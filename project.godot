@@ -13,4 +13,4 @@ config_version=5
 config/name="macro-demo"
 run/main_scene="res://scenes/test_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
