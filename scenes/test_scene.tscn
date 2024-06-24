@@ -36,10 +36,6 @@ environment = SubResource("Environment_mj3wy")
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
 texture = ExtResource("1_w4bjj")
 
-[node name="Hands2" type="Sprite3D" parent="MainCamera"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
-texture = ExtResource("1_w4bjj")
-
 [node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
 texture = ExtResource("1_w4bjj")
@@ -81,11 +77,6 @@ texture = ExtResource("5_nkxga")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
 
 [node name="Sprite3D" type="Sprite3D" parent="Monster"]
-transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-billboard = 1
-texture = ExtResource("6_1wxf1")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Monster"]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 billboard = 1
 texture = ExtResource("6_1wxf1")
