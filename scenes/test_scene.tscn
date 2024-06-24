@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b776oyder3315"]
+[gd_scene load_steps=12 format=3 uid="uid://2a4cvqnuhyn3"]
 
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="1_w4bjj"]
 [ext_resource type="Texture2D" uid="uid://dkalr3qs250t0" path="res://assets/prototype_textures/PNG/Dark/texture_08.png" id="2_f1t7r"]
@@ -33,6 +33,10 @@ transform = Transform3D(1, 0, 0, 0, 0.933618, 0.35827, 0, -0.35827, 0.933618, 0,
 environment = SubResource("Environment_mj3wy")
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
+texture = ExtResource("1_w4bjj")
+
+[node name="Hands2" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
 texture = ExtResource("1_w4bjj")
 
