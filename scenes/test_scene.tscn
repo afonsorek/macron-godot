@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://b776oyder3315"]
+
+[ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="1_w4bjj"]
+[ext_resource type="Texture2D" uid="uid://dkalr3qs250t0" path="res://assets/prototype_textures/PNG/Dark/texture_08.png" id="2_f1t7r"]
+[ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="3_kfpwv"]
+[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="4_a26yr"]
+[ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/prototype_textures/PNG/Light/texture_07.png" id="5_nkxga"]
+[ext_resource type="Texture2D" uid="uid://c2y2w252cg76b" path="res://assets/prototype_textures/PNG/Orange/texture_09.png" id="6_1wxf1"]
+
+[sub_resource type="Environment" id="Environment_mj3wy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lihlf"]
+albedo_texture = ExtResource("2_f1t7r")
+uv1_scale = Vector3(4.78, 1.13, 1.55)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfecl"]
+material = SubResource("StandardMaterial3D_lihlf")
+size = Vector3(4.78, 1.13, 1.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xam4"]
+albedo_texture = ExtResource("3_kfpwv")
+uv1_scale = Vector3(3.49, 1.17, 0.45)
+uv1_offset = Vector3(0.03, 2.08165e-12, 2.08165e-12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4asul"]
+material = SubResource("StandardMaterial3D_3xam4")
+size = Vector3(2.06, 0.19, 1.09)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.933618, 0.35827, 0, -0.35827, 0.933618, 0, 1.88195, 2.54362)
+environment = SubResource("Environment_mj3wy")
+
+[node name="Hands" type="Sprite3D" parent="MainCamera"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
+texture = ExtResource("1_w4bjj")
+
+[node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
+texture = ExtResource("1_w4bjj")
+
+[node name="3DEnvironment" type="Node3D" parent="."]
+
+[node name="Lights" type="Node3D" parent="3DEnvironment"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
+transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
+
+[node name="Table" type="MeshInstance3D" parent="3DEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0.75)
+mesh = SubResource("BoxMesh_sfecl")
+skeleton = NodePath("../..")
+
+[node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
+mesh = SubResource("BoxMesh_4asul")
+skeleton = NodePath("../..")
+
+[node name="Sizzle" type="Node3D" parent="3DEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
+
+[node name="Sprite" type="Sprite3D" parent="3DEnvironment/Sizzle"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+billboard = 1
+texture = ExtResource("4_a26yr")
+
+[node name="Ingredient" type="Node3D" parent="3DEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 1.084, 1.08)
+
+[node name="Sprite" type="Sprite3D" parent="3DEnvironment/Ingredient"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+billboard = 1
+texture = ExtResource("5_nkxga")
+
+[node name="Monster" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
+
+[node name="Sprite3D" type="Sprite3D" parent="Monster"]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+billboard = 1
+texture = ExtResource("6_1wxf1")
