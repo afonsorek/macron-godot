@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://2a4cvqnuhyn3"]
+[gd_scene load_steps=13 format=3 uid="uid://b776oyder3315"]
 
-[ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="1_w4bjj"]
-[ext_resource type="Texture2D" uid="uid://dkalr3qs250t0" path="res://assets/prototype_textures/PNG/Dark/texture_08.png" id="2_f1t7r"]
-[ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="3_kfpwv"]
-[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="4_a26yr"]
-[ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/prototype_textures/PNG/Light/texture_07.png" id="5_nkxga"]
-[ext_resource type="Texture2D" uid="uid://c2y2w252cg76b" path="res://assets/prototype_textures/PNG/Orange/texture_09.png" id="6_1wxf1"]
+[ext_resource type="Script" path="res://scenes/kitchen_controller.gd" id="1_0221c"]
+[ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
+[ext_resource type="Texture2D" uid="uid://dkalr3qs250t0" path="res://assets/prototype_textures/PNG/Dark/texture_08.png" id="3_7tb4b"]
+[ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
+[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="5_3yrrq"]
+[ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/prototype_textures/PNG/Light/texture_07.png" id="6_1jlhx"]
+[ext_resource type="Texture2D" uid="uid://c2y2w252cg76b" path="res://assets/prototype_textures/PNG/Orange/texture_09.png" id="7_74awe"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lihlf"]
-albedo_texture = ExtResource("2_f1t7r")
+albedo_texture = ExtResource("3_7tb4b")
 uv1_scale = Vector3(4.78, 1.13, 1.55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sfecl"]
@@ -18,7 +19,7 @@ material = SubResource("StandardMaterial3D_lihlf")
 size = Vector3(4.78, 1.13, 1.55)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xam4"]
-albedo_texture = ExtResource("3_kfpwv")
+albedo_texture = ExtResource("4_v2nr6")
 uv1_scale = Vector3(3.49, 1.17, 0.45)
 uv1_offset = Vector3(0.03, 2.08165e-12, 2.08165e-12)
 
@@ -26,7 +27,8 @@ uv1_offset = Vector3(0.03, 2.08165e-12, 2.08165e-12)
 material = SubResource("StandardMaterial3D_3xam4")
 size = Vector3(2.06, 0.19, 1.09)
 
-[node name="TestScene" type="Node3D"]
+[node name="Kitchen" type="Node3D"]
+script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.933618, 0.35827, 0, -0.35827, 0.933618, 0, 1.88195, 2.54362)
@@ -34,11 +36,11 @@ environment = SubResource("Environment_mj3wy")
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
-texture = ExtResource("1_w4bjj")
+texture = ExtResource("2_a8p5s")
 
 [node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
-texture = ExtResource("1_w4bjj")
+texture = ExtResource("2_a8p5s")
 
 [node name="3DEnvironment" type="Node3D" parent="."]
 
@@ -63,20 +65,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
 [node name="Sprite" type="Sprite3D" parent="3DEnvironment/Sizzle"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 billboard = 1
-texture = ExtResource("4_a26yr")
+texture = ExtResource("5_3yrrq")
 
 [node name="Ingredient" type="Node3D" parent="3DEnvironment"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 1.084, 1.08)
 
 [node name="Sprite" type="Sprite3D" parent="3DEnvironment/Ingredient"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 billboard = 1
-texture = ExtResource("5_nkxga")
+texture = ExtResource("6_1jlhx")
 
 [node name="Monster" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
 
 [node name="Sprite3D" type="Sprite3D" parent="Monster"]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 billboard = 1
-texture = ExtResource("6_1wxf1")
+texture = ExtResource("7_74awe")
