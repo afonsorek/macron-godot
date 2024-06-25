@@ -4,16 +4,19 @@ class_name Ingredient
 #endregion
 
 #region Variables
-# StringNames são strings únicas no código: ótimas para relacionar dados,
-# funcionando efetivamente como UUIDs.
+## StringNames são strings únicas no código: ótimas para relacionar dados,
+## funcionando efetivamente como UUIDs.
 var name : StringName
 var description : String
-var elements : Array[StringName]
+var elements : Dictionary # StringName -> int
 var states : Array[IngredientState]
 #endregion
 
 #region Computed properties
 #endregion
+
+func _init():
+	pass
 
 #region Public functions
 #endregion
