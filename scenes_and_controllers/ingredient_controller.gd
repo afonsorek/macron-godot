@@ -30,14 +30,7 @@ func _enter_tree():
 	pass
 	
 func _ready():
-	# Para cada node filho de States, registrar o estado
-	for child in %States.get_children():
-		if child is IngredientState:
-			var new_state := child as IngredientState
-			if !initial_state:
-				initial_state = new_state
-			states[child.name.to_lower()] = new_state
-			new_state.transitioned.connect(_on_state_transition)
+	pass
 	
 func _process(delta):
 	# Manda a atualização de update para o state atual
@@ -51,8 +44,18 @@ func _physics_process(delta):
 #region Public functions
 func set_ingredient(ingredient: Ingredient):
 	current_ingredient = ingredient
+	# Para cada node filho de States, registrar os States
+	_clear_states()
+	var starting_state : IngredientState
 	for state : IngredientState in ingredient.states:
-		
+		if !starting_state:
+			starting_state = state
+		states[state.name] = state
+		state.transitioned.connect(_on_state_transition)
+	if starting_state:
+		starting_state.enter()
+		current_state = starting_state
+	
 #endregion
 
 #region Private functions
