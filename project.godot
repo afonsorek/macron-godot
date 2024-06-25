@@ -11,6 +11,21 @@ config_version=5
 [application]
 
 config/name="macro-demo"
-run/main_scene="res://scenes/kitchen_scene.tscn"
+run/main_scene="res://scenes_and_controllers/kitchen_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://audio/": "orange",
+"res://data/": "yellow",
+"res://managers/": "green",
+"res://models/": "teal",
+"res://packages/": "blue",
+"res://scenes_and_controllers/": "purple",
+"res://script_templates/": "pink",
+"res://shaders/": "red",
+"res://sprites/": "orange"
+}

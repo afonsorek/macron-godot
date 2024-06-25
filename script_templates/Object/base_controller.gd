@@ -1,5 +1,5 @@
-extends Node3D
-class_name KitchenController
+extends Node
+class_name BaseController
 
 #region Enums
 #endregion
@@ -11,8 +11,6 @@ class_name KitchenController
 #endregion
 
 #region Variables
-@onready var monster = %Monster
-@onready var current_ingredient = %Ingredient
 #endregion
 
 #region Computed properties
