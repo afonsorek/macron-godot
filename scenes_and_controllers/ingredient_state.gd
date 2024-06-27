@@ -4,12 +4,7 @@ class_name IngredientState
 signal transitioned
 
 var name : String
-
-func enter():
-	pass
-	
-func exit():
-	pass
-
-func update(_delta: float):
-	pass
+var enter : Callable # () -> void
+var exit : Callable # () -> void
+var update : Callable # (delta : float) -> void
+var beat : Callable # () -> void
