@@ -15,6 +15,10 @@ run/main_scene="res://scenes_and_controllers/kitchen_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+GameManager="*res://managers/game_manager.gd"
+
 [file_customization]
 
 folder_colors={

@@ -30,12 +30,13 @@ func _enter_tree():
 	pass
 	
 func _ready():
+	# TODO: Conectar com beat aqui
 	pass
 	
 func _process(delta):
 	# Manda a atualização de update para o state atual
 	if current_state:
-		current_state.update(delta)
+		current_state.update.call(self,delta)
 	
 func _physics_process(delta):
 	pass
@@ -44,27 +45,17 @@ func _physics_process(delta):
 #region Public functions
 func set_ingredient(ingredient: Ingredient):
 	current_ingredient = ingredient
-	# Para cada node filho de States, registrar os States
 	_clear_states()
 	var starting_state : IngredientState
 	for state : IngredientState in ingredient.states:
 		if !starting_state:
 			starting_state = state
 		states[state.name] = state
-		state.transitioned.connect(_on_state_transition)
 	if starting_state:
-		starting_state.enter()
+		starting_state.enter.call(self)
 		current_state = starting_state
-	
-#endregion
 
-#region Private functions
-func _clear_states():
-	current_state = null
-	states.clear()
-	
-
-func _on_state_transition(state : IngredientState, new_state_name : String):
+func transition(state : IngredientState, new_state_name : String):
 	# Se não foi o state atual que causou a transição, return
 	if (state != current_state):
 		return
@@ -76,8 +67,19 @@ func _on_state_transition(state : IngredientState, new_state_name : String):
 		
 	# Processo de trocar para novo state
 	if current_state:
-		current_state.exit()
+		current_state.exit.call(self)
+	if new_state:
+		new_state.enter.call(self)
 		
+#endregion
+
+#region Private functions
+func _clear_states():
+	current_state = null
+	states.clear()
+	
+func _on_beat():
+	current_state.beat.call(self)
 	
 #endregion
 

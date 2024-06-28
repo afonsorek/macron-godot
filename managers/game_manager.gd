@@ -1,6 +1,3 @@
-extends Node
-class_name BaseController
-
 #region Enums
 #endregion
 
@@ -11,29 +8,18 @@ class_name BaseController
 #endregion
 
 #region Variables
+var ingredients : Array[StringName] = []
 #endregion
 
 #region Computed properties
 #endregion
 
-#region Event functions
-func _init():
-	pass
-	
-func _enter_tree():
-	pass
-	
-func _ready():
-	pass
-	
-func _process(_delta):
-	pass
-	
-func _physics_process(_delta):
-	pass
-#endregion
-
 #region Public functions
+func add_ingredient(ingredient_name : StringName):
+	ingredients.append(ingredient_name)
+	
+func start_run():
+	ingredients = ["batata"]
 #endregion
 
 #region Private functions
@@ -41,4 +27,5 @@ func _physics_process(_delta):
 
 #region Subclasses
 #endregion
+
 

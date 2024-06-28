@@ -10,6 +10,7 @@ var name : StringName
 var description : String
 var elements : Dictionary # StringName -> int
 var states : Array[IngredientState]
+var known : bool = false
 #endregion
 
 #region Computed properties

@@ -4,7 +4,15 @@ class_name IngredientState
 signal transitioned
 
 var name : String
-var enter : Callable # () -> void
-var exit : Callable # () -> void
-var update : Callable # (delta : float) -> void
-var beat : Callable # () -> void
+var enter : Callable # (controller: IngredientController) -> void
+var exit : Callable # (controller: IngredientController) -> void
+var update : Callable # (controller: IngredientController, delta : float) -> void
+var beat : Callable # (controller: IngredientController) -> void
+
+func _init(name : String, enter: Callable, exit: Callable, update: Callable, beat: Callable):
+	self.name = name
+	self.enter = enter
+	self.exit = exit
+	self.update = update
+	self.beat = beat
+
