@@ -16,8 +16,11 @@ var known : bool = false
 #region Computed properties
 #endregion
 
-func _init():
-	pass
+func _init(name: StringName, description: String, elements: Dictionary, states: Array[IngredientState]):
+	self.name = name
+	self.description = description
+	self.elements = elements
+	self.states = states
 
 #region Public functions
 #endregion
