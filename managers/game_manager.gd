@@ -17,6 +17,7 @@ var ingredients : Array[StringName] = []
 #region Public functions
 func add_ingredient(ingredient_name : StringName):
 	ingredients.append(ingredient_name)
+	IngredientData.set_ingredient_as_known(ingredient_name)
 	
 func start_run():
 	ingredients = ["batata"]

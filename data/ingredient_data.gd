@@ -4,14 +4,7 @@ class_name IngredientData
 #endregion
 
 #region Variables
-#endregion
-
-#region Computed properties
-#endregion
-
-#region Public functions
-static func get_ingredients() -> Array[Ingredient]:
-	return [
+static var ingredients : Array[Ingredient] = [
 		Ingredient.new(
 			"batata",
 			"eh uma batata",
@@ -42,12 +35,24 @@ static func get_ingredients() -> Array[Ingredient]:
 			]
 		)
 	]
+#endregion
 
+#region Computed properties
+#endregion
+
+#region Public functions
 static func get_ingredient_by_name(name : StringName) -> Ingredient:
-	for ingredient in get_ingredients():
+	for ingredient in ingredients:
 		if ingredient.name == name:
 			return ingredient
 	return null
+	
+static func set_ingredient_as_known(name : StringName):
+	var ingredient = get_ingredient_by_name(name)
+	ingredient.known = true
+#endregion
+
+#region Private functions
 #endregion
 
 #region Subclasses
