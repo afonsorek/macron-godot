@@ -1,5 +1,5 @@
 extends Node3D
-class_name KitchenController
+class_name IngredientView
 
 #region Enums
 #endregion
@@ -11,8 +11,6 @@ class_name KitchenController
 #endregion
 
 #region Variables
-@onready var monster = %Monster
-@onready var current_ingredient = %Ingredient
 #endregion
 
 #region Computed properties
@@ -28,14 +26,16 @@ func _enter_tree():
 func _ready():
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 #endregion
 
 #region Public functions
+func set_color(color: Color):
+	%Sprite.modulate = color
 #endregion
 
 #region Private functions
@@ -43,4 +43,5 @@ func _physics_process(delta):
 
 #region Subclasses
 #endregion
+
 
