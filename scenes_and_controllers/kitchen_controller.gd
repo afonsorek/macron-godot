@@ -61,7 +61,7 @@ func _make_recipe():
 	processed_ingredients.clear()
 	
 func _process_inputs(_delta):
-	if is_selecting_ingredient && Input.is_action_just_pressed("Y"):
+	if is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
 		ingredient_controller.set_ingredient_by_name("batata")
 		ui_view.hide_select_ingredient()
 	elif Input.is_action_just_pressed("select_ingredient"):
