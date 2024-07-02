@@ -39,7 +39,7 @@ func _process(delta):
 		current_state.update.call(self,delta)
 		
 	# Verifica se o jogador está enviando o prato
-	if Input.is_action_just_pressed("A") and current_state and current_state.name == "done":
+	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
 		_send_ingredient()
 	
 func _physics_process(delta):
@@ -102,6 +102,7 @@ func _send_ingredient():
 	print("Sending ingredient!")
 	sending_ingredient.emit(current_ingredient)
 	current_ingredient = null
+	_clear_states()
 	view.hide()
 	
 #endregion

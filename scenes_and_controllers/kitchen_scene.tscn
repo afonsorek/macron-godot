@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=14 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="5_3yrrq"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="Texture2D" uid="uid://c2y2w252cg76b" path="res://assets/prototype_textures/PNG/Orange/texture_09.png" id="7_74awe"]
+[ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
@@ -79,3 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 billboard = 1
 texture = ExtResource("7_74awe")
+
+[node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
+unique_name_in_owner = true
