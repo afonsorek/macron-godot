@@ -13,7 +13,9 @@ class_name KitchenController
 #region Variables
 @onready var monster_controller := %Monster as MonsterController
 @onready var ingredient_controller := %Ingredient as IngredientController
+@onready var sizzle_controller := %Sizzle as SizzleController
 @onready var ui_view := %KitchenUIView as KitchenUiView
+var made_recipe : Recipe
 var processed_ingredients : Array[Ingredient] = []
 var is_selecting_ingredient := false
 #endregion
@@ -31,6 +33,7 @@ func _enter_tree():
 func _ready():
 	# Connect signals
 	ingredient_controller.sending_ingredient.connect(ingredient_sent)
+	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	# Spawn monster
 	_spawn_monster()
 	
@@ -61,7 +64,11 @@ func _make_recipe():
 	var recipe_result = RecipeData.match_recipe(ingredient_names)
 	if (recipe_result):
 		print("Made recipe: %s, with ingredients %s" % [recipe_result.name, recipe_result.ingredients])
+		monster_controller.receive_recipe(recipe_result)
 	processed_ingredients.clear()
+		
+func _on_satisfaction_changed(new_value : int, delta : int):
+	ui_view.on_satisfaction_changed(new_value, delta, monster_controller.current_monster.max_satisfaction)
 	
 func _process_inputs(_delta):
 	if monster_controller.has_monster:
@@ -80,7 +87,10 @@ func _select_ingredient():
 
 func _spawn_monster():
 	await get_tree().create_timer(2.0).timeout
-	monster_controller.set_monster(Monster.new())
+	# TODO: Get random monster here
+	var selected_monster = Monster.new()
+	monster_controller.set_monster(selected_monster)
+	sizzle_controller.give_tip(selected_monster.tips)
 	if !is_selecting_ingredient && Input.is_action_pressed("select_ingredient"):
 		_select_ingredient()
 	

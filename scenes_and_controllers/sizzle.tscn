@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b04jqx73jkfti"]
+
+[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="1_hakmp"]
+[ext_resource type="Script" path="res://scenes_and_controllers/sizzle_controller.gd" id="1_uw8fs"]
+[ext_resource type="Script" path="res://views/sizzle_view.gd" id="2_v5irg"]
+
+[node name="Sizzle" type="Node3D"]
+script = ExtResource("1_uw8fs")
+
+[node name="View" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_v5irg")
+
+[node name="Sprite" type="Sprite3D" parent="View"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_hakmp")

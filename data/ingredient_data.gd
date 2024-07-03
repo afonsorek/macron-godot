@@ -8,7 +8,7 @@ static var ingredients : Array[Ingredient] = [
 		Ingredient.new(
 			"batata",
 			"eh uma batata",
-			{ "Carb": 1 },
+			["Carb"],
 			[
 				IngredientState.new(
 					"cut",

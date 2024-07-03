@@ -27,6 +27,7 @@ var impatience_levels : Dictionary = {
 #region Variables
 var name : StringName
 var descriptions : Array[String]
+var tips : Array[String]
 var hunger : int
 var aggressiveness : int
 var impatience : int
@@ -35,7 +36,6 @@ var enter : Callable # (controller : MonsterController) -> void
 var update : Callable # (controller : MonsterController, delta : float) -> void
 var beat : Callable # (controller : MonsterController) -> void
 var exit : Callable # (controller : MonsterController) -> void
-var tips : Array[String]
 
 #endregion
 

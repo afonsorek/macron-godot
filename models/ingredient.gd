@@ -8,7 +8,7 @@ class_name Ingredient
 ## funcionando efetivamente como UUIDs.
 var name : StringName
 var description : String
-var elements : Dictionary # StringName -> int
+var elements : Array[StringName]
 var states : Array[IngredientState]
 var known : bool = false
 #endregion
@@ -16,11 +16,11 @@ var known : bool = false
 #region Computed properties
 #endregion
 
-func _init(name: StringName, description: String, elements: Dictionary, states: Array[IngredientState]):
-	self.name = name
-	self.description = description
-	self.elements = elements
-	self.states = states
+func _init(_name: StringName, _description: String, _elements: Array[StringName], _states: Array[IngredientState]):
+	name = _name
+	description = _description
+	elements = _elements
+	states = _states
 
 #region Public functions
 #endregion
