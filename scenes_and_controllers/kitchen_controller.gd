@@ -11,9 +11,9 @@ class_name KitchenController
 #endregion
 
 #region Variables
-@onready var current_monster = %Monster
-@onready var ingredient_controller = %Ingredient as IngredientController
-@onready var ui_view = %KitchenUIView as KitchenUiView
+@onready var monster_controller := %Monster as MonsterController
+@onready var ingredient_controller := %Ingredient as IngredientController
+@onready var ui_view := %KitchenUIView as KitchenUiView
 var processed_ingredients : Array[Ingredient] = []
 var is_selecting_ingredient := false
 #endregion
@@ -29,7 +29,10 @@ func _enter_tree():
 	pass
 	
 func _ready():
+	# Connect signals
 	ingredient_controller.sending_ingredient.connect(ingredient_sent)
+	# Spawn monster
+	_spawn_monster()
 	
 func _process(_delta):
 	_process_inputs(_delta)
@@ -61,15 +64,25 @@ func _make_recipe():
 	processed_ingredients.clear()
 	
 func _process_inputs(_delta):
-	if is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
-		ingredient_controller.set_ingredient_by_name("batata")
-		ui_view.hide_select_ingredient()
-	elif Input.is_action_just_pressed("select_ingredient"):
-		is_selecting_ingredient = true
-		ui_view.show_select_ingredient()
-	elif Input.is_action_just_released("select_ingredient"):
+	if monster_controller.has_monster:
+		if Input.is_action_just_pressed("select_ingredient"):
+			_select_ingredient()
+		elif is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
+			ingredient_controller.set_ingredient_by_name("batata")
+			ui_view.hide_select_ingredient()
+	if Input.is_action_just_released("select_ingredient"):
 		is_selecting_ingredient = false
 		ui_view.hide_select_ingredient()
+
+func _select_ingredient():
+	is_selecting_ingredient = true
+	ui_view.show_select_ingredient()
+
+func _spawn_monster():
+	await get_tree().create_timer(2.0).timeout
+	monster_controller.set_monster(Monster.new())
+	if !is_selecting_ingredient && Input.is_action_pressed("select_ingredient"):
+		_select_ingredient()
 	
 #endregion
 
