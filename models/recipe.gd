@@ -12,12 +12,6 @@ var known : bool = false
 #region Computed properties
 #endregion
 
-func _init(name: StringName, ingredients: Array[StringName]):
-	self.name = name
-	self.ingredients = ingredients
-	self.ingredients.sort()
-	pass
-
 #region Public functions
 func get_elements() -> Array[StringName]:
 	var ings : Array[Ingredient] = []

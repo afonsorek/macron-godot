@@ -4,19 +4,31 @@ class_name RecipeData
 #endregion
 
 #region Variables
-const recipes : Array[Recipe] = []
+static var recipes : Array[Recipe] = []
 #endregion
 
 #region Computed properties
 #endregion
 
 #region Public functions
+static func init_recipes():
+	recipes = []
+	for i in range(0):
+		var nr = Recipe.new()
+		match i:
+			_:
+				nr.name = "nil"
+
 static func match_recipe(ingredient_names : Array[StringName]) -> Recipe:
 	ingredient_names.sort()
 	for recipe in recipes:
 		if ingredient_names == recipe.ingredients:
 			return recipe
-	return Recipe.new("Soup", ingredient_names)
+	# If specific recipe not found:
+	var default_recipe = Recipe.new()
+	default_recipe.name = "Soup"
+	default_recipe.ingredients = ingredient_names
+	return default_recipe
 
 static func get_recipes_with_ingredient(ingredient: Ingredient) -> Array[Recipe]:
 	return get_recipes_with_ingredient_name(ingredient.name)

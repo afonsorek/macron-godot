@@ -16,12 +16,6 @@ var known : bool = false
 #region Computed properties
 #endregion
 
-func _init(_name: StringName, _description: String, _elements: Array[StringName], _states: Array[IngredientState]):
-	name = _name
-	description = _description
-	elements = _elements
-	states = _states
-
 #region Public functions
 #endregion
 

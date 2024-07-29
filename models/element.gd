@@ -11,10 +11,6 @@ var description : String
 #region Computed properties
 #endregion
 
-func _init(name : StringName, description: String):
-	self.name = name
-	self.description = description
-
 #region Public functions
 #endregion
 

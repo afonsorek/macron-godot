@@ -32,10 +32,10 @@ var hunger : int
 var aggressiveness : int
 var impatience : int
 var tastes : Dictionary # String -> bool, true se gosta e false se desgosta
-var enter : Callable # (controller : MonsterController) -> void
-var update : Callable # (controller : MonsterController, delta : float) -> void
-var beat : Callable # (controller : MonsterController) -> void
-var exit : Callable # (controller : MonsterController) -> void
+var enter := Callable() # (controller : MonsterController) -> void
+var update := Callable() # (controller : MonsterController, delta : float) -> void
+var beat := Callable() # (controller : MonsterController) -> void
+var exit := Callable() # (controller : MonsterController) -> void
 
 #endregion
 
