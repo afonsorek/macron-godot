@@ -11,7 +11,7 @@ static var ingredients : Array[Ingredient]
 #endregion
 
 #region Public functions
-static func init_ingredients():
+static func initialize_ingredients():
 	ingredients = []
 	for i in range(1):
 		var ni := Ingredient.new()
@@ -45,7 +45,8 @@ static func init_ingredients():
 
 static func get_ingredient_by_name(name : StringName) -> Ingredient:
 	if !ingredients:
-		init_ingredients()
+		print("Ingredients not initialized!")
+		return null
 	for ingredient in ingredients:
 		if ingredient.name == name:
 			return ingredient
@@ -53,7 +54,8 @@ static func get_ingredient_by_name(name : StringName) -> Ingredient:
 	
 static func set_ingredient_as_known(name : StringName) -> void:
 	var ingredient = get_ingredient_by_name(name)
-	ingredient.known = true
+	if ingredient:
+		ingredient.known = true
 #endregion
 
 #region Private functions

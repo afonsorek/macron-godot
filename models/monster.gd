@@ -36,6 +36,7 @@ var enter := Callable() # (controller : MonsterController) -> void
 var update := Callable() # (controller : MonsterController, delta : float) -> void
 var beat := Callable() # (controller : MonsterController) -> void
 var exit := Callable() # (controller : MonsterController) -> void
+var knowledge_level := 0
 
 #endregion
 

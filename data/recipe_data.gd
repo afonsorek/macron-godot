@@ -11,7 +11,7 @@ static var recipes : Array[Recipe] = []
 #endregion
 
 #region Public functions
-static func init_recipes():
+static func initialize_recipes():
 	recipes = []
 	for i in range(0):
 		var nr = Recipe.new()
