@@ -1,4 +1,5 @@
 class_name Ingredient
+extends Resource
 
 #region Enums
 #endregion
@@ -6,10 +7,10 @@ class_name Ingredient
 #region Variables
 ## StringNames são strings únicas no código: ótimas para relacionar dados,
 ## funcionando efetivamente como UUIDs.
-var name : StringName
-var description : String
-var elements : Array[StringName]
-var states : Array[IngredientState]
+@export var name : StringName
+@export var description : String
+@export var elements : Array[StringName]
+@export var states : Array[IngredientState]
 var known : bool = false
 #endregion
 

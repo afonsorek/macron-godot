@@ -15,7 +15,13 @@ func _init():
 
 #region Public functions
 static func initialize_monsters():
-	monsters = []
+	var paths = FileUtility.get_resource_paths("res://data/monsters")
+	for path in paths:
+		var new_monster : Monster = load(path)
+		if (new_monster):
+			monsters.append(new_monster)
+		else:
+			print("Monster null!!")
 
 static func get_monster_by_name(name : StringName) -> Monster:
 	if !monsters:

@@ -1,41 +1,20 @@
 class_name Monster
+extends Resource
 
 #region Enums
-var hunger_levels : Dictionary = {
-	1: "Nibbler",
-	2: "Hungry",
-	3: "Insatiable",
-	4: "Devourer",
-	5: "Ravenous"
-}
-var aggressiveness_levels : Dictionary = {
-	1: "Calm",
-	2: "Opportunistic",
-	3: "Aggressive",
-	4: "Furious",
-	5: "Berserker"
-}
-var impatience_levels : Dictionary = {
-	1: "Patient",
-	2: "Impatient",
-	3: "Immediatist",
-	4: "Hothead",
-	5: "Zero Tolerance"
-}
+enum Hunger {NIBBLER = 1, HUNGRY, INSATIABLE, DEVOURER, RAVENOUS}
+enum Agressiveness {CALM = 1, OPPORTUNISTIC, AGGRESSIVE, FURIOUS, BERSERKER}
+enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 #endregion
 
 #region Variables
-var name : StringName
-var descriptions : Array[String]
-var tips : Array[String]
-var hunger : int
-var aggressiveness : int
-var impatience : int
-var tastes : Dictionary # String -> bool, true se gosta e false se desgosta
-var enter := Callable() # (controller : MonsterController) -> void
-var update := Callable() # (controller : MonsterController, delta : float) -> void
-var beat := Callable() # (controller : MonsterController) -> void
-var exit := Callable() # (controller : MonsterController) -> void
+@export var name : StringName
+@export var descriptions : Array[String]
+@export var tips : Array[String]
+@export var hunger : Hunger
+@export var aggressiveness : Agressiveness
+@export var impatience : Impatience
+@export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
 var knowledge_level := 0
 
 #endregion
@@ -53,8 +32,20 @@ func _init():
 	pass
 
 #region Public functions
+func enter(controller: MonsterController) -> void:
+	pass
+	
+func update(controller: MonsterController, delta : float) -> void:
+	pass
+	
+func beat(controller: MonsterController) -> void:
+	pass
+	
+func exit(controller: MonsterController) -> void:
+	pass
+	
 func get_hunger_level(hunger: int) -> String:
-	return hunger_levels[hunger]
+	return Hunger.find_key(hunger)
 #endregion
 
 #region Subclasses

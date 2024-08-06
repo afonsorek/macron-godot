@@ -35,8 +35,8 @@ func _ready():
 	
 func _process(delta):
 	# Manda a atualização de update para o state atual
-	if current_state and current_state.update:
-		current_state.update.call(self,delta)
+	if current_state:
+		current_state.update(self,delta)
 		
 	# Verifica se o jogador está enviando o prato
 	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
@@ -49,7 +49,8 @@ func _physics_process(delta):
 #region Public functions
 func set_ingredient_by_name(name: StringName):
 	var new_ingredient = IngredientData.get_ingredient_by_name(name)
-	set_ingredient(new_ingredient)
+	if(new_ingredient):
+		set_ingredient(new_ingredient)
 
 func set_ingredient(ingredient: Ingredient):
 	current_ingredient = ingredient
@@ -60,8 +61,7 @@ func set_ingredient(ingredient: Ingredient):
 			starting_state = state
 		states[state.name] = state
 	if starting_state:
-		if starting_state.enter:
-			starting_state.enter.call(self)
+		starting_state.enter(self)
 		current_state = starting_state
 		print(current_state.name)
 	view.show()
@@ -80,10 +80,9 @@ func transition(state_name : String, new_state_name : String):
 		return
 		
 	# Processo de trocar para novo state
-	if current_state and current_state.exit:
-		current_state.exit.call(self)
-	if new_state.enter:
-		new_state.enter.call(self)
+	if current_state:
+		current_state.exit(self)
+	new_state.enter(self)
 	current_state = new_state
 		
 #endregion
@@ -95,8 +94,8 @@ func _clear_states():
 	states.clear()
 	
 func _on_beat():
-	if current_state and current_state.beat:
-		current_state.beat.call(self)
+	if current_state:
+		current_state.beat(self)
 
 func _send_ingredient():
 	print("Sending ingredient!")

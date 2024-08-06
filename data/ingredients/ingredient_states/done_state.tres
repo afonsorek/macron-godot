@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DoneState" load_steps=2 format=3 uid="uid://dut5uudnrimce"]
+
+[ext_resource type="Script" path="res://data/ingredients/ingredient_states/done_state.gd" id="1_nw4xm"]
+
+[resource]
+script = ExtResource("1_nw4xm")
+name = "done"
