@@ -1,15 +1,17 @@
-class_name Element
+class_name MonsterData
 
 #region Enums
 #endregion
 
 #region Variables
-var name : StringName
-var description : String
+static var monsters : Array[Monster] = []
 #endregion
 
 #region Computed properties
 #endregion
+
+func _init():
+	pass
 
 #region Public functions
 #endregion

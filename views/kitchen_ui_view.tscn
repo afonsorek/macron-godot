@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://views/kitchen_ui_view.gd" id="1_h37ij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
-font_size = 46
+font_size = 31
 
 [node name="KitchenUIView" type="Control"]
 layout_mode = 3
@@ -38,6 +38,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "O menu de selecionar ingredientes vai ser aqui"
+label_settings = SubResource("LabelSettings_kbh1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SatisfactionPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_right = 315.0
+offset_bottom = 56.0
+
+[node name="SatisfactionLabel" type="Label" parent="SatisfactionPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Satisfação: ##/##"
 label_settings = SubResource("LabelSettings_kbh1i")
 horizontal_alignment = 1
 vertical_alignment = 1
