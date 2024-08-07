@@ -75,7 +75,7 @@ func _process_inputs(_delta):
 		if Input.is_action_just_pressed("select_ingredient"):
 			_select_ingredient()
 		elif is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
-			ingredient_controller.set_ingredient_by_name("batata")
+			ingredient_controller.set_ingredient_by_name("Potato")
 			ui_view.hide_select_ingredient()
 	if Input.is_action_just_released("select_ingredient"):
 		is_selecting_ingredient = false

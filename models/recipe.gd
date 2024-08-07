@@ -1,4 +1,5 @@
 class_name Recipe
+extends Resource
 
 #region Enums
 #endregion

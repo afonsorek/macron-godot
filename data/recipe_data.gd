@@ -11,13 +11,15 @@ static var recipes : Array[Recipe] = []
 #endregion
 
 #region Public functions
-static func init_recipes():
-	recipes = []
-	for i in range(0):
-		var nr = Recipe.new()
-		match i:
-			_:
-				nr.name = "nil"
+static func initialize_recipes():
+	var paths = FileUtility.get_resource_paths("res://data/recipes")
+	for path in paths:
+		var new_recipe : Recipe = load(path)
+		if (new_recipe):
+			recipes.append(new_recipe)
+		else:
+			print("Recipe null!!")
+	
 
 static func match_recipe(ingredient_names : Array[StringName]) -> Recipe:
 	ingredient_names.sort()

@@ -16,6 +16,13 @@ var ingredients : Array[StringName] = []
 #region Computed properties
 #endregion
 
+#region Event functions
+func _ready():
+	IngredientData.initialize_ingredients()
+	MonsterData.initialize_monsters()
+	RecipeData.initialize_recipes()
+#endregion
+
 #region Public functions
 func add_ingredient(ingredient_name : StringName):
 	ingredients.append(ingredient_name)

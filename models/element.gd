@@ -1,4 +1,5 @@
 class_name Element
+extends Resource
 
 #region Enums
 #endregion
