@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
-[ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
+[ext_resource type="PackedScene" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
 [ext_resource type="PackedScene" uid="uid://b04jqx73jkfti" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
