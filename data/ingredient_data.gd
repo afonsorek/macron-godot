@@ -18,6 +18,11 @@ static var ingredients : Array[Ingredient] = [
 						print("Entered cut state!"),
 					func(controller: IngredientController, delta: float): # Update
 						if Input.is_action_just_pressed("action_right"):
+							
+							#play animation of cuting
+							controller.view.cut()
+							
+							
 							controller.state_properties["remaining_cuts"] -= 1
 							print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])
 						if controller.state_properties["remaining_cuts"] <= 0:

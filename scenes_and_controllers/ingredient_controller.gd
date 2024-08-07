@@ -64,7 +64,7 @@ func set_ingredient(ingredient: Ingredient):
 			starting_state.enter.call(self)
 		current_state = starting_state
 		print(current_state.name)
-	view.show()
+	view.entry()
 
 func transition(state_name : String, new_state_name : String):
 	# Se não foi o state atual que causou a transição, return

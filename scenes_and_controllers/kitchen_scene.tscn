@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
-[ext_resource type="Texture2D" uid="uid://dkalr3qs250t0" path="res://assets/prototype_textures/PNG/Dark/texture_08.png" id="3_7tb4b"]
+[ext_resource type="Texture2D" uid="uid://do34mwxavutv4" path="res://assets/table-large.png" id="3_hxwby"]
 [ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
-[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="5_3yrrq"]
+[ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sizzle.png" id="5_qbson"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
-[ext_resource type="Texture2D" uid="uid://c2y2w252cg76b" path="res://assets/prototype_textures/PNG/Orange/texture_09.png" id="7_74awe"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
+[ext_resource type="Texture2D" uid="uid://dmthcm8ujrdw7" path="res://assets/mc-sapao.PNG" id="8_lbn0l"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lihlf"]
-albedo_texture = ExtResource("3_7tb4b")
+albedo_texture = ExtResource("3_hxwby")
 uv1_scale = Vector3(4.78, 1.13, 1.55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sfecl"]
@@ -32,8 +32,9 @@ size = Vector3(2.06, 0.19, 1.09)
 script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.933618, 0.35827, 0, -0.35827, 0.933618, 0, 1.88195, 2.54362)
+transform = Transform3D(1, 0, 0, 0, 0.997461, 0.0712187, 0, -0.0712187, 0.997461, 0, 1.44981, 2.54362)
 environment = SubResource("Environment_mj3wy")
+fov = 74.0913
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
@@ -64,9 +65,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
 
 [node name="Sprite" type="Sprite3D" parent="3DEnvironment/Sizzle"]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0798941, -0.140684, 0.962224)
 billboard = 1
-texture = ExtResource("5_3yrrq")
+texture = ExtResource("5_qbson")
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
@@ -77,9 +78,9 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
 
 [node name="Sprite3D" type="Sprite3D" parent="Monster"]
-transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.08165e-12, -0.732526, 3.85279)
 billboard = 1
-texture = ExtResource("7_74awe")
+texture = ExtResource("8_lbn0l")
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true

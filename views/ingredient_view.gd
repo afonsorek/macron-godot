@@ -16,14 +16,26 @@ class_name IngredientView
 #region Computed properties
 #endregion
 
+#Processando
+func cut():
+	var slices = []
+	for i in 4:
+		var sprite = $Sprite.duplicate()
+		slices.append(sprite)
+		
+		sprite.
+		
+		self.add_child(sprite)
+		
+	
+	$ingredient_animation.play("ingredient_cut")
+
 #Entrada
 func entry():
-	var animation = Animation.new()
-	var track_index = animation.add_track(Animation.TYPE_VALUE)
-	animation.track_set_path(track_index, "Ingredient:position:x")
-	animation.track_insert_key(track_index, 0.0, 0)
-	animation.track_insert_key(track_index, 2.0, 100)
-	animation.length = 2.0
+	show()
+	$ingredient_animation.speed_scale *= 2.0
+	$ingredient_animation.play("ingredient_entry")
+	$ingredient_animation.speed_scale /= 2.0 
 
 #Saida
 
