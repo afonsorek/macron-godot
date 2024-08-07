@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PotatoCutState" load_steps=2 format=3 uid="uid://mnoe4f4ay4pe"]
+
+[ext_resource type="Script" path="res://data/ingredients/ingredient_states/potato_cut_state.gd" id="1_126lg"]
+
+[resource]
+script = ExtResource("1_126lg")
+name = "cut"

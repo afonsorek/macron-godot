@@ -4,57 +4,37 @@ class_name IngredientData
 #endregion
 
 #region Variables
-static var ingredients : Array[Ingredient] = [
-		Ingredient.new(
-			"batata",
-			"eh uma batata",
-			{ "Carb": 1 },
-			[
-				IngredientState.new(
-					"cut",
-					func(controller : IngredientController): # Enter
-						controller.view.set_color(Color.CHARTREUSE)
-						controller.state_properties["remaining_cuts"] = 4
-						print("Entered cut state!"),
-					func(controller: IngredientController, delta: float): # Update
-						if Input.is_action_just_pressed("action_right"):
-							
-							#play animation of cuting
-							controller.view.cut()
-							
-							
-							controller.state_properties["remaining_cuts"] -= 1
-							print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])
-						if controller.state_properties["remaining_cuts"] <= 0:
-							controller.transition("cut","done"),
-					Callable(), #Beat,
-					func(controller : IngredientController): #Exit
-						controller.view.set_color(Color.RED)
-						print("Exited cut state!"),
-				),
-				IngredientState.new(
-					"done",
-					func(controller : IngredientController):
-						print("Entered done state!"),
-				)
-			]
-		)
-	]
+
+static var ingredients : Array[Ingredient] = []
 #endregion
 
 #region Computed properties
 #endregion
 
 #region Public functions
+static func initialize_ingredients():
+	var paths = FileUtility.get_resource_paths("res://data/ingredients")
+	for path in paths:
+		var new_ingredient : Ingredient = load(path)
+		if (new_ingredient):
+			ingredients.append(new_ingredient)
+		else:
+			print("Ingredient null!!")
+
 static func get_ingredient_by_name(name : StringName) -> Ingredient:
+	if !ingredients:
+		print("Ingredients not initialized!")
+		return null
 	for ingredient in ingredients:
 		if ingredient.name == name:
 			return ingredient
+	print("No ingredient by name %s!" % name)
 	return null
 	
-static func set_ingredient_as_known(name : StringName):
+static func set_ingredient_as_known(name : StringName) -> void:
 	var ingredient = get_ingredient_by_name(name)
-	ingredient.known = true
+	if ingredient:
+		ingredient.known = true
 #endregion
 
 #region Private functions
@@ -62,5 +42,6 @@ static func set_ingredient_as_known(name : StringName):
 
 #region Subclasses
 #endregion
+
 
 

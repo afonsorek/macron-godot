@@ -32,7 +32,8 @@ folder_colors={
 "res://script_templates/": "pink",
 "res://shaders/": "red",
 "res://sprites/": "orange",
-"res://views/": "yellow"
+"res://utility/": "yellow",
+"res://views/": "green"
 }
 
 [input]

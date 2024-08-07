@@ -1,23 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=12 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
-[ext_resource type="Texture2D" uid="uid://do34mwxavutv4" path="res://assets/table-large.png" id="3_hxwby"]
+[ext_resource type="PackedScene" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
-[ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sizzle.png" id="5_qbson"]
+[ext_resource type="PackedScene" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
+[ext_resource type="PackedScene" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
-[ext_resource type="Texture2D" uid="uid://dmthcm8ujrdw7" path="res://assets/mc-sapao.PNG" id="8_lbn0l"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lihlf"]
-albedo_texture = ExtResource("3_hxwby")
-uv1_scale = Vector3(4.78, 1.13, 1.55)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sfecl"]
-material = SubResource("StandardMaterial3D_lihlf")
-size = Vector3(4.78, 1.13, 1.55)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xam4"]
 albedo_texture = ExtResource("4_v2nr6")
@@ -32,7 +24,7 @@ size = Vector3(2.06, 0.19, 1.09)
 script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.997461, 0.0712187, 0, -0.0712187, 0.997461, 0, 1.44981, 2.54362)
+transform = Transform3D(1, 0, 0, 0, 0.935586, 0.353099, 0, -0.353099, 0.935586, 0, 1.70439, 2.37614)
 environment = SubResource("Environment_mj3wy")
 fov = 74.0913
 
@@ -51,36 +43,25 @@ texture = ExtResource("2_a8p5s")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
 
-[node name="Table" type="MeshInstance3D" parent="3DEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0.75)
-mesh = SubResource("BoxMesh_sfecl")
-skeleton = NodePath("../..")
+[node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
 mesh = SubResource("BoxMesh_4asul")
 skeleton = NodePath("../..")
 
-[node name="Sizzle" type="Node3D" parent="3DEnvironment"]
+[node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
-
-[node name="Sprite" type="Sprite3D" parent="3DEnvironment/Sizzle"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0798941, -0.140684, 0.962224)
-billboard = 1
-texture = ExtResource("5_qbson")
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 1.084, 1.08)
 
-[node name="Monster" type="Node3D" parent="."]
+[node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
-
-[node name="Sprite3D" type="Sprite3D" parent="Monster"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.08165e-12, -0.732526, 3.85279)
-billboard = 1
-texture = ExtResource("8_lbn0l")
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true

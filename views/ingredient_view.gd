@@ -23,7 +23,7 @@ func cut():
 		var sprite = $Sprite.duplicate()
 		slices.append(sprite)
 		
-		sprite.
+		#sprite.
 		
 		self.add_child(sprite)
 		
