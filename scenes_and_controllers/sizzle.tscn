@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b04jqx73jkfti"]
+[gd_scene load_steps=4 format=3 uid="uid://flf8c64yeova"]
 
-[ext_resource type="Texture2D" uid="uid://dvolbum05d6dc" path="res://assets/prototype_textures/PNG/Red/texture_09.png" id="1_hakmp"]
 [ext_resource type="Script" path="res://scenes_and_controllers/sizzle_controller.gd" id="1_uw8fs"]
 [ext_resource type="Script" path="res://views/sizzle_view.gd" id="2_v5irg"]
+[ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sizzle.png" id="3_ai118"]
 
 [node name="Sizzle" type="Node3D"]
 script = ExtResource("1_uw8fs")
@@ -14,4 +14,4 @@ script = ExtResource("2_v5irg")
 [node name="Sprite" type="Sprite3D" parent="View"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 billboard = 1
-texture = ExtResource("1_hakmp")
+texture = ExtResource("3_ai118")
