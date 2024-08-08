@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
-[ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
+[ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://b04jqx73jkfti" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://0pexkfpet1an" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
@@ -12,13 +12,11 @@
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xam4"]
-albedo_texture = ExtResource("4_v2nr6")
-uv1_scale = Vector3(3.49, 1.17, 0.45)
-uv1_offset = Vector3(0.03, 2.08165e-12, 2.08165e-12)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e607t"]
+albedo_color = Color(0.161819, 0.104871, 0.0569567, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4asul"]
-material = SubResource("StandardMaterial3D_3xam4")
+material = SubResource("StandardMaterial3D_e607t")
 size = Vector3(2.06, 0.19, 1.09)
 
 [node name="Kitchen" type="Node3D"]
@@ -26,8 +24,9 @@ script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.957677, 0.287845, 0, -0.287845, 0.957677, 0, 1.70457, 2.47955)
+transform = Transform3D(1, 0, 0, 0, 0.986926, 0.161173, 0, -0.161173, 0.986926, 0, 1.70457, 3.04381)
 environment = SubResource("Environment_mj3wy")
+fov = 70.997
 script = ExtResource("2_g0kje")
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
@@ -46,9 +45,18 @@ texture = ExtResource("2_a8p5s")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
+light_energy = 0.354
+
+[node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55352, 2.38614)
+light_color = Color(1, 1, 0.576471, 1)
+light_energy = 2.859
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
+
+[node name="blockbench_export" parent="3DEnvironment" instance=ExtResource("5_j22kp")]
+transform = Transform3D(-24, 6.27816e-15, -2.26494e-06, 8.37089e-15, 18, -5.2318e-15, 3.6239e-06, -6.27816e-15, -15, 0, -1.79504, -0.163525)
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
