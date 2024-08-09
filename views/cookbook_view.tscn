@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn14w0bpohdvu"]
+
+[ext_resource type="Script" path="res://views/cookbook_view.gd" id="1_4ux3s"]
+[ext_resource type="PackedScene" uid="uid://cp31yq75ksg0k" path="res://views/pause_tab_view.tscn" id="2_cy0ga"]
+
+[node name="CookbookView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ux3s")
+
+[node name="Tabs" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseTabView" parent="Tabs" instance=ExtResource("2_cy0ga")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

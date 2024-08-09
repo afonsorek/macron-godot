@@ -11,6 +11,7 @@ class_name KitchenUiView
 #endregion
 
 #region Variables
+@onready var cookbook := %Cookbook as CookbookView
 #endregion
 
 #region Computed properties
@@ -34,8 +35,14 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
+func close_cookbook():
+	cookbook.close()
+	
 func hide_select_ingredient():
 	%SelectIngredientPanel.hide()
+
+func open_cookbook():
+	cookbook.open()
 	
 func on_satisfaction_changed(new_value : int, delta : int, max : int):
 	if !%SatisfactionPanel.visible:

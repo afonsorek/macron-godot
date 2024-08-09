@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp31yq75ksg0k"]
+
+[ext_resource type="Script" path="res://views/pause_tab_view.gd" id="1_lwqif"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gdy3"]
+font_size = 20
+
+[node name="PauseTabView" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -225.0
+offset_right = 167.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwqif")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Aba de pause"
+label_settings = SubResource("LabelSettings_kbh1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LifePointsLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pontos de vida: #"
+label_settings = SubResource("LabelSettings_3gdy3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DefeatedMonstersLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Monstros derrotados: #"
+label_settings = SubResource("LabelSettings_3gdy3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "Continuar o jogo"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "Sair do jogo"
