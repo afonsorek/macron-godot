@@ -15,6 +15,7 @@ class_name KitchenController
 @onready var ingredient_controller := %Ingredient as IngredientController
 @onready var sizzle_controller := %Sizzle as SizzleController
 @onready var ui_view := %KitchenUIView as KitchenUiView
+@onready var camera := %MainCamera as CameraController
 var made_recipe : Recipe
 var processed_ingredients : Array[Ingredient] = []
 var is_selecting_ingredient := false
@@ -53,6 +54,7 @@ func ingredient_sent(ingredient: Ingredient):
 	processed_ingredients.append(ingredient)
 	print("Ingredient received in KitchenController!")
 	print(">>>> I have %d ingredient(s)" % processed_ingredients.size())
+	camera._move_view_farder()
 	if processed_ingredients.size() == 3:
 		_make_recipe()
 #endregion
@@ -85,6 +87,7 @@ func _process_inputs(_delta):
 		elif is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
 			ingredient_controller.set_ingredient_by_name("Potato")
 			ui_view.hide_select_ingredient()
+			camera._move_view_closer()
 	if Input.is_action_just_released("select_ingredient"):
 		is_selecting_ingredient = false
 		ui_view.hide_select_ingredient()

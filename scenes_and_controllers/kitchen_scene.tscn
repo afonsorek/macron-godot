@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=13 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
 [ext_resource type="PackedScene" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
+[ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
 [ext_resource type="Texture2D" uid="uid://bd2nns57epp1s" path="res://assets/prototype_textures/PNG/Green/texture_09.png" id="4_v2nr6"]
 [ext_resource type="PackedScene" uid="uid://b04jqx73jkfti" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
@@ -24,15 +25,19 @@ size = Vector3(2.06, 0.19, 1.09)
 script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.935586, 0.353099, 0, -0.353099, 0.935586, 0, 1.70439, 2.37614)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.957677, 0.287845, 0, -0.287845, 0.957677, 0, 1.70457, 2.47955)
 environment = SubResource("Environment_mj3wy")
+script = ExtResource("2_g0kje")
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
+visible = false
 texture = ExtResource("2_a8p5s")
 
 [node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
+visible = false
 texture = ExtResource("2_a8p5s")
 
 [node name="3DEnvironment" type="Node3D" parent="."]
@@ -56,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 1.084, 1.08)
+transform = Transform3D(0.823006, 0, 0, 0, 0.823006, 0, 0, 0, 0.823006, 0.02, 0.666653, 0.942628)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
