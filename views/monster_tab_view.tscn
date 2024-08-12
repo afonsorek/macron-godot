@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwyfm13whb7r5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gdy3"]
+font_size = 20
+
+[node name="MonsterTabView" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = -225.0
+offset_right = 334.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "Monstros"
+label_settings = SubResource("LabelSettings_kbh1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(334, 2.08165e-12)
+layout_mode = 2
+
+[node name="Detalhes" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(334, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LifePointsLabel" type="Label" parent="HBoxContainer/Detalhes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pontos de vida: #"
+label_settings = SubResource("LabelSettings_3gdy3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DefeatedMonstersLabel" type="Label" parent="HBoxContainer/Detalhes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Monstros derrotados: #"
+label_settings = SubResource("LabelSettings_3gdy3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="HBoxContainer/Detalhes"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "Continuar o jogo"
+
+[node name="ExitButton" type="Button" parent="HBoxContainer/Detalhes"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "Sair do jogo"

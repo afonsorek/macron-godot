@@ -59,7 +59,7 @@ func _set_tab(tab : Tab):
 		Tab.PAUSE: 
 			selected_tab = %PauseTabView
 		Tab.MONSTERS:
-			pass
+			selected_tab = %MonsterTabView
 		Tab.INGREDIENTS:
 			pass
 		Tab.RECIPES:

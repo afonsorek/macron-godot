@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn14w0bpohdvu"]
+[gd_scene load_steps=4 format=3 uid="uid://bn14w0bpohdvu"]
 
 [ext_resource type="Script" path="res://views/cookbook_view.gd" id="1_4ux3s"]
 [ext_resource type="PackedScene" uid="uid://cp31yq75ksg0k" path="res://views/pause_tab_view.tscn" id="2_cy0ga"]
+[ext_resource type="PackedScene" uid="uid://bwyfm13whb7r5" path="res://views/monster_tab_view.tscn" id="3_u6oih"]
 
 [node name="CookbookView" type="Control"]
 layout_mode = 3
@@ -25,3 +26,19 @@ grow_vertical = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="MonsterTabView" parent="Tabs" instance=ExtResource("3_u6oih")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 668.0
+offset_bottom = 450.0
+grow_horizontal = 1
+grow_vertical = 1
