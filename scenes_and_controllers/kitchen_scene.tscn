@@ -57,15 +57,15 @@ skeleton = NodePath("../..")
 
 [node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.954, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.617263, 0.153424)
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.823006, 0, 0, 0, 0.823006, 0, 0, 0, 0.823006, 0.02, 0.666653, 0.942628)
+transform = Transform3D(0.823006, 0, 0, 0, 0.823006, 0, 0, 0, 0.823006, 2.08165e-12, 0.689753, 0.943)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.41, -7.353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.418258, -7.353)
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true

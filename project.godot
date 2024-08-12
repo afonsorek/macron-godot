@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GameManager="*res://managers/game_manager.gd"
+CameraManager="*res://managers/camera_manager.gd"
 
 [file_customization]
 

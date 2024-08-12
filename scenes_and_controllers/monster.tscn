@@ -12,7 +12,10 @@ unique_name_in_owner = true
 visible = false
 script = ExtResource("2_6obq7")
 
-[node name="Sprite3D" type="Sprite3D" parent="View"]
+[node name="Pivot" type="Node3D" parent="View"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32835, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="View/Pivot"]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 0, 0)
-billboard = 1
 texture = ExtResource("1_q7egg")
