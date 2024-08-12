@@ -22,7 +22,8 @@ func enter(controller : IngredientController):
 func update(controller : IngredientController, delta : float):
 	if Input.is_action_just_pressed("action_right"):
 		#play animation of cuting
-		controller.view.cut()
+		#controller.view.cut()
+		controller.view.squishy()
 		controller.state_properties["remaining_cuts"] -= 1
 		print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])
 	if controller.state_properties["remaining_cuts"] <= 0:

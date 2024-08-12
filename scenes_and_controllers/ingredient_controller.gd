@@ -102,7 +102,7 @@ func _send_ingredient():
 	sending_ingredient.emit(current_ingredient)
 	current_ingredient = null
 	_clear_states()
-	view.hide()
+	view.send()
 	
 #endregion
 

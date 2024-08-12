@@ -13,22 +13,9 @@ class_name IngredientView
 #region Variables
 #endregion
 
-#region Computed properties
-#endregion
-
 #Processando
-func cut():
-	var slices = []
-	for i in 4:
-		var sprite = $Sprite.duplicate()
-		slices.append(sprite)
-		
-		#sprite.
-		
-		self.add_child(sprite)
-		
-	
-	$ingredient_animation.play("ingredient_cut")
+func squishy():
+	$ingredient_animation.play("ingredient_squishy")
 
 #Entrada
 func entry():
@@ -38,6 +25,9 @@ func entry():
 	$ingredient_animation.speed_scale /= 2.0 
 
 #Saida
+func send():
+	$ingredient_animation.play("ingredient_send")
+	OS.delay_msec(0.5)
 
 #Descarte
 
