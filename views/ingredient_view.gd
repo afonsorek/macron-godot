@@ -1,11 +1,10 @@
-extends Node3D
+extends PivotableView
 class_name IngredientView
 
 #region Enums
 #endregion
 
 #region Parameters (consts and exportvars)
-@export var look_at_camera := true
 #endregion
 
 #region Signals
@@ -44,8 +43,7 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	if visible and look_at_camera:
-		_look_at_camera()
+	super._process(_delta)
 	
 func _physics_process(_delta):
 	pass
@@ -57,8 +55,6 @@ func set_color(color: Color):
 #endregion
 
 #region Private functions
-func _look_at_camera():
-	%Pivot.look_at(CameraManager.get_camera_position(),Vector3.UP,true)
 #endregion
 
 #region Subclasses
