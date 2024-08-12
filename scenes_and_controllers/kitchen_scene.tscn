@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=18 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
+[ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
 [ext_resource type="Texture2D" uid="uid://b8h5dbvbea86t" path="res://assets/table-1.png" id="3_22nyy"]
 [ext_resource type="PackedScene" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
@@ -10,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
-[ext_resource type="Texture2D" uid="uid://do34mwxavutv4" path="res://assets/table-large.png" id="10_ckg56"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
@@ -31,29 +31,23 @@ uv1_offset = Vector3(0.03, 2.08165e-12, 2.08165e-12)
 material = SubResource("StandardMaterial3D_3xam4")
 size = Vector3(2.06, 0.19, 1.09)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sty10"]
-albedo_texture = ExtResource("10_ckg56")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_una8v"]
-albedo_texture = ExtResource("10_ckg56")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dj7o"]
-albedo_texture = ExtResource("10_ckg56")
-
 [node name="Kitchen" type="Node3D"]
 script = ExtResource("1_0221c")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.935586, 0.353099, 0, -0.353099, 0.935586, 0, 1.70439, 2.37614)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.957677, 0.287845, 0, -0.287845, 0.957677, 0, 1.70457, 2.47955)
 environment = SubResource("Environment_mj3wy")
-fov = 74.0913
+script = ExtResource("2_g0kje")
 
 [node name="Hands" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
+visible = false
 texture = ExtResource("2_a8p5s")
 
 [node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
+visible = false
 texture = ExtResource("2_a8p5s")
 
 [node name="3DEnvironment" type="Node3D" parent="."]
@@ -92,47 +86,15 @@ skeleton = NodePath("../..")
 
 [node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
 unique_name_in_owner = true
-transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 1.34, 0.909, 0.678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.617263, 0.153424)
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0.02, 0.668926, 0.943635)
+transform = Transform3D(0.823006, 0, 0, 0, 0.823006, 0, 0, 0, 0.823006, 2.08165e-12, 0.689753, 0.943)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.08165e-12, 2.08165e-12, -6.999)
-
-[node name="roof" type="StaticBody3D" parent="3DEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 3, 1.426)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="3DEnvironment/roof"]
-transform = Transform3D(6, 0, -9.14757e-23, -9.14757e-23, -2.62268e-07, -6, 0, 6, -2.62268e-07, 2.08165e-12, 0, 2.08165e-12)
-material_override = SubResource("StandardMaterial3D_sty10")
-mesh = SubResource("QuadMesh_jflrq")
-
-[node name="wall1" type="StaticBody3D" parent="3DEnvironment"]
-transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, -3, 2.08165e-12, 1.426)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="3DEnvironment/wall1"]
-transform = Transform3D(-1.31134e-07, 1.04636e-15, 3, 1.04636e-15, 3, -1.04636e-15, -3, 1.04636e-15, -1.31134e-07, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-material_override = SubResource("StandardMaterial3D_una8v")
-mesh = SubResource("QuadMesh_jflrq")
-
-[node name="wall2" type="StaticBody3D" parent="3DEnvironment"]
-transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 3, 2.08165e-12, 1.426)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="3DEnvironment/wall2"]
-transform = Transform3D(-1.31134e-07, -1.04636e-15, -3, 1.04636e-15, 3, -1.04636e-15, 3, -1.04636e-15, -1.31134e-07, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-material_override = SubResource("StandardMaterial3D_8dj7o")
-mesh = SubResource("QuadMesh_jflrq")
-
-[node name="floor" type="StaticBody3D" parent="3DEnvironment"]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 2.08165e-12, 2.08165e-12, -12.06)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="3DEnvironment/floor"]
-transform = Transform3D(3, -2.09272e-15, -4.57379e-23, -4.57379e-23, -1.31134e-07, 3, -2.09272e-15, -3, -1.31134e-07, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-mesh = SubResource("QuadMesh_jflrq")
-surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.418258, -7.353)
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true

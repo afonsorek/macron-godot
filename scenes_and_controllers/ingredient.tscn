@@ -32,6 +32,17 @@ tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.4, 1, 1, 0.5, 1, 0.8, 1, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_77mgy"]
+resource_name = "ingredient_send"
+length = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Sprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12, 0.3, 1, 2.08165e-12, 2.08165e-12, -30, 0.5, 1, 2.08165e-12, -30, -30)
+
 [sub_resource type="Animation" id="Animation_rlp6s"]
 resource_name = "ingredient_squishy"
 length = 0.3
@@ -50,17 +61,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 2.08165e-12, -2.5, 2.08165e-12, 0.3, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
-[sub_resource type="Animation" id="Animation_77mgy"]
-resource_name = "ingredient_send"
-length = 0.5
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Sprite")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12, 0.3, 1, 2.08165e-12, 2.08165e-12, -30, 0.5, 1, 2.08165e-12, -30, -30)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tstey"]
 _data = {
 "ingredient_cut": SubResource("Animation_1jfrp"),
@@ -78,10 +78,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.16993, 0)
 visible = false
 script = ExtResource("2_nvjkk")
 
-[node name="Sprite" type="Sprite3D" parent="View"]
+[node name="Pivot" type="Node3D" parent="View"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.11759e-06, -40)
-billboard = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403563, 0)
+
+[node name="Sprite" type="Sprite3D" parent="View/Pivot"]
+unique_name_in_owner = true
 texture = ExtResource("2_56yym")
 
 [node name="ingredient_animation" type="AnimationPlayer" parent="View"]
