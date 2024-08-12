@@ -68,7 +68,7 @@ transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0
 light_energy = 0.183
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
-transform = Transform3D(-0.595103, 0, 0.803649, 0, 1, 0, -0.803649, 0, -0.595103, 1.52389, 0.751701, 0.329198)
+transform = Transform3D(-0.595103, 0, 0.803649, 0, 1, 0, -0.803649, 0, -0.595103, 1.90978, 0.828817, -0.142486)
 light_color = Color(1, 0.647059, 0.0980392, 1)
 light_energy = 8.636
 light_indirect_energy = 16.0
@@ -86,15 +86,15 @@ skeleton = NodePath("../..")
 
 [node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34, 0.617263, 0.153424)
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.34, 0.809892, 0.634385)
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.823006, 0, 0, 0, 0.823006, 0, 0, 0, 0.823006, 2.08165e-12, 0.689753, 0.943)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.689753, 0.943)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.418258, -7.353)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, -3.17169, -7.353)
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true

@@ -19,4 +19,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32835, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="View/Pivot"]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 2.08165e-12, 0, 0)
+shaded = true
 texture = ExtResource("3_wwi87")

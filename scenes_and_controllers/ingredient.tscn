@@ -75,7 +75,6 @@ script = ExtResource("1_m7u5f")
 [node name="View" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.16993, 0)
-visible = false
 script = ExtResource("2_nvjkk")
 
 [node name="Pivot" type="Node3D" parent="View"]
