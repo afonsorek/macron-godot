@@ -15,6 +15,7 @@ class_name IngredientView
 
 #Processando
 func squishy():
+	$ingredient_animation.stop()
 	$ingredient_animation.play("ingredient_squishy")
 
 #Entrada
