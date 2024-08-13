@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn14w0bpohdvu"]
+[gd_scene load_steps=4 format=3 uid="uid://dkrfpquvoux21"]
 
 [ext_resource type="Script" path="res://views/cookbook_view.gd" id="1_4ux3s"]
-[ext_resource type="PackedScene" uid="uid://cp31yq75ksg0k" path="res://views/pause_tab_view.tscn" id="2_cy0ga"]
-[ext_resource type="PackedScene" uid="uid://bwyfm13whb7r5" path="res://views/monster_tab_view.tscn" id="3_u6oih"]
+[ext_resource type="PackedScene" uid="uid://buu4xu40cb7t" path="res://views/pause_tab_view.tscn" id="2_cy0ga"]
+[ext_resource type="PackedScene" uid="uid://c52jfrlcrn6a8" path="res://views/monster_tab_view.tscn" id="3_u6oih"]
 
 [node name="CookbookView" type="Control"]
 layout_mode = 3

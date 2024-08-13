@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2fdmbv3amdhn"]
 
 [ext_resource type="Script" path="res://views/kitchen_ui_view.gd" id="1_h37ij"]
-[ext_resource type="PackedScene" uid="uid://bn14w0bpohdvu" path="res://views/cookbook_view.tscn" id="2_jew40"]
+[ext_resource type="PackedScene" uid="uid://dkrfpquvoux21" path="res://views/cookbook_view.tscn" id="2_jew40"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
 font_size = 31
