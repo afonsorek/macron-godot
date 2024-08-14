@@ -15,20 +15,18 @@ class_name IngredientView
 
 #Processando
 func squishy():
-	$ingredient_animation.stop()
+	$ingredient_animation.stop(true)
 	$ingredient_animation.play("ingredient_squishy")
 
 #Entrada
 func entry():
 	show()
-	$ingredient_animation.speed_scale *= 2.0
 	$ingredient_animation.play("ingredient_entry")
-	$ingredient_animation.speed_scale /= 2.0 
 
 #Saida
 func send():
 	$ingredient_animation.play("ingredient_send")
-	OS.delay_msec(0.5)
+	#OS.delay_msec(0.5)
 
 #Descarte
 
@@ -40,7 +38,6 @@ func _enter_tree():
 	pass
 	
 func _ready():
-	entry()
 	pass
 	
 func _process(_delta):

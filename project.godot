@@ -20,10 +20,6 @@ config/icon="res://assets/icon.svg"
 GameManager="*res://managers/game_manager.gd"
 CameraManager="*res://managers/camera_manager.gd"
 
-[display]
-
-window/size/mode=2
-
 [file_customization]
 
 folder_colors={

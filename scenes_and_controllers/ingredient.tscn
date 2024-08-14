@@ -80,6 +80,7 @@ script = ExtResource("1_m7u5f")
 [node name="View" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.16993, 0)
+visible = false
 script = ExtResource("2_nvjkk")
 
 [node name="Pivot" type="Node3D" parent="View"]
@@ -88,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403563, 0)
 
 [node name="Sprite" type="Sprite3D" parent="View/Pivot"]
 unique_name_in_owner = true
-transform = Transform3D(1.2, 0, 0, 0, 0.8, 0, 0, 0, 1.2, 2.08165e-12, -1, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.430161, 2.08165e-12)
 texture = ExtResource("2_56yym")
 
 [node name="ingredient_animation" type="AnimationPlayer" parent="View"]
