@@ -7,6 +7,9 @@ class_name CameraController
 @export var closer_position = Vector3(0, 1.9, 1.6)
 @export var closer_rotation = Vector3(-0.9, 0, 0)
 
+func _ready():
+	CameraManager.set_camera(self)
+
 func _move_view_closer():
 	var tween : Tween = get_tree().create_tween()
 	tween.tween_property(self, "position", closer_position, animation_speed).set_trans(Tween.TRANS_SINE)

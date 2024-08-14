@@ -4,6 +4,7 @@ class_name IngredientData
 #endregion
 
 #region Variables
+
 static var ingredients : Array[Ingredient] = []
 #endregion
 

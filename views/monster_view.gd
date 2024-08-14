@@ -1,4 +1,4 @@
-extends Node3D
+extends PivotableView
 class_name MonsterView
 
 #region Enums
@@ -27,7 +27,7 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	pass
+	super._process(_delta)
 	
 func _physics_process(_delta):
 	pass
