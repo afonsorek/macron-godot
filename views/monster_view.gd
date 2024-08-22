@@ -34,6 +34,14 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
+func set_billboard(value : bool):
+	%MainSprite.billboard = 1 if value else 0
+	
+func set_modulate(color : Color):
+	%MainSprite.modulate = color
+	
+func set_shaded(value : bool):
+	%MainSprite.shaded = value
 #endregion
 
 #region Private functions

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8h5dbvbea86t" path="res://assets/table-1.png" id="3_22nyy"]
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
-[ext_resource type="PackedScene" path="res://assets/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
+[ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
