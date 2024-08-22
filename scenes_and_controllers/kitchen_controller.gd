@@ -35,6 +35,7 @@ func _ready():
 	# Connect signals
 	ingredient_controller.sending_ingredient.connect(ingredient_sent)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
+	GameManager.game_state_changed.connect(_on_game_state_changed)
 	# Spawn monster
 	_spawn_monster()
 	
@@ -68,6 +69,13 @@ func _make_recipe():
 		print("Made recipe: %s, with ingredients %s" % [recipe_result.name, recipe_result.ingredients])
 		monster_controller.receive_recipe(recipe_result)
 	processed_ingredients.clear()
+	
+func _on_game_state_changed(game_state : GameManager.GameState):
+	match game_state:
+		GameManager.GameState.PAUSED:
+			ui_view.open_cookbook()
+		GameManager.GameState.KITCHEN:
+			ui_view.close_cookbook()
 		
 func _on_satisfaction_changed(new_value : int, delta : int):
 	ui_view.on_satisfaction_changed(new_value, delta, monster_controller.current_monster.max_satisfaction)
@@ -83,13 +91,15 @@ func _process_inputs(_delta):
 	if Input.is_action_just_released("select_ingredient"):
 		is_selecting_ingredient = false
 		ui_view.hide_select_ingredient()
+	if Input.is_action_just_pressed("pause"):
+		GameManager.pause_game()
 
 func _select_ingredient():
 	is_selecting_ingredient = true
 	ui_view.show_select_ingredient()
 
 func _spawn_monster():
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0,false).timeout
 	# TODO: Get random monster here
 	var selected_monster = Monster.new()
 	monster_controller.set_monster(selected_monster)

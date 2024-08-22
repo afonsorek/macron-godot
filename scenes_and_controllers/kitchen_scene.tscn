@@ -96,3 +96,4 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, -3.17169, 
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true
+process_mode = 3
