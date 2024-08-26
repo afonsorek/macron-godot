@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/sizzle_controller.gd" id="1_uw8fs"]
 [ext_resource type="Script" path="res://views/sizzle_view.gd" id="2_v5irg"]
-[ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sizzle.png" id="3_ai118"]
+[ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sprites/sizzle.png" id="3_ai118"]
 
 [node name="Sizzle" type="Node3D"]
 script = ExtResource("1_uw8fs")

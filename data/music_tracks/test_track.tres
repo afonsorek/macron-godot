@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://cqeq1bin1e8yu"]
 
 [ext_resource type="Script" path="res://models/music_track.gd" id="1_dnkq1"]
-[ext_resource type="AudioStream" uid="uid://c3ts3i2ymtoqk" path="res://audio/songs/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3" id="1_mt0mf"]
+[ext_resource type="AudioStream" uid="uid://c3ts3i2ymtoqk" path="res://assets/music/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3" id="1_mt0mf"]
 
 [resource]
 script = ExtResource("1_dnkq1")

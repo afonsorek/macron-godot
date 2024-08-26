@@ -13,7 +13,7 @@ config_version=5
 config/name="macro-demo"
 run/main_scene="res://scenes_and_controllers/kitchen_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/sizzle.png"
+config/icon="res://assets/sprites/sizzle.png"
 
 [audio]
 
@@ -29,17 +29,15 @@ RhythmManager="*res://managers/rhythm_manager.gd"
 
 folder_colors={
 "res://assets/": "red",
-"res://audio/": "orange",
-"res://data/": "yellow",
-"res://managers/": "green",
-"res://models/": "teal",
+"res://data/": "orange",
+"res://managers/": "yellow",
+"res://models/": "green",
 "res://packages/": "blue",
 "res://scenes_and_controllers/": "purple",
 "res://script_templates/": "pink",
 "res://shaders/": "red",
-"res://sprites/": "orange",
-"res://utility/": "yellow",
-"res://views/": "green"
+"res://utility/": "orange",
+"res://views/": "yellow"
 }
 
 [input]
