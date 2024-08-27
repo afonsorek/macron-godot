@@ -24,7 +24,9 @@ func _enter_tree():
 	pass
 	
 func _ready():
-	pass
+	%AnimationPlayer.play("idle")
+	RhythmManager.bpm_changed.connect(_adjust_speed_scale)
+	_adjust_speed_scale(RhythmManager.bpm)
 	
 func _process(_delta):
 	super._process(_delta)
@@ -39,6 +41,8 @@ func say(text: String):
 #endregion
 
 #region Private functions
+func _adjust_speed_scale(bpm:float):
+	%AnimationPlayer.speed_scale = bpm/60.0
 #endregion
 
 #region Subclasses

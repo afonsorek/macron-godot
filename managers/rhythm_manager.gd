@@ -12,6 +12,8 @@ const TOLERANCE = 0.2
 signal beat()
 signal bpm_changed(bpm : float)
 signal changed_measure()
+signal input_judged(result : bool)
+signal rhythm_input(action : String)
 signal started_playing(track : MusicTrack)
 signal stopped_playing()
 #endregion
@@ -51,6 +53,7 @@ func _ready():
 	# Testes
 	set_track(load("res://data/music_tracks/test_track.tres"),true,true)
 	delay_input = 0.1
+	#set_bpm(100*1.25)
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("mute"):
@@ -78,7 +81,9 @@ func judge_input() -> bool:
 	if hit_this_beat:
 		used_this_beat = true
 	#print("%.2f / %.2f = %.2f" % [delayed_input, wait_time, time])
-	return hit_last_beat or hit_this_beat
+	var result = hit_last_beat or hit_this_beat
+	input_judged.emit(result)
+	return result
 	
 func play():
 	if !current_track:
