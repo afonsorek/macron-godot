@@ -4,6 +4,33 @@
 [ext_resource type="Script" path="res://views/sizzle_view.gd" id="2_v5irg"]
 [ext_resource type="Texture2D" uid="uid://bviohff8m6cp0" path="res://assets/sprites/sizzle.png" id="3_ai118"]
 
+[sub_resource type="Animation" id="Animation_keujk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Pivot/AnimatablePivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.05109e-31, -2.64698e-23, 3.97092e-09)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Pivot/AnimatablePivot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ko5tx"]
 resource_name = "idle"
 length = 2.0
@@ -33,33 +60,6 @@ tracks/1/keys = {
 "values": [Vector3(-1.05109e-31, -2.64698e-23, 3.97092e-09), Vector3(3.48787e-16, 3.48787e-16, 0.0872665), Vector3(-1.05109e-31, -2.64698e-23, 3.97092e-09), Vector3(3.48787e-16, 3.48787e-16, -0.0872665), Vector3(-1.05109e-31, -2.64698e-23, 3.97092e-09)]
 }
 
-[sub_resource type="Animation" id="Animation_keujk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Pivot/AnimatablePivot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.05109e-31, -2.64698e-23, 3.97092e-09)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("%Pivot/AnimatablePivot:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ttsld"]
 _data = {
 "RESET": SubResource("Animation_keujk"),
@@ -78,7 +78,7 @@ script = ExtResource("2_v5irg")
 unique_name_in_owner = true
 
 [node name="AnimatablePivot" type="Node3D" parent="View/Pivot"]
-transform = Transform3D(1, -3.97092e-09, -2.64698e-23, 3.97092e-09, 1, 1.05109e-31, 2.64698e-23, -2.10219e-31, 1, 0, 0, 0)
+transform = Transform3D(1, -3.97092e-09, -2.64698e-23, 3.97092e-09, 1, 1.05109e-31, 2.64698e-23, -2.10218e-31, 1, 0, 0, 0)
 
 [node name="Sprite" type="Sprite3D" parent="View/Pivot/AnimatablePivot"]
 transform = Transform3D(0.08, -2.42759e-10, -9.27872e-25, -3.11962e-10, 0.08, 7.26087e-25, 3.30872e-24, 0, 0.08, -3.13065e-09, 0.831, 2.08165e-12)
