@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=3 uid="uid://ccx5o045l4jii"]
+
+[ext_resource type="Script" path="res://scenes_and_controllers/experience_prototype_controller.gd" id="1_t30of"]
+[ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_32c4p"]
+[ext_resource type="AudioStream" uid="uid://cjlj3q3p3o8bc" path="res://assets/sfx/RISADONHA.wav" id="4_exkoc"]
+[ext_resource type="AudioStream" uid="uid://cu1yfsdy56ebi" path="res://assets/sfx/groan3.mp3" id="5_ck8tv"]
+[ext_resource type="AudioStream" uid="uid://clkb5ejqr54do" path="res://assets/sfx/groan4.mp3" id="6_nqvxx"]
+[ext_resource type="AudioStream" uid="uid://c3ts3i2ymtoqk" path="res://assets/music/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3" id="7_5qwk6"]
+[ext_resource type="AudioStream" uid="uid://48c5e6anios1" path="res://assets/music/macro-1-ligeirinho.wav" id="8_6i1rn"]
+[ext_resource type="AudioStream" uid="uid://bn371uptouc6h" path="res://assets/music/macro-2-wav.wav" id="8_646fl"]
+[ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="10_8gk5f"]
+
+[sub_resource type="Environment" id="Environment_mj3wy"]
+background_mode = 1
+background_color = Color(0.0708272, 0.0708272, 0.0708272, 1)
+
+[sub_resource type="Animation" id="Animation_v2ea0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCamera:environment:background_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0708272, 0.0708272, 0.0708272, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d0jtt"]
+resource_name = "background_pulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCamera:environment:background_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.118581, 0.118581, 0.118581, 1), Color(0.0708272, 0.0708272, 0.0708272, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj5u0"]
+_data = {
+"RESET": SubResource("Animation_v2ea0"),
+"background_pulse": SubResource("Animation_d0jtt")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wqhnb"]
+font_size = 80
+
+[node name="Experience Prototype" type="Node3D"]
+script = ExtResource("1_t30of")
+monster_max_position = Vector3(2.08165e-12, -5.53897, 0.211245)
+
+[node name="MainCamera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, -3.84034e-16, 3.47001e-16, 3.47001e-16, 0.994881, 0.101056, -3.84034e-16, -0.101056, 0.994881, 2.08165e-12, 1.645, 3.044)
+environment = SubResource("Environment_mj3wy")
+fov = 70.997
+script = ExtResource("2_32c4p")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
+light_energy = 0.354
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71943, 2.77887)
+light_color = Color(1, 1, 0.576471, 1)
+light_energy = 2.859
+spot_angle = 58.8028
+
+[node name="3DEnvironment" type="Node3D" parent="."]
+
+[node name="Monster" parent="3DEnvironment" instance=ExtResource("10_8gk5f")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, -3.17169, -7.353)
+
+[node name="LaughPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_exkoc")
+
+[node name="GoodGroanPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_ck8tv")
+
+[node name="BadGroanPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_nqvxx")
+
+[node name="MainMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_5qwk6")
+
+[node name="FastMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_6i1rn")
+
+[node name="WaitMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_646fl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_kj5u0")
+}
+speed_scale = 1.667
+
+[node name="Perdeu" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Perdeu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Você perdeu!!!"
+label_settings = SubResource("LabelSettings_wqhnb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ganhou" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Ganhou"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Você ganhou!!!"
+label_settings = SubResource("LabelSettings_wqhnb")
+horizontal_alignment = 1
+vertical_alignment = 1

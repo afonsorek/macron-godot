@@ -1,4 +1,4 @@
-extends Node3D
+extends PivotableView
 class_name MonsterView
 
 #region Enums
@@ -27,13 +27,21 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	pass
+	super._process(_delta)
 	
 func _physics_process(_delta):
 	pass
 #endregion
 
 #region Public functions
+func set_billboard(value : bool):
+	%MainSprite.billboard = 1 if value else 0
+	
+func set_modulate(color : Color):
+	%MainSprite.modulate = color
+	
+func set_shaded(value : bool):
+	%MainSprite.shaded = value
 #endregion
 
 #region Private functions

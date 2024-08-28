@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjak54fk033sm"]
 
-[ext_resource type="Texture2D" uid="uid://cmx66211neqe7" path="res://assets/prototype_textures/PNG/Table/table_top.png" id="2_1vcbf"]
-[ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/prototype_textures/PNG/Table/table_leg.png" id="3_co7nr"]
+[ext_resource type="Texture2D" uid="uid://cmx66211neqe7" path="res://assets/textures/prototype_textures/PNG/Table/table_top.png" id="2_1vcbf"]
+[ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/textures/prototype_textures/PNG/Table/table_leg.png" id="3_co7nr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo0jn"]
 albedo_texture = ExtResource("2_1vcbf")
@@ -18,11 +18,11 @@ material = SubResource("StandardMaterial3D_pacop")
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.5, -1.04636e-15, -6.09838e-23, 0, -6.55671e-08, 2, -2.44151e-15, -1.5, -8.74228e-08, 2.08165e-12, 0.6, 2.08165e-12)
+transform = Transform3D(8, -1.04636e-15, -6.09839e-23, 0, -6.55671e-08, 2, -5.58059e-15, -1.5, -8.74228e-08, 2.08165e-12, 0.6, 2.08165e-12)
 mesh = SubResource("QuadMesh_mbsui")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, -4.67543e-24, 5.44178e-23, 4.15786e-23, -3.49691e-09, -0.667, 5.84429e-23, 0.08, -2.91555e-08, -0.002, -0.5, -0.0383437)
+transform = Transform3D(1, -8.76644e-24, 3.93258e-23, -1.03236e-21, -6.55671e-09, -0.667, 5.84429e-23, 0.15, -2.91555e-08, 2.08165e-12, -0.5, -0.0723029)
 mesh = SubResource("QuadMesh_uu4mw")
 skeleton = NodePath("../..")
 

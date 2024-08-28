@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3ts3i2ymtoqk"
+path="res://.godot/imported/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3-4749851860a9ebc8b16194c613490f83.mp3str"
+
+[deps]
+
+source_file="res://assets/music/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3"
+dest_files=["res://.godot/imported/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3-4749851860a9ebc8b16194c613490f83.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -40,6 +40,7 @@ func _process(delta):
 		
 	# Verifica se o jogador está enviando o prato
 	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
+		RhythmManager.judge_input()
 		_send_ingredient()
 	
 func _physics_process(delta):
@@ -64,7 +65,7 @@ func set_ingredient(ingredient: Ingredient):
 		starting_state.enter(self)
 		current_state = starting_state
 		print(current_state.name)
-	view.show()
+	view.entry()
 
 func transition(state_name : String, new_state_name : String):
 	# Se não foi o state atual que causou a transição, return
@@ -102,7 +103,7 @@ func _send_ingredient():
 	sending_ingredient.emit(current_ingredient)
 	current_ingredient = null
 	_clear_states()
-	view.hide()
+	view.send()
 	
 #endregion
 

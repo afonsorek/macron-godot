@@ -2,10 +2,13 @@ extends Camera3D
 class_name CameraController
 
 @export var animation_speed = 0.4
-@export var farder_position = Vector3(0, 1.705, 2.48)
-@export var farder_rotation = Vector3(-0.29147, 0, 0)
-@export var closer_position = Vector3(0, 1.9, 1.5)
+@export var farder_position = Vector3(0, 1.645, 3.044)
+@export var farder_rotation = Vector3(-0.101, 0, 0)
+@export var closer_position = Vector3(0, 1.9, 1.6)
 @export var closer_rotation = Vector3(-0.9, 0, 0)
+
+func _ready():
+	CameraManager.set_camera(self)
 
 func _move_view_closer():
 	var tween : Tween = get_tree().create_tween()

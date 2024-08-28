@@ -1,4 +1,4 @@
-extends Node3D
+extends PivotableView
 class_name IngredientView
 
 #region Enums
@@ -13,8 +13,22 @@ class_name IngredientView
 #region Variables
 #endregion
 
-#region Computed properties
-#endregion
+#Processando
+func squishy():
+	%IngredientAnimation.stop(true)
+	%IngredientAnimation.play("ingredient_squishy")
+
+#Entrada
+func entry():
+	show()
+	%IngredientAnimation.play("ingredient_entry")
+
+#Saida
+func send():
+	%IngredientAnimation.play("ingredient_send")
+	#OS.delay_msec(0.5)
+
+#Descarte
 
 #region Event functions
 func _init():
@@ -24,10 +38,11 @@ func _enter_tree():
 	pass
 	
 func _ready():
-	pass
+	RhythmManager.bpm_changed.connect(_adjust_speed_scale)
+	_adjust_speed_scale(RhythmManager.bpm)
 	
 func _process(_delta):
-	pass
+	super._process(_delta)
 	
 func _physics_process(_delta):
 	pass
@@ -39,6 +54,8 @@ func set_color(color: Color):
 #endregion
 
 #region Private functions
+func _adjust_speed_scale(bpm:float):
+	%IngredientAnimation.speed_scale = bpm/60.0
 #endregion
 
 #region Subclasses
