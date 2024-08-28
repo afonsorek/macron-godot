@@ -40,6 +40,7 @@ func _process(delta):
 		
 	# Verifica se o jogador está enviando o prato
 	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
+		RhythmManager.judge_input()
 		_send_ingredient()
 	
 func _physics_process(delta):

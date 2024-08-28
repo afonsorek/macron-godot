@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/experience_prototype_controller.gd" id="1_t30of"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_32c4p"]
-[ext_resource type="AudioStream" uid="uid://cjlj3q3p3o8bc" path="res://audio/RISADONHA.wav" id="4_exkoc"]
-[ext_resource type="AudioStream" uid="uid://cu1yfsdy56ebi" path="res://audio/groan3.mp3" id="5_ck8tv"]
-[ext_resource type="AudioStream" uid="uid://clkb5ejqr54do" path="res://audio/groan4.mp3" id="6_nqvxx"]
-[ext_resource type="AudioStream" uid="uid://c3ts3i2ymtoqk" path="res://audio/songs/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3" id="7_5qwk6"]
-[ext_resource type="AudioStream" uid="uid://48c5e6anios1" path="res://audio/songs/macro-1-ligeirinho.wav" id="8_6i1rn"]
-[ext_resource type="AudioStream" uid="uid://bn371uptouc6h" path="res://audio/songs/macro-2-wav.wav" id="8_646fl"]
+[ext_resource type="AudioStream" uid="uid://cjlj3q3p3o8bc" path="res://assets/sfx/RISADONHA.wav" id="4_exkoc"]
+[ext_resource type="AudioStream" uid="uid://cu1yfsdy56ebi" path="res://assets/sfx/groan3.mp3" id="5_ck8tv"]
+[ext_resource type="AudioStream" uid="uid://clkb5ejqr54do" path="res://assets/sfx/groan4.mp3" id="6_nqvxx"]
+[ext_resource type="AudioStream" uid="uid://c3ts3i2ymtoqk" path="res://assets/music/macro-1-diferente-soft-estranho-COM A PORRA DA GUITARRA KRL.mp3" id="7_5qwk6"]
+[ext_resource type="AudioStream" uid="uid://48c5e6anios1" path="res://assets/music/macro-1-ligeirinho.wav" id="8_6i1rn"]
+[ext_resource type="AudioStream" uid="uid://bn371uptouc6h" path="res://assets/music/macro-2-wav.wav" id="8_646fl"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="10_8gk5f"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]

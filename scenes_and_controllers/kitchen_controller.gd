@@ -77,6 +77,7 @@ func _process_inputs(_delta):
 		if Input.is_action_just_pressed("select_ingredient"):
 			_select_ingredient()
 		elif is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
+			RhythmManager.judge_input()
 			ingredient_controller.set_ingredient_by_name("Potato")
 			ui_view.hide_select_ingredient()
 			camera._move_view_closer()

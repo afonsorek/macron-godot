@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/monster_controller.gd" id="1_h02wp"]
 [ext_resource type="Script" path="res://views/monster_view.gd" id="2_6obq7"]
-[ext_resource type="Texture2D" uid="uid://dmthcm8ujrdw7" path="res://assets/mc-sapao.PNG" id="3_wwi87"]
+[ext_resource type="Texture2D" uid="uid://dmthcm8ujrdw7" path="res://assets/sprites/mc-sapao.PNG" id="3_wwi87"]
 
 [node name="Monster" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93755, 0.995411, 1.73681)
