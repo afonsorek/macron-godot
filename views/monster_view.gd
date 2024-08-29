@@ -42,6 +42,11 @@ func set_modulate(color : Color):
 	
 func set_shaded(value : bool):
 	%MainSprite.shaded = value
+
+func entry():
+	show()
+	%AnimationPlayer.play("monster-entry")
+
 #endregion
 
 #region Private functions

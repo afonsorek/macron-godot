@@ -56,7 +56,7 @@ func receive_recipe(recipe: Recipe) -> void:
 	satisfaction += recipe_score 
 	
 func set_monster(monster: Monster) -> void:
-	view.show()
+	view.entry()
 	current_monster = monster
 	current_monster.enter(self)
 	satisfaction = monster.max_satisfaction/2
