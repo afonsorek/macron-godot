@@ -26,7 +26,6 @@ func entry():
 #Saida
 func send():
 	%IngredientAnimation.play("ingredient_send")
-	#OS.delay_msec(0.5)
 
 #Descarte
 

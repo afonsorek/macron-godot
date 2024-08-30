@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SelectIngredientState" load_steps=2 format=3 uid="uid://c2lsc7om1uj5d"]
+
+[ext_resource type="Script" path="res://data/kitchen_states/select_ingredient_state.gd" id="1_iqx1m"]
+
+[resource]
+script = ExtResource("1_iqx1m")
+name = "select_ingredient"

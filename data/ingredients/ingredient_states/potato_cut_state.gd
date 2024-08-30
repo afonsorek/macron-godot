@@ -17,7 +17,7 @@ func _init():
 func enter(controller : IngredientController):
 	controller.view.set_color(Color.CHARTREUSE)
 	controller.state_properties["remaining_cuts"] = 4
-	print("Entered cut state!")
+	print("Entrei aqui ebaa")
 
 func update(controller : IngredientController, delta : float):
 	if Input.is_action_just_pressed("action_right"):
@@ -35,7 +35,6 @@ func beat(controller : IngredientController):
 
 func exit(controller : IngredientController):
 	controller.view.set_color(Color.RED)
-	print("Exited cut state!")
 #endregion
 
 #region Subclasses

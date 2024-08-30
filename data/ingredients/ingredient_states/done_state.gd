@@ -15,7 +15,7 @@ func _init():
 
 #region Public functions
 func enter(controller : IngredientController):
-	print("Entered done state!")
+	pass
 
 func update(controller : IngredientController, delta : float):
 	pass

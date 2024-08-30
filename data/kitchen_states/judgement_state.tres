@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="JudgementState" load_steps=2 format=3 uid="uid://ctuahlhh8j147"]
+
+[ext_resource type="Script" path="res://data/kitchen_states/judgement_state.gd" id="1_0bhob"]
+
+[resource]
+script = ExtResource("1_0bhob")
+name = "judgement"
