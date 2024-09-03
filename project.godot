@@ -25,6 +25,11 @@ GameManager="*res://managers/game_manager.gd"
 CameraManager="*res://managers/camera_manager.gd"
 RhythmManager="*res://managers/rhythm_manager.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [file_customization]
 
 folder_colors={
