@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu4nvbf4m386a"]
+[gd_scene load_steps=10 format=3 uid="uid://cu4nvbf4m386a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/ingredient_controller.gd" id="1_m7u5f"]
 [ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/textures/prototype_textures/PNG/Light/texture_07.png" id="2_56yym"]
 [ext_resource type="Script" path="res://views/ingredient_view.gd" id="2_nvjkk"]
+[ext_resource type="PackedScene" uid="uid://d3vrpqk33p1f3" path="res://scenes_and_controllers/cleaver_view.tscn" id="4_rqxjt"]
 
 [sub_resource type="Animation" id="Animation_1jfrp"]
 resource_name = "ingredient_cut"
@@ -97,3 +98,6 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_tstey")
 }
+
+[node name="CleaverView" parent="." instance=ExtResource("4_rqxjt")]
+unique_name_in_owner = true

@@ -13,6 +13,7 @@ signal sending_ingredient(ingredient)
 
 #region Variables
 @onready var view = %View as IngredientView
+@onready var cleaver_view := %CleaverView
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState

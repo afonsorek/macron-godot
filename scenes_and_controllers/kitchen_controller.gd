@@ -15,6 +15,7 @@ class_name KitchenController
 @onready var ingredient_controller := %Ingredient as IngredientController
 @onready var sizzle_controller := %Sizzle as SizzleController
 @onready var ui_view := %KitchenUIView as KitchenUiView
+@onready var cleaver_view := %CleaverView
 @onready var camera := %MainCamera as CameraController
 var made_recipe : Recipe
 var processed_ingredients : Array[Ingredient] = []

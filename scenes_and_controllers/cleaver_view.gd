@@ -1,6 +1,8 @@
 extends Control
 
+class_name CleaverClass
+
 func cleaver_animation():
-	%NeutralCleaver.hidden()
+	%NeutralCleaver.hide()
 	%CuttingCleaver.show()
 	

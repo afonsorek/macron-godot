@@ -25,6 +25,8 @@ func update(controller : IngredientController, delta : float):
 		#controller.view.cut()
 		RhythmManager.judge_input()
 		controller.view.squishy()
+		print(controller.cleaver_view)
+		controller.cleaver_view.cleaver_animation()
 		controller.state_properties["remaining_cuts"] -= 1
 		print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])
 	if controller.state_properties["remaining_cuts"] <= 0:
