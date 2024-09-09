@@ -12,12 +12,12 @@ signal sending_ingredient(ingredient)
 #endregion
 
 #region Variables
-@onready var view = %View as IngredientView
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState
 var state_properties : Dictionary = {}
 var ingredient_process := false
+var view : IngredientView
 #endregion
 
 #region Computed properties
@@ -59,6 +59,8 @@ func set_ingredient_by_name(name: StringName):
 
 func set_ingredient(ingredient: Ingredient):
 	current_ingredient = ingredient
+	view = ingredient.view_tscn.instantiate()
+	add_child(view)
 	_clear_states()
 	var starting_state : IngredientState
 	for state : IngredientState in ingredient.states:
@@ -105,10 +107,10 @@ func _on_beat():
 
 func _send_ingredient():
 	print("Sending ingredient!")
-	sending_ingredient.emit(current_ingredient)
-	current_ingredient = null
-	_clear_states()
 	view.send()
+	sending_ingredient.emit(current_ingredient)
+	#current_ingredient = null
+	#_clear_states()
 	
 #endregion
 

@@ -43,7 +43,7 @@ func _ingredient_sent(ingredient: Ingredient):
 		saved_controller.make_recipe(processed_ingredients)
 		saved_controller.transition_state(name,"judgement")
 	else:
-		await RhythmManager.beat
+		#await RhythmManager.beat
 		_get_next_ingredient()
 #endregion
 
