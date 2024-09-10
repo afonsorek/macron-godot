@@ -2,7 +2,7 @@ extends Camera3D
 class_name CameraController
 
 @export var animation_speed = 0.4
-@export var farder_position = Vector3(0, 1.645, 3.044)
+@export var farder_position = Vector3(0, 1.69, 3.044)
 @export var farder_rotation = Vector3(-0.101, 0, 0)
 @export var closer_position = Vector3(0, 1.9, 1.6)
 @export var closer_rotation = Vector3(-0.9, 0, 0)
