@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b8h5dbvbea86t" path="res://assets/textures/table-1.png" id="3_22nyy"]
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/sprites/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
-[ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
+[ext_resource type="PackedScene" uid="uid://b68swqhrb5yy2" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck3.gltf" id="7_dijcr"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
@@ -68,15 +68,14 @@ light_energy = 0.354
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71943, 2.77887)
-light_color = Color(1, 1, 0.576471, 1)
 light_energy = 2.859
 spot_angle = 58.8028
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 
-[node name="Parede" parent="3DEnvironment" instance=ExtResource("5_j22kp")]
-transform = Transform3D(-24, 6.62695e-15, -3.7749e-06, 8.37089e-15, 19, -8.71967e-15, 3.6239e-06, -6.62695e-15, -25, 2.08165e-12, -2, -0.246)
+[node name="Parede" parent="3DEnvironment" instance=ExtResource("7_dijcr")]
+transform = Transform3D(-24, 6.62695e-15, -3.01992e-06, 8.37089e-15, 19, -6.97574e-15, 3.6239e-06, -6.62695e-15, -20, 2.08165e-12, -2, -0.246)
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
