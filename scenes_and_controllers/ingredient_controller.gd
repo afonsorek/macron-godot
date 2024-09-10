@@ -93,6 +93,9 @@ func _cleaver_distance_transition_closer():
 func _cleaver_distance_transition_farder():
 	cleaver_view._distance_transition_farder()
 	
+func _splash_animation():
+	pass
+	
 #endregion
 
 #region Private functions
