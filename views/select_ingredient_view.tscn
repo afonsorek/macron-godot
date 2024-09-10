@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://p4dp2k0f3s6m"]
+
+[ext_resource type="Script" path="res://views/select_ingredient_view.gd" id="1_w7gc8"]
+[ext_resource type="PackedScene" uid="uid://2shwwhhswhoh" path="res://views/ingredient_panel_view.tscn" id="2_ba852"]
+
+[node name="SelectIngredientView" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -187.0
+offset_right = 210.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7gc8")
+
+[node name="IngredientPanelUp" parent="." instance=ExtResource("2_ba852")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 160.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 126.0
+
+[node name="IngredientPanelLeft" parent="." instance=ExtResource("2_ba852")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 274.0
+offset_top = 137.0
+offset_right = 374.0
+offset_bottom = 237.0
+
+[node name="IngredientPanelRight" parent="." instance=ExtResource("2_ba852")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 44.0
+offset_top = 135.0
+offset_right = 144.0
+offset_bottom = 235.0
+
+[node name="IngredientPanelDown" parent="." instance=ExtResource("2_ba852")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 160.0
+offset_top = 248.0
+offset_right = 260.0
+offset_bottom = 348.0

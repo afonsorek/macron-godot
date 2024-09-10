@@ -15,7 +15,6 @@ signal sending_ingredient(ingredient)
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState
-var state_properties : Dictionary = {}
 var ingredient_process := false
 var view : IngredientView
 #endregion
@@ -98,7 +97,6 @@ func transition(state_name : String, new_state_name : String):
 #region Private functions
 func _clear_states():
 	current_state = null
-	state_properties = {}
 	states.clear()
 	
 func _on_beat():

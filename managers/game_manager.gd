@@ -21,6 +21,8 @@ func _ready():
 	IngredientData.initialize_ingredients()
 	MonsterData.initialize_monsters()
 	RecipeData.initialize_recipes()
+	InputPromptData.initialize_input_prompts()
+	start_run()
 #endregion
 
 #region Public functions
@@ -29,7 +31,7 @@ func add_ingredient(ingredient_name : StringName):
 	IngredientData.set_ingredient_as_known(ingredient_name)
 	
 func start_run():
-	ingredients = ["batata"]
+	ingredients = ["Potato"]
 #endregion
 
 #region Private functions

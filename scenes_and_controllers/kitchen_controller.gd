@@ -25,6 +25,8 @@ var states : Dictionary = {}
 #endregion
 
 #region Computed properties
+var is_selected_ingredients_full: bool:
+	get: return selected_ingredient_names.size() >= 3
 #endregion
 
 #region Event functions
@@ -52,6 +54,12 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
+func add_selected_ingredient(ingredient_name : String):
+	selected_ingredient_names.append(ingredient_name)
+	while selected_ingredient_names.size() > 3:
+		selected_ingredient_names.pop_front()
+	print(selected_ingredient_names)
+	
 func make_recipe(processed_ingredients : Array[Ingredient]):
 	print("Making recipe!")
 	var ingredient_names : Array[StringName]

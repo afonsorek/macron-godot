@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://2shwwhhswhoh"]
+
+[ext_resource type="Script" path="res://views/ingredient_panel_view.gd" id="1_cw84o"]
+[ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="2_suiqw"]
+
+[node name="IngredientPanel" type="Panel"]
+custom_minimum_size = Vector2(100, 100)
+size_flags_vertical = 4
+script = ExtResource("1_cw84o")
+
+[node name="IngredientTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="PromptTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_suiqw")
+expand_mode = 2

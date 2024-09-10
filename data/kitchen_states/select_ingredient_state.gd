@@ -23,10 +23,11 @@ func enter(controller : KitchenController):
 	
 func update(controller : KitchenController, delta : float):
 	if Input.is_action_just_pressed("action_up"):
-		RhythmManager.judge_input()
-		controller.selected_ingredient_names = ["Potato","Potato","Potato"]
-		controller.transition_state(name,"cooking")
-
+		#RhythmManager.judge_input()
+		controller.add_selected_ingredient("Potato")
+		if controller.is_selected_ingredients_full:
+			controller.transition_state(name,"cooking")
+	
 func beat(controller : KitchenController):
 	pass
 

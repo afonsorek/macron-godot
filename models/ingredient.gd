@@ -12,6 +12,7 @@ extends Resource
 @export var elements : Array[StringName]
 @export var states : Array[IngredientState]
 @export var view_tscn : PackedScene # .tscn que herda da classe IngredientView
+@export var base_texture : Texture2D
 var known : bool = false
 #endregion
 
