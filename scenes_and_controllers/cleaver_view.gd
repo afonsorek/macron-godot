@@ -2,7 +2,7 @@ extends Control
 
 class_name CleaverClass
 
-func cleaver_animation():
+func _cleaver_animation():
 	%NeutralCleaver.hide()
 	%SmearCleaver.show()
 	await get_tree().create_timer(0.03).timeout
@@ -12,3 +12,9 @@ func cleaver_animation():
 	%NeutralCleaver.show()
 	%CuttingCleaver.hide()
 	
+	
+func _distance_transition_closer():
+	%NeutralCleaver._move_closer()
+
+func _distance_transition_farder():
+	%NeutralCleaver._move_farder()

@@ -86,7 +86,13 @@ func transition(state_name : String, new_state_name : String):
 		current_state.exit(self)
 	new_state.enter(self)
 	current_state = new_state
+	
+func _cleaver_distance_transition_closer():
+	cleaver_view._distance_transition_closer()
 		
+func _cleaver_distance_transition_farder():
+	cleaver_view._distance_transition_farder()
+	
 #endregion
 
 #region Private functions

@@ -55,6 +55,7 @@ func ingredient_sent(ingredient: Ingredient):
 	print("Ingredient received in KitchenController!")
 	print(">>>> I have %d ingredient(s)" % processed_ingredients.size())
 	camera._move_view_farder()
+	ingredient_controller._cleaver_distance_transition_farder()
 	if processed_ingredients.size() == 3:
 		_make_recipe()
 #endregion
@@ -82,6 +83,7 @@ func _process_inputs(_delta):
 			ingredient_controller.set_ingredient_by_name("Potato")
 			ui_view.hide_select_ingredient()
 			camera._move_view_closer()
+			ingredient_controller._cleaver_distance_transition_closer()
 	if Input.is_action_just_released("select_ingredient"):
 		is_selecting_ingredient = false
 		ui_view.hide_select_ingredient()

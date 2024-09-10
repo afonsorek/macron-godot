@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3vrpqk33p1f3"]
+[gd_scene load_steps=6 format=3 uid="uid://d3vrpqk33p1f3"]
 
 [ext_resource type="Texture2D" uid="uid://skv5jf05mtuk" path="res://assets/sprites/neutral_cleaver.png" id="1_66mky"]
 [ext_resource type="Script" path="res://scenes_and_controllers/cleaver_view.gd" id="1_u0t1m"]
 [ext_resource type="Texture2D" uid="uid://cw6eifxsfsw7r" path="res://assets/sprites/cutting_cleaver.png" id="2_1sbid"]
+[ext_resource type="Script" path="res://scenes_and_controllers/NeutralCleaver.gd" id="3_jlnpy"]
 [ext_resource type="Texture2D" uid="uid://by76yfyiiuig" path="res://assets/sprites/smear_cleaver2.png" id="4_16rha"]
 
 [node name="CleaverView" type="Control"]
@@ -16,9 +17,10 @@ script = ExtResource("1_u0t1m")
 
 [node name="NeutralCleaver" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1563, 624)
-scale = Vector2(0.540807, 0.540807)
+position = Vector2(1736, 1414)
+scale = Vector2(0.334009, 0.334009)
 texture = ExtResource("1_66mky")
+script = ExtResource("3_jlnpy")
 
 [node name="CuttingCleaver" type="Sprite2D" parent="."]
 unique_name_in_owner = true
