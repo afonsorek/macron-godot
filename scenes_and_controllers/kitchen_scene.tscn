@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=23 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/textures/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/sprites/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
+[ext_resource type="PackedScene" uid="uid://e6jaw2je0na5" path="res://scenes_and_controllers/counter_top.tscn" id="6_lxwjh"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://b68swqhrb5yy2" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck3.gltf" id="7_dijcr"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
@@ -64,6 +65,9 @@ mesh = SubResource("QuadMesh_jflrq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
 
+[node name="CounterTop" parent="3DEnvironment" instance=ExtResource("6_lxwjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.12, 2.08165e-12)
+
 [node name="Lights" type="Node3D" parent="3DEnvironment"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
@@ -81,7 +85,7 @@ spot_angle = 68.977
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 
 [node name="Parede" parent="3DEnvironment" instance=ExtResource("7_dijcr")]
-transform = Transform3D(-28, -5.27047e-08, -1.81167e-06, 9.76454e-15, 19.997, -0.209428, 4.22788e-06, -0.349047, -11.9982, 2.08165e-12, -2.05, -0.246)
+transform = Transform3D(-28, 9.15486e-09, 1.04906e-06, 9.7659e-15, 19.9997, -0.0628316, -2.44784e-06, -0.104719, -11.9998, 2.08165e-12, -2.05, -0.246)
 
 [node name="BigTile" type="Sprite3D" parent="3DEnvironment/Parede"]
 transform = Transform3D(-0.02, 1.151e-17, -1.50996e-10, 6.97574e-18, 0.033, -3.48787e-19, 3.01992e-09, -1.151e-17, -0.001, 2.08165e-12, 0.141, -0.008)

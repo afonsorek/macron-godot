@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://e6jaw2je0na5"]
+
+[ext_resource type="Texture2D" uid="uid://bj8yih15qdjv4" path="res://assets/textures/big_tile.png" id="1_flp3a"]
+
+[node name="CounterTop" type="Node3D"]
+
+[node name="Side" type="Sprite3D" parent="."]
+transform = Transform3D(0.525, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("1_flp3a")
+
+[node name="Top" type="Sprite3D" parent="Side"]
+transform = Transform3D(1, -6.27816e-16, -1.5246e-23, -1.5246e-23, -3.93403e-08, 1, -6.97574e-16, -0.9, -4.37114e-08, 2.08165e-12, 0.5, -0.3)
+texture = ExtResource("1_flp3a")
