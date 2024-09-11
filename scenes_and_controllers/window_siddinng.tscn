@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd5r6dwvcgphp"]
+
+[ext_resource type="Texture2D" uid="uid://lu044rksl0xj" path="res://assets/textures/window_siding.png" id="1_1j25o"]
+
+[node name="WindowSidding" type="Node3D"]
+
+[node name="TopSidding" type="Sprite3D" parent="."]
+transform = Transform3D(0.109, 0, 0, 0, 0.06, 0, 0, 0, 0.1, 0, 0, 0)
+modulate = Color(0.67069, 0.67069, 0.670689, 1)
+texture = ExtResource("1_1j25o")
+
+[node name="SideSidding" type="Sprite3D" parent="."]
+transform = Transform3D(-1.96701e-09, -0.06, 3.48787e-17, 0.045, -2.62268e-09, -3.48787e-17, 1.56954e-17, 2.09272e-17, 0.1, -2.649, -1.1, 2.08165e-12)
+modulate = Color(0.670588, 0.670588, 0.670588, 1)
+texture = ExtResource("1_1j25o")
+
+[node name="SideSidding2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.96701e-09, -0.06, 3.48787e-17, 0.045, -2.62268e-09, -3.48787e-17, 1.56954e-17, 2.09272e-17, 0.1, 2.649, -1.1, 2.08165e-12)
+modulate = Color(0.670588, 0.670588, 0.670588, 1)
+texture = ExtResource("1_1j25o")
