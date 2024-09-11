@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://views/ingredient_view.gd" id="2_nvjkk"]
 [ext_resource type="Texture2D" uid="uid://yjfgxttfoudt" path="res://assets/sprites/splash.png" id="3_2l1fa"]
 [ext_resource type="Script" path="res://scenes_and_controllers/Splash.gd" id="4_dpwsm"]
-[ext_resource type="PackedScene" uid="uid://d3vrpqk33p1f3" path="res://scenes_and_controllers/cleaver_view.tscn" id="4_rqxjt"]
+[ext_resource type="PackedScene" path="res://scenes_and_controllers/cleaver_view.tscn" id="4_rqxjt"]
 
 [sub_resource type="Animation" id="Animation_1jfrp"]
 resource_name = "ingredient_cut"
