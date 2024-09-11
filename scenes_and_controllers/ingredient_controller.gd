@@ -9,6 +9,7 @@ class_name IngredientController
 
 #region Signals
 signal sending_ingredient(ingredient)
+signal setting_utensil(utensil : HandUtensilsView.Utensil)
 #endregion
 
 #region Variables
@@ -40,7 +41,7 @@ func _process(delta):
 		
 	# Verifica se o jogador está enviando o prato
 	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
-		RhythmManager.judge_input()
+		RhythmManager.judge_input(false)
 		_send_ingredient()
 	
 func _physics_process(delta):
@@ -66,6 +67,9 @@ func set_ingredient(ingredient: Ingredient):
 		current_state = starting_state
 		print(current_state.name)
 	view.entry()
+	
+func set_utensil(utensil : HandUtensilsView.Utensil):
+	setting_utensil.emit(utensil)
 
 func transition(state_name : String, new_state_name : String):
 	# Se não foi o state atual que causou a transição, return
@@ -85,7 +89,7 @@ func transition(state_name : String, new_state_name : String):
 		current_state.exit(self)
 	new_state.enter(self)
 	current_state = new_state
-		
+	
 #endregion
 
 #region Private functions

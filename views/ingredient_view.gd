@@ -11,6 +11,7 @@ class_name IngredientView
 #endregion
 
 #region Variables
+@onready var splash := %Splash as SplashView
 #endregion
 
 #Processando

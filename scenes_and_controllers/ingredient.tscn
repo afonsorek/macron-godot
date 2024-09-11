@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu4nvbf4m386a"]
+[gd_scene load_steps=11 format=3 uid="uid://cu4nvbf4m386a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/ingredient_controller.gd" id="1_m7u5f"]
 [ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/textures/prototype_textures/PNG/Light/texture_07.png" id="2_56yym"]
 [ext_resource type="Script" path="res://views/ingredient_view.gd" id="2_nvjkk"]
+[ext_resource type="Texture2D" uid="uid://yjfgxttfoudt" path="res://assets/sprites/splash.png" id="3_2l1fa"]
+[ext_resource type="Script" path="res://views/splash_view.gd" id="5_0o0sb"]
 
 [sub_resource type="Animation" id="Animation_1jfrp"]
 resource_name = "ingredient_cut"
@@ -91,6 +93,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403563, 0)
 [node name="Sprite" type="Sprite3D" parent="View/Pivot"]
 unique_name_in_owner = true
 texture = ExtResource("2_56yym")
+
+[node name="Splash" type="Sprite3D" parent="View/Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+visible = false
+texture = ExtResource("3_2l1fa")
+script = ExtResource("5_0o0sb")
 
 [node name="IngredientAnimation" type="AnimationPlayer" parent="View"]
 unique_name_in_owner = true
