@@ -93,7 +93,7 @@ modulate = Color(0.68101, 0.68101, 0.68101, 1)
 texture = ExtResource("9_i778j")
 
 [node name="WallTileRight" type="Sprite3D" parent="3DEnvironment/Parede"]
-transform = Transform3D(-0.03, -8.8497e-12, 3.23462e-09, 1.04635e-17, 0.0289998, 0.000129154, -2.62268e-09, 0.000101229, -0.0369998, -0.127, 0.167, -0.008)
+transform = Transform3D(-0.022, -1.52851e-11, 5.58681e-09, 7.67326e-18, 0.0289998, 0.000129154, -3.32191e-09, 0.000101229, -0.0369998, -0.12, 0.167, -0.008)
 modulate = Color(0.682353, 0.682353, 0.682353, 1)
 texture = ExtResource("9_ju1iy")
 
@@ -101,7 +101,7 @@ texture = ExtResource("9_ju1iy")
 transform = Transform3D(-0.0357143, -1.24966e-17, 9.43672e-09, 1.02506e-17, 0.0500043, 2.22233e-10, -5.39271e-09, 1.77811e-10, -0.0624966, 2.08165e-12, 0.266, -0.008)
 
 [node name="WallTileLeft" type="Sprite3D" parent="3DEnvironment/Parede"]
-transform = Transform3D(-0.03, -8.8497e-12, 3.23462e-09, 1.04635e-17, 0.0289998, 0.000129154, -2.62268e-09, 0.000101229, -0.0369998, 0.127, 0.167, -0.008)
+transform = Transform3D(-0.022, -1.52851e-11, 5.58681e-09, 7.67326e-18, 0.0289998, 0.000129154, -3.32191e-09, 0.000101229, -0.0369998, 0.12, 0.167, -0.008)
 modulate = Color(0.682353, 0.682353, 0.682353, 1)
 texture = ExtResource("9_ju1iy")
 
