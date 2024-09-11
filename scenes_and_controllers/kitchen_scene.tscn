@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=21 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/textures/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 [ext_resource type="PackedScene" uid="uid://dd5r6dwvcgphp" path="res://scenes_and_controllers/window_siddinng.tscn" id="8_rxfqf"]
+[ext_resource type="Texture2D" uid="uid://bj8yih15qdjv4" path="res://assets/textures/big_tile.png" id="9_i778j"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
@@ -81,8 +82,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 [node name="Parede" parent="3DEnvironment" instance=ExtResource("7_dijcr")]
 transform = Transform3D(-28, -5.27048e-08, -2.26459e-06, 9.76454e-15, 19.997, -0.261786, 4.22788e-06, -0.349048, -14.9977, 2.08165e-12, -2.05, -0.246)
 
+[node name="BigTile" type="Sprite3D" parent="3DEnvironment/Parede"]
+transform = Transform3D(-0.019, 1.151e-17, -1.50996e-10, 6.62695e-18, 0.033, -3.48787e-19, 2.86892e-09, -1.151e-17, -0.001, 2.08165e-12, 0.141, -0.008)
+texture = ExtResource("9_i778j")
+
 [node name="TopSidding" parent="3DEnvironment/Parede" instance=ExtResource("8_rxfqf")]
-transform = Transform3D(-0.0357143, 7.57472e-18, 5.46363e-09, 1.02506e-17, 0.0500043, -7.15501e-11, -3.12224e-09, 1.77811e-10, -0.0624966, 2.08165e-12, 0.267, -0.008)
+transform = Transform3D(-0.0357143, -1.24966e-17, 9.43672e-09, 1.02506e-17, 0.0500043, 2.22233e-10, -5.39271e-09, 1.77811e-10, -0.0624966, 2.08165e-12, 0.267, -0.008)
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
