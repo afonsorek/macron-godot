@@ -2,6 +2,8 @@ class_name FileUtility
 
 static func get_resource_paths(dirPath : String) -> Array[String]:
 	var dir = DirAccess.open(dirPath)
+	if !dir:
+		return []
 	dir.list_dir_begin()
 
 	var resource_paths : Array[String] = []
