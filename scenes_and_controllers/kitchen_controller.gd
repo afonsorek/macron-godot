@@ -16,6 +16,7 @@ class_name KitchenController
 @onready var sizzle_controller := %Sizzle as SizzleController
 @onready var ui_view := %KitchenUIView as KitchenUiView
 @onready var camera := %MainCamera as CameraController
+@onready var hand_utensils := %HandUtensilsView as HandUtensilsView
 var made_recipe : Recipe
 var processed_ingredients : Array[Ingredient] = []
 var is_selecting_ingredient := false
@@ -34,6 +35,7 @@ func _enter_tree():
 func _ready():
 	# Connect signals
 	ingredient_controller.sending_ingredient.connect(ingredient_sent)
+	ingredient_controller.setting_utensil.connect(_set_utensil)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	# Spawn monster
 	_spawn_monster()
@@ -54,6 +56,7 @@ func ingredient_sent(ingredient: Ingredient):
 	print("Ingredient received in KitchenController!")
 	print(">>>> I have %d ingredient(s)" % processed_ingredients.size())
 	camera._move_view_farder()
+	hand_utensils.remove_utensil()
 	if processed_ingredients.size() == 3:
 		_make_recipe()
 #endregion
@@ -77,7 +80,7 @@ func _process_inputs(_delta):
 		if Input.is_action_just_pressed("select_ingredient"):
 			_select_ingredient()
 		elif is_selecting_ingredient && Input.is_action_just_pressed("action_up"):
-			RhythmManager.judge_input()
+			RhythmManager.judge_input(false)
 			ingredient_controller.set_ingredient_by_name("Potato")
 			ui_view.hide_select_ingredient()
 			camera._move_view_closer()
@@ -88,6 +91,9 @@ func _process_inputs(_delta):
 func _select_ingredient():
 	is_selecting_ingredient = true
 	ui_view.show_select_ingredient()
+
+func _set_utensil(utensil : HandUtensilsView.Utensil):
+	hand_utensils.set_utensil(utensil)
 
 func _spawn_monster():
 	await get_tree().create_timer(2.0).timeout

@@ -1,7 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
-[ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/textures/prototype_textures/PNG/Purple/texture_09.png" id="2_a8p5s"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
 [ext_resource type="Texture2D" uid="uid://b8h5dbvbea86t" path="res://assets/textures/table-1.png" id="3_22nyy"]
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
+[ext_resource type="PackedScene" uid="uid://cr4kyf6l5123" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 
@@ -40,16 +40,6 @@ transform = Transform3D(1, -3.84034e-16, 3.47001e-16, 3.47001e-16, 0.994881, 0.1
 environment = SubResource("Environment_mj3wy")
 fov = 70.997
 script = ExtResource("2_g0kje")
-
-[node name="Hands" type="Sprite3D" parent="MainCamera"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, 0.73, -0.49, -0.979)
-visible = false
-texture = ExtResource("2_a8p5s")
-
-[node name="Hands (cópia)" type="Sprite3D" parent="MainCamera"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, -3.02647e-10, 0, 3.02647e-10, 0.03, -0.74, -0.49, -0.979)
-visible = false
-texture = ExtResource("2_a8p5s")
 
 [node name="3DEnvironment" type="Node3D" parent="."]
 
@@ -100,4 +90,7 @@ transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 2.08165e-12, 0.774, 
 bar_spawn_distance = 55.7
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
+unique_name_in_owner = true
+
+[node name="HandUtensilsView" parent="." instance=ExtResource("12_g15y3")]
 unique_name_in_owner = true
