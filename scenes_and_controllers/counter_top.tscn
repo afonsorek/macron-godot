@@ -5,7 +5,7 @@
 [node name="CounterTop" type="Node3D"]
 
 [node name="Side" type="Sprite3D" parent="."]
-transform = Transform3D(0.525, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.526, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
 texture = ExtResource("1_flp3a")
 
 [node name="Top" type="Sprite3D" parent="Side"]

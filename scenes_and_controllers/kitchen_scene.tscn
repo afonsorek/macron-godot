@@ -65,9 +65,6 @@ mesh = SubResource("QuadMesh_jflrq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
 
-[node name="CounterTop" parent="3DEnvironment" instance=ExtResource("6_lxwjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.12, 2.08165e-12)
-
 [node name="Lights" type="Node3D" parent="3DEnvironment"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
@@ -77,8 +74,8 @@ light_energy = 0.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.818992, 0.573805, 0, -0.573805, 0.818992, 0, 3.00122, 3.14697)
-light_color = Color(0.735214, 0.735651, 0.707925, 1)
-light_energy = 9.0
+light_color = Color(0.838263, 0.838599, 0.819537, 1)
+light_energy = 7.0
 spot_angle = 68.977
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
@@ -87,19 +84,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 [node name="Parede" parent="3DEnvironment" instance=ExtResource("7_dijcr")]
 transform = Transform3D(-28, 9.15486e-09, 1.04906e-06, 9.7659e-15, 19.9997, -0.0628316, -2.44784e-06, -0.104719, -11.9998, 2.08165e-12, -2.05, -0.246)
 
+[node name="CounterTop" parent="3DEnvironment/Parede" instance=ExtResource("6_lxwjh")]
+transform = Transform3D(-0.0357143, 1.29665e-17, -3.12224e-09, 2.28871e-11, 0.0499993, -0.000261798, 7.28513e-09, -0.00043633, -0.0833322, -6.11959e-10, 0.158447, -0.0177163)
+
 [node name="BigTile" type="Sprite3D" parent="3DEnvironment/Parede"]
 transform = Transform3D(-0.02, 1.151e-17, -1.50996e-10, 6.97574e-18, 0.033, -3.48787e-19, 3.01992e-09, -1.151e-17, -0.001, 2.08165e-12, 0.141, -0.008)
+modulate = Color(0.68101, 0.68101, 0.68101, 1)
 texture = ExtResource("9_i778j")
 
 [node name="WallTileRight" type="Sprite3D" parent="3DEnvironment/Parede"]
 transform = Transform3D(-0.03, -8.8497e-12, 3.23462e-09, 1.04635e-17, 0.0289998, 0.000129154, -2.62268e-09, 0.000101229, -0.0369998, -0.127, 0.167, -0.008)
+modulate = Color(0.682353, 0.682353, 0.682353, 1)
 texture = ExtResource("9_ju1iy")
 
 [node name="TopSidding" parent="3DEnvironment/Parede" instance=ExtResource("8_rxfqf")]
-transform = Transform3D(-0.0357143, -1.24966e-17, 9.43672e-09, 1.02506e-17, 0.0500043, 2.22233e-10, -5.39271e-09, 1.77811e-10, -0.0624966, 2.08165e-12, 0.267, -0.008)
+transform = Transform3D(-0.0357143, -1.24966e-17, 9.43672e-09, 1.02506e-17, 0.0500043, 2.22233e-10, -5.39271e-09, 1.77811e-10, -0.0624966, 2.08165e-12, 0.266, -0.008)
 
 [node name="WallTileLeft" type="Sprite3D" parent="3DEnvironment/Parede"]
 transform = Transform3D(-0.03, -8.8497e-12, 3.23462e-09, 1.04635e-17, 0.0289998, 0.000129154, -2.62268e-09, 0.000101229, -0.0369998, 0.127, 0.167, -0.008)
+modulate = Color(0.682353, 0.682353, 0.682353, 1)
 texture = ExtResource("9_ju1iy")
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
