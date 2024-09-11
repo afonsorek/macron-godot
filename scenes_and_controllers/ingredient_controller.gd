@@ -14,7 +14,6 @@ signal setting_utensil(utensil : HandUtensilsView.Utensil)
 
 #region Variables
 @onready var view = %View as IngredientView
-@onready var cleaver_view := %CleaverView as CleaverView
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState
