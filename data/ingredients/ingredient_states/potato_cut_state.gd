@@ -17,6 +17,7 @@ func _init():
 func enter(controller : IngredientController):
 	controller.view.set_color(Color.CHARTREUSE)
 	controller.state_properties["remaining_cuts"] = 4
+	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
 	print("Entered cut state!")
 
 func update(controller : IngredientController, delta : float):
@@ -25,8 +26,6 @@ func update(controller : IngredientController, delta : float):
 		#controller.view.cut()
 		RhythmManager.judge_input()
 		controller.view.squishy()
-		print(controller.cleaver_view)
-		controller.cleaver_view._cleaver_animation()
 		controller.view.splash.animate_splash()
 		controller.state_properties["remaining_cuts"] -= 1
 		print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])

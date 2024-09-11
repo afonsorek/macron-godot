@@ -1,8 +1,9 @@
 extends Control
+class_name CleaverView
 
-class_name CleaverClass
+var is_closer := false
 
-func _cleaver_animation():
+func use_animation():
 	%NeutralCleaver.hide()
 	%SmearCleaver.show()
 	await get_tree().create_timer(0.03).timeout
@@ -13,8 +14,12 @@ func _cleaver_animation():
 	%CuttingCleaver.hide()
 	
 	
-func _distance_transition_closer():
-	%NeutralCleaver._move_closer()
+func enter_animation():
+	if !is_closer:
+		%NeutralCleaver.move_closer()
+		is_closer = true
 
-func _distance_transition_farder():
-	%NeutralCleaver._move_farder()
+func exit_animation():
+	if is_closer:
+		%NeutralCleaver.move_farder()
+		is_closer = false

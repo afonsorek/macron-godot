@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://skv5jf05mtuk" path="res://assets/sprites/neutral_cleaver.png" id="1_66mky"]
 [ext_resource type="Script" path="res://scenes_and_controllers/cleaver_view.gd" id="1_u0t1m"]
 [ext_resource type="Texture2D" uid="uid://cw6eifxsfsw7r" path="res://assets/sprites/cutting_cleaver.png" id="2_1sbid"]
-[ext_resource type="Script" path="res://scenes_and_controllers/NeutralCleaver.gd" id="3_jlnpy"]
+[ext_resource type="Script" path="res://views/neutral_cleaver_view.gd" id="3_fab0k"]
 [ext_resource type="Texture2D" uid="uid://by76yfyiiuig" path="res://assets/sprites/smear_cleaver2.png" id="4_16rha"]
 
 [node name="CleaverView" type="Control"]
@@ -21,7 +21,7 @@ visible = false
 position = Vector2(1746.35, 1628.38)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_66mky")
-script = ExtResource("3_jlnpy")
+script = ExtResource("3_fab0k")
 farder_position = Vector2(1736, 1600)
 farder_size = Vector2(0.3, 0.3)
 

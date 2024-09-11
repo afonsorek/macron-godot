@@ -9,11 +9,12 @@ class_name IngredientController
 
 #region Signals
 signal sending_ingredient(ingredient)
+signal setting_utensil(utensil : HandUtensilsView.Utensil)
 #endregion
 
 #region Variables
 @onready var view = %View as IngredientView
-@onready var cleaver_view := %CleaverView
+@onready var cleaver_view := %CleaverView as CleaverView
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState
@@ -41,7 +42,7 @@ func _process(delta):
 		
 	# Verifica se o jogador está enviando o prato
 	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
-		RhythmManager.judge_input()
+		RhythmManager.judge_input(false)
 		_send_ingredient()
 	
 func _physics_process(delta):
@@ -67,6 +68,9 @@ func set_ingredient(ingredient: Ingredient):
 		current_state = starting_state
 		print(current_state.name)
 	view.entry()
+	
+func set_utensil(utensil : HandUtensilsView.Utensil):
+	setting_utensil.emit(utensil)
 
 func transition(state_name : String, new_state_name : String):
 	# Se não foi o state atual que causou a transição, return
@@ -86,15 +90,6 @@ func transition(state_name : String, new_state_name : String):
 		current_state.exit(self)
 	new_state.enter(self)
 	current_state = new_state
-	
-func _cleaver_distance_transition_closer():
-	cleaver_view._distance_transition_closer()
-		
-func _cleaver_distance_transition_farder():
-	cleaver_view._distance_transition_farder()
-	
-func _splash_animation():
-	pass
 	
 #endregion
 

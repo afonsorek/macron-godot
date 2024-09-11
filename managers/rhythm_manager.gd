@@ -12,7 +12,7 @@ const TOLERANCE = 0.2
 signal beat()
 signal bpm_changed(bpm : float)
 signal changed_measure()
-signal input_judged(result : bool)
+signal input_judged(result : bool, animate: bool)
 signal rhythm_input(action : String)
 signal started_playing(track : MusicTrack)
 signal stopped_playing()
@@ -58,9 +58,6 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("mute"):
 		_mute_action()
-	# Teste
-	#if Input.is_action_just_pressed("action_down"):
-		#print(judge_input())
 	
 func _physics_process(_delta):
 	pass
@@ -71,7 +68,7 @@ func chain_track(track: MusicTrack):
 	await changed_measure
 	set_track(track,true,true)
 	
-func judge_input() -> bool:
+func judge_input(animate := true) -> bool:
 	var delayed_input := timer.time_left + delay_input
 	var time := (delayed_input)/wait_time
 	var hit_last_beat := (1.0-time) < TOLERANCE and !used_last_beat
@@ -82,7 +79,7 @@ func judge_input() -> bool:
 		used_this_beat = true
 	#print("%.2f / %.2f = %.2f" % [delayed_input, wait_time, time])
 	var result = hit_last_beat or hit_this_beat
-	input_judged.emit(result)
+	input_judged.emit(result,animate)
 	return result
 	
 func play():
