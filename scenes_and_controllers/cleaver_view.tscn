@@ -17,10 +17,13 @@ script = ExtResource("1_u0t1m")
 
 [node name="NeutralCleaver" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1736, 1414)
-scale = Vector2(0.334009, 0.334009)
+visible = false
+position = Vector2(1746.35, 1628.38)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_66mky")
 script = ExtResource("3_jlnpy")
+farder_position = Vector2(1736, 1600)
+farder_size = Vector2(0.3, 0.3)
 
 [node name="CuttingCleaver" type="Sprite2D" parent="."]
 unique_name_in_owner = true
