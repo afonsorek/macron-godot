@@ -18,6 +18,7 @@ class_name KitchenController
 @onready var sizzle_controller := %Sizzle as SizzleController
 @onready var ui_view := %KitchenUIView as KitchenUiView
 @onready var camera := %MainCamera as CameraController
+@onready var hand_utensils := %HandUtensilsView as HandUtensilsView
 var current_state : KitchenState
 var made_recipe : Recipe
 var selected_ingredient_names : Array[String] = []
@@ -38,6 +39,7 @@ func _enter_tree():
 	
 func _ready():
 	# Connect signals
+	ingredient_controller.setting_utensil.connect(_set_utensil)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	RhythmManager.beat.connect(_on_beat)
 	# Start initial state
@@ -96,6 +98,9 @@ func _on_beat():
 		
 func _on_satisfaction_changed(new_value : int, delta : int):
 	ui_view.on_satisfaction_changed(new_value, delta, monster_controller.current_monster.max_satisfaction)
+
+func _set_utensil(utensil : HandUtensilsView.Utensil):
+	hand_utensils.set_utensil(utensil)
 #endregion
 
 #region Subclasses

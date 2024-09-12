@@ -19,6 +19,7 @@ class_name JudgementState
 #region Public functions
 func enter(controller : KitchenController):
 	controller.camera.move_view_to(CameraController.Position.MAIN)
+	controller.hand_utensils.remove_utensil()
 	controller.monster_controller.receive_recipe(controller.made_recipe)
 	await controller.get_tree().create_timer(2.0).timeout
 	controller.transition_state(name,"select_ingredient")

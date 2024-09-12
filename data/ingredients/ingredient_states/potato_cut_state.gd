@@ -22,12 +22,14 @@ func _init():
 func enter(controller : IngredientController):
 	controller.view.set_color(Color.CHARTREUSE)
 	remaining_cuts = total_cuts
+	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
 
 func update(controller : IngredientController, delta : float):
 	if Input.is_action_just_pressed("action_right"):
 		RhythmManager.judge_input()
 		controller.view.squishy()
 		remaining_cuts -= 1
+		controller.view.splash.animate_splash()
 		print("Cut! Remaining: %d" % remaining_cuts)
 	if remaining_cuts <= 0:
 		controller.transition("cut","done")

@@ -70,7 +70,7 @@ func _on_beat():
 	right_bar.position = Vector3(bar_spawn_distance,0,0)
 	_tween_bar(right_bar)
 	
-func _on_rhythm_input(value : bool):
+func _on_rhythm_input(value : bool, _animate : bool):
 	if middle_bar_tween:
 		middle_bar.scale = middle_bar_base_scale
 		middle_bar_tween.kill()

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr4kyf6l5123"]
+
+[ext_resource type="Script" path="res://hand_utensils_view.gd" id="1_tsnts"]
+[ext_resource type="PackedScene" uid="uid://d3vrpqk33p1f3" path="res://scenes_and_controllers/cleaver_view.tscn" id="2_u2an6"]
+
+[node name="HandUtensilsView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tsnts")
+
+[node name="CleaverView" parent="." instance=ExtResource("2_u2an6")]
+unique_name_in_owner = true
+layout_mode = 1
