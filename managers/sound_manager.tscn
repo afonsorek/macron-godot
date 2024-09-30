@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddmjli473yvch"]
+
+[ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
+[ext_resource type="AudioStream" uid="uid://dha5f63650uk8" path="res://assets/sfx/cutting_sounds/cut-wet-1.wav" id="2_jf3ni"]
+[ext_resource type="AudioStream" uid="uid://bmv0iljgwesrb" path="res://assets/sfx/cutting_sounds/cut-wet-2.wav" id="3_id20u"]
+[ext_resource type="AudioStream" uid="uid://cetyti4jqtq0q" path="res://assets/sfx/cutting_sounds/cut-wet-3.wav" id="4_nj6ko"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
+streams_count = 3
+stream_0/stream = ExtResource("2_jf3ni")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_id20u")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_nj6ko")
+stream_2/weight = 1.0
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_nubne")
+
+[node name="DryCuttingSounds" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6aunh")
+
+[node name="WetCuttingSounds" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6aunh")
