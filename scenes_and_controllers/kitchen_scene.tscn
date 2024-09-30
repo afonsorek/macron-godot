@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
-[ext_resource type="PackedScene" uid="uid://cr4kyf6l5123" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
+[ext_resource type="PackedScene" uid="uid://d022tloe6ey1c" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
 

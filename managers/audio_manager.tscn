@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=3 format=3 uid="uid://ddmjli473yvch"]
+
+[ext_resource type="Script" path="res://managers/audio_manager.gd" id="1_nubne"]
+[ext_resource type="AudioStream" uid="uid://dts2r3vnpkc8e" path="res://assets/sfx/cutting_sounds/cut-dry-1.wav" id="2_31k4m"]
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_nubne")
+
+[node name="DryCut1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_31k4m")
