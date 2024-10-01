@@ -1,17 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=15 format=3 uid="uid://ddmjli473yvch"]
 
 [ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
-[ext_resource type="AudioStream" uid="uid://dha5f63650uk8" path="res://assets/sfx/cutting_sounds/cut-wet-1.wav" id="2_jf3ni"]
-[ext_resource type="AudioStream" uid="uid://bmv0iljgwesrb" path="res://assets/sfx/cutting_sounds/cut-wet-2.wav" id="3_id20u"]
-[ext_resource type="AudioStream" uid="uid://cetyti4jqtq0q" path="res://assets/sfx/cutting_sounds/cut-wet-3.wav" id="4_nj6ko"]
+[ext_resource type="AudioStream" uid="uid://dha5f63650uk8" path="res://assets/sfx/cutting_sounds/cut-wet-1.wav" id="2_vb7g5"]
+[ext_resource type="AudioStream" uid="uid://bmv0iljgwesrb" path="res://assets/sfx/cutting_sounds/cut-wet-2.wav" id="3_ddfna"]
+[ext_resource type="AudioStream" uid="uid://cetyti4jqtq0q" path="res://assets/sfx/cutting_sounds/cut-wet-3.wav" id="4_jiqrt"]
+[ext_resource type="AudioStream" uid="uid://dxeup5xktjorq" path="res://assets/sfx/cutting_sounds/cut-crunch-1.wav" id="5_roriw"]
+[ext_resource type="AudioStream" uid="uid://03bu7oig6074" path="res://assets/sfx/cutting_sounds/cut-crunch-2.wav" id="6_dix6f"]
+[ext_resource type="AudioStream" uid="uid://b27ifxqn8au8u" path="res://assets/sfx/cutting_sounds/cut-crunch-3.wav" id="7_1l6l3"]
+[ext_resource type="AudioStream" uid="uid://bnkw1u2d4tpi7" path="res://assets/sfx/cutting_sounds/cut-saw-1.wav" id="8_fok0s"]
+[ext_resource type="AudioStream" uid="uid://ck2qj6gcfoqei" path="res://assets/sfx/cutting_sounds/cut-saw-2.wav" id="9_04kgj"]
+[ext_resource type="AudioStream" uid="uid://gyc4fffnaptd" path="res://assets/sfx/cutting_sounds/cut-saw-3.wav" id="10_hbhgr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
 streams_count = 3
-stream_0/stream = ExtResource("2_jf3ni")
+stream_0/stream = ExtResource("2_vb7g5")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("3_id20u")
+stream_1/stream = ExtResource("3_ddfna")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("4_nj6ko")
+stream_2/stream = ExtResource("4_jiqrt")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lq3pe"]
+streams_count = 3
+stream_0/stream = ExtResource("2_vb7g5")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_ddfna")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_jiqrt")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pmj2p"]
+streams_count = 3
+stream_0/stream = ExtResource("5_roriw")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_dix6f")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_1l6l3")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eco44"]
+streams_count = 3
+stream_0/stream = ExtResource("8_fok0s")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("9_04kgj")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("10_hbhgr")
 stream_2/weight = 1.0
 
 [node name="SoundManager" type="Node"]
@@ -21,4 +54,10 @@ script = ExtResource("1_nubne")
 stream = SubResource("AudioStreamRandomizer_6aunh")
 
 [node name="WetCuttingSounds" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_6aunh")
+stream = SubResource("AudioStreamRandomizer_lq3pe")
+
+[node name="CrunchCuttingSounds" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_pmj2p")
+
+[node name="SawCuttingSounds" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_eco44")

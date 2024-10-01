@@ -25,7 +25,7 @@ func update(controller : IngredientController, delta : float):
 		#play animation of cuting
 		#controller.view.cut()
 		RhythmManager.judge_input()
-		SoundManager.play_dry_cutting()
+		SoundManager.play_cutting_sounds(SoundManager.CutType.WET)
 		controller.view.squishy()
 		controller.view.splash.animate_splash()
 		controller.state_properties["remaining_cuts"] -= 1
