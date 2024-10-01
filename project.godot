@@ -24,6 +24,7 @@ buses/default_bus_layout="res://data/default_bus_layout.tres"
 GameManager="*res://managers/game_manager.gd"
 CameraManager="*res://managers/camera_manager.gd"
 RhythmManager="*res://managers/rhythm_manager.gd"
+SoundManager="*res://managers/sound_manager.tscn"
 
 [display]
 
