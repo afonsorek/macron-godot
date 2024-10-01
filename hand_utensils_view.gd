@@ -48,10 +48,12 @@ func set_utensil(new_utensil : Utensil):
 	var before_utensil_node := _get_utensil_node(current_utensil)
 	if before_utensil_node:
 		before_utensil_node.exit_animation()
+		SoundManager.knife_out_sound.play()
 	current_utensil = new_utensil
 	var new_utensil_node := _get_utensil_node(new_utensil)
 	if new_utensil_node:
-		new_utensil_node.enter_animation()
+		new_utensil_node.enter_animation() 
+		SoundManager.knife_in_sound.play()
 #endregion
 
 #region Private functions

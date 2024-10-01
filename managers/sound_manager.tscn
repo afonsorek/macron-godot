@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=20 format=3 uid="uid://ddmjli473yvch"]
 
 [ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
 [ext_resource type="AudioStream" uid="uid://c2wwavq34rnby" path="res://assets/sfx/cutting_sounds/dry_cut_1.wav" id="2_mmg0p"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://djj7wsfmip4cv" path="res://assets/sfx/cutting_sounds/saw_cut_1.wav" id="11_lnkhm"]
 [ext_resource type="AudioStream" uid="uid://bbauaypeyysp0" path="res://assets/sfx/cutting_sounds/saw_cut_2.wav" id="12_oyo16"]
 [ext_resource type="AudioStream" uid="uid://c4tm4ft1rmc0" path="res://assets/sfx/cutting_sounds/saw_cut_3.wav" id="13_006kt"]
+[ext_resource type="AudioStream" uid="uid://b6bi8dvf5vbgc" path="res://assets/sfx/knife_entry.wav" id="14_drhax"]
+[ext_resource type="AudioStream" uid="uid://dkobws75dopnt" path="res://assets/sfx/knife_out.wav" id="15_gxor2"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
 streams_count = 3
@@ -64,3 +66,11 @@ stream = SubResource("AudioStreamRandomizer_pmj2p")
 
 [node name="SawCuttingSounds" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_eco44")
+
+[node name="KnifeIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_drhax")
+volume_db = -20.0
+
+[node name="KnifeOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_gxor2")
+volume_db = -20.0
