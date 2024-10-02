@@ -15,7 +15,7 @@ albedo_texture = ExtResource("3_co7nr")
 [sub_resource type="QuadMesh" id="QuadMesh_uu4mw"]
 material = SubResource("StandardMaterial3D_pacop")
 
-[node name="Node3D" type="Node3D"]
+[node name="Table" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(8, -1.04636e-15, -6.09839e-23, 0, -6.55671e-08, 2, -5.58059e-15, -1.5, -8.74228e-08, 2.08165e-12, 0.6, 2.08165e-12)
