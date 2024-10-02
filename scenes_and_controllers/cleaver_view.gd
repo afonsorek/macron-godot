@@ -17,9 +17,11 @@ func use_animation():
 func enter_animation():
 	if !is_closer:
 		%NeutralCleaver.move_closer()
+		SoundManager.knife_in_sound.play()
 		is_closer = true
 
 func exit_animation():
 	if is_closer:
 		%NeutralCleaver.move_farder()
+		SoundManager.knife_out_sound.play()
 		is_closer = false

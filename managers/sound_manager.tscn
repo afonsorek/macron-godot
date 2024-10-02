@@ -1,50 +1,55 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=20 format=3 uid="uid://ddmjli473yvch"]
 
 [ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
-[ext_resource type="AudioStream" uid="uid://dha5f63650uk8" path="res://assets/sfx/cutting_sounds/cut-wet-1.wav" id="2_vb7g5"]
-[ext_resource type="AudioStream" uid="uid://bmv0iljgwesrb" path="res://assets/sfx/cutting_sounds/cut-wet-2.wav" id="3_ddfna"]
-[ext_resource type="AudioStream" uid="uid://cetyti4jqtq0q" path="res://assets/sfx/cutting_sounds/cut-wet-3.wav" id="4_jiqrt"]
-[ext_resource type="AudioStream" uid="uid://dxeup5xktjorq" path="res://assets/sfx/cutting_sounds/cut-crunch-1.wav" id="5_roriw"]
-[ext_resource type="AudioStream" uid="uid://03bu7oig6074" path="res://assets/sfx/cutting_sounds/cut-crunch-2.wav" id="6_dix6f"]
-[ext_resource type="AudioStream" uid="uid://b27ifxqn8au8u" path="res://assets/sfx/cutting_sounds/cut-crunch-3.wav" id="7_1l6l3"]
-[ext_resource type="AudioStream" uid="uid://bnkw1u2d4tpi7" path="res://assets/sfx/cutting_sounds/cut-saw-1.wav" id="8_fok0s"]
-[ext_resource type="AudioStream" uid="uid://ck2qj6gcfoqei" path="res://assets/sfx/cutting_sounds/cut-saw-2.wav" id="9_04kgj"]
-[ext_resource type="AudioStream" uid="uid://gyc4fffnaptd" path="res://assets/sfx/cutting_sounds/cut-saw-3.wav" id="10_hbhgr"]
+[ext_resource type="AudioStream" uid="uid://c2wwavq34rnby" path="res://assets/sfx/cutting_sounds/dry_cut_1.wav" id="2_mmg0p"]
+[ext_resource type="AudioStream" uid="uid://i2slnvkugf1w" path="res://assets/sfx/cutting_sounds/dry_cut_2.wav" id="3_4flaw"]
+[ext_resource type="AudioStream" uid="uid://vnk7a8q74jrm" path="res://assets/sfx/cutting_sounds/dry_cut_3.wav" id="4_7jj1e"]
+[ext_resource type="AudioStream" uid="uid://d0v7k78jcf3cf" path="res://assets/sfx/cutting_sounds/wet_cut_1.wav" id="5_07mup"]
+[ext_resource type="AudioStream" uid="uid://o0mdbmll1vag" path="res://assets/sfx/cutting_sounds/wet_cut_2.wav" id="6_v8f2i"]
+[ext_resource type="AudioStream" uid="uid://hv5r7hlkvq8v" path="res://assets/sfx/cutting_sounds/wet_cut_3.wav" id="7_pd52c"]
+[ext_resource type="AudioStream" uid="uid://d0wrwluw4c8e3" path="res://assets/sfx/cutting_sounds/crunch_cut_1.wav" id="8_hnqsj"]
+[ext_resource type="AudioStream" uid="uid://cqwustt0ab6ly" path="res://assets/sfx/cutting_sounds/crunch_cut_2.wav" id="9_1lg6t"]
+[ext_resource type="AudioStream" uid="uid://bm21ev7prcfqv" path="res://assets/sfx/cutting_sounds/crunch_cut_3.wav" id="10_f6kww"]
+[ext_resource type="AudioStream" uid="uid://djj7wsfmip4cv" path="res://assets/sfx/cutting_sounds/saw_cut_1.wav" id="11_lnkhm"]
+[ext_resource type="AudioStream" uid="uid://bbauaypeyysp0" path="res://assets/sfx/cutting_sounds/saw_cut_2.wav" id="12_oyo16"]
+[ext_resource type="AudioStream" uid="uid://c4tm4ft1rmc0" path="res://assets/sfx/cutting_sounds/saw_cut_3.wav" id="13_006kt"]
+[ext_resource type="AudioStream" uid="uid://b6bi8dvf5vbgc" path="res://assets/sfx/knife_entry.wav" id="14_drhax"]
+[ext_resource type="AudioStream" uid="uid://dkobws75dopnt" path="res://assets/sfx/knife_out.wav" id="15_gxor2"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
 streams_count = 3
-stream_0/stream = ExtResource("2_vb7g5")
+stream_0/stream = ExtResource("2_mmg0p")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("3_ddfna")
+stream_1/stream = ExtResource("3_4flaw")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("4_jiqrt")
+stream_2/stream = ExtResource("4_7jj1e")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lq3pe"]
 streams_count = 3
-stream_0/stream = ExtResource("2_vb7g5")
+stream_0/stream = ExtResource("5_07mup")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("3_ddfna")
+stream_1/stream = ExtResource("6_v8f2i")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("4_jiqrt")
+stream_2/stream = ExtResource("7_pd52c")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pmj2p"]
 streams_count = 3
-stream_0/stream = ExtResource("5_roriw")
+stream_0/stream = ExtResource("8_hnqsj")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("6_dix6f")
+stream_1/stream = ExtResource("9_1lg6t")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("7_1l6l3")
+stream_2/stream = ExtResource("10_f6kww")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eco44"]
 streams_count = 3
-stream_0/stream = ExtResource("8_fok0s")
+stream_0/stream = ExtResource("11_lnkhm")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("9_04kgj")
+stream_1/stream = ExtResource("12_oyo16")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("10_hbhgr")
+stream_2/stream = ExtResource("13_006kt")
 stream_2/weight = 1.0
 
 [node name="SoundManager" type="Node"]
@@ -61,3 +66,11 @@ stream = SubResource("AudioStreamRandomizer_pmj2p")
 
 [node name="SawCuttingSounds" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_eco44")
+
+[node name="KnifeIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_drhax")
+volume_db = -20.0
+
+[node name="KnifeOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_gxor2")
+volume_db = -20.0
