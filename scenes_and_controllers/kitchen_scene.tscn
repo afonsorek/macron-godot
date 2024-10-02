@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=21 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/sprites/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
 [ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
+[ext_resource type="PackedScene" uid="uid://dgd2dr5l4ihay" path="res://scenes_and_controllers/kitchen_space.tscn" id="6_sop3a"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
@@ -31,6 +32,8 @@ albedo_color = Color(0.161819, 0.104871, 0.0569567, 1)
 material = SubResource("StandardMaterial3D_e607t")
 size = Vector3(2.06, 0.19, 1.09)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_2uiul"]
+
 [node name="Kitchen" type="Node3D"]
 script = ExtResource("1_0221c")
 
@@ -45,6 +48,7 @@ script = ExtResource("2_g0kje")
 
 [node name="Chao" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(9, -6.27816e-15, -1.37214e-22, -1.37214e-22, -3.93402e-07, 9, -6.27816e-15, -9, -3.93402e-07, 8.3266e-12, -0.954053, 2.92)
+visible = false
 material_override = SubResource("StandardMaterial3D_2apbc")
 mesh = SubResource("QuadMesh_jflrq")
 skeleton = NodePath("")
@@ -64,33 +68,49 @@ spot_angle = 58.8028
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
+visible = false
+
+[node name="KitchenSpace" parent="3DEnvironment" instance=ExtResource("6_sop3a")]
 
 [node name="Parede" parent="3DEnvironment" instance=ExtResource("5_j22kp")]
 transform = Transform3D(-24, 6.62695e-15, -3.7749e-06, 8.37089e-15, 19, -8.71967e-15, 3.6239e-06, -6.62695e-15, -25, 2.08165e-12, -2, -0.246)
+visible = false
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
+visible = false
 mesh = SubResource("BoxMesh_4asul")
 skeleton = NodePath("../..")
 
 [node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
 unique_name_in_owner = true
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.34, 0.687306, 0.634385)
+visible = false
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.855828)
+visible = false
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, 1.77722, 2.08165e-12)
+visible = false
 
 [node name="RhythmIndicator" parent="3DEnvironment" instance=ExtResource("11_kh371")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 2.08165e-12, 0.774, 2.08165e-12)
+visible = false
 bar_spawn_distance = 55.7
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
 unique_name_in_owner = true
+visible = false
 
 [node name="HandUtensilsView" parent="." instance=ExtResource("12_g15y3")]
 unique_name_in_owner = true
+visible = false
+
+[node name="WindowSpace" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, -6.6642e-31, 2.91301e-38, 0, -4.37114e-08, -1, 1.66605e-30, 1, -4.37114e-08, 2.08165e-12, 2, -0.246)
+visible = false
+mesh = SubResource("PlaneMesh_2uiul")
