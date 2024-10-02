@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://dgd2dr5l4ihay"]
+[gd_scene load_steps=28 format=3 uid="uid://dgd2dr5l4ihay"]
 
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="1_bd1bj"]
 [ext_resource type="Texture2D" uid="uid://c827ei1jx8vf2" path="res://assets/textures/prototype_textures/PNG/Table/table_siding_lighter.png" id="2_b6123"]
 [ext_resource type="Texture2D" uid="uid://b7e5nrqvdxexl" path="res://assets/textures/prototype_textures/PNG/Table/table_top_darker.png" id="3_hnmlj"]
 [ext_resource type="Texture2D" uid="uid://bdrndpvsshx1p" path="res://assets/textures/prototype_textures/PNG/Table/table_siding_darker.png" id="4_cs8o2"]
-[ext_resource type="Texture2D" uid="uid://dsse3fs1wvgek" path="res://assets/textures/prototype_textures/PNG/Table/table_top_lighter.png" id="5_5ts40"]
+[ext_resource type="Texture2D" uid="uid://d1nngf78nrwvs" path="res://assets/textures/prototype_textures/PNG/Table/table_top_lighter - cópia.png" id="5_4wa7n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3vkh"]
 albedo_texture = ExtResource("2_b6123")
@@ -48,16 +48,21 @@ albedo_texture = ExtResource("2_b6123")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ra6d"]
 albedo_texture = ExtResource("2_b6123")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kycsx"]
-albedo_texture = ExtResource("5_5ts40")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2bts"]
+albedo_texture = ExtResource("4_cs8o2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dkdoy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yl0lx"]
+albedo_texture = ExtResource("5_4wa7n")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ybq4j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w04yi"]
 albedo_texture = ExtResource("2_b6123")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ax0o"]
-albedo_texture = ExtResource("5_5ts40")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgyt1"]
+albedo_texture = ExtResource("5_4wa7n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3e6r"]
 albedo_texture = ExtResource("2_b6123")
@@ -147,9 +152,15 @@ mesh = SubResource("PlaneMesh_k33e1")
 [node name="RightGabinet" type="Node3D" parent="Gabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67529, -1.67287, 0)
 
+[node name="Handle2" type="MeshInstance3D" parent="Gabinets/RightGabinet"]
+transform = Transform3D(-8.74228e-09, 1.8, 3.48787e-16, -0.2, -7.86805e-08, -3.48787e-16, -6.97574e-17, -6.27816e-16, 1, 0.12071, 3.43387, 0.225)
+material_override = SubResource("StandardMaterial3D_g2bts")
+mesh = SubResource("QuadMesh_dkdoy")
+skeleton = NodePath("../../..")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Gabinets/RightGabinet"]
 transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, 0.159, 5.12, 0.189)
-material_override = SubResource("StandardMaterial3D_kycsx")
+material_override = SubResource("StandardMaterial3D_yl0lx")
 mesh = SubResource("PlaneMesh_ybq4j")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Gabinets/RightGabinet"]
@@ -160,9 +171,15 @@ mesh = SubResource("PlaneMesh_k33e1")
 [node name="LeftGabinet" type="Node3D" parent="Gabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67529, -1.67287, 0)
 
+[node name="Handle" type="MeshInstance3D" parent="Gabinets/LeftGabinet"]
+transform = Transform3D(-8.74228e-09, 1.8, 3.48787e-16, -0.2, -7.86805e-08, -3.48787e-16, -6.97574e-17, -6.27816e-16, 1, -7.47095, 3.43355, 0.225294)
+material_override = SubResource("StandardMaterial3D_g2bts")
+mesh = SubResource("QuadMesh_dkdoy")
+skeleton = NodePath("../../..")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Gabinets/LeftGabinet"]
 transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, -7.472, 5.12, 0.189)
-material_override = SubResource("StandardMaterial3D_2ax0o")
+material_override = SubResource("StandardMaterial3D_jgyt1")
 mesh = SubResource("PlaneMesh_ybq4j")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Gabinets/LeftGabinet"]
