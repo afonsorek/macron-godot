@@ -76,7 +76,7 @@ transform = Transform3D(-24, 6.62695e-15, -3.7749e-06, 8.37089e-15, 19, -8.71967
 visible = false
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.468452, 0.86)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.444991, 0.758694)
 mesh = SubResource("BoxMesh_4asul")
 skeleton = NodePath("../..")
 
@@ -86,7 +86,7 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.34, 0.687306, 0.63
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.855828)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.999449)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
