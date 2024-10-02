@@ -51,7 +51,7 @@ func set_utensil(new_utensil : Utensil):
 	current_utensil = new_utensil
 	var new_utensil_node := _get_utensil_node(new_utensil)
 	if new_utensil_node:
-		new_utensil_node.enter_animation()
+		new_utensil_node.enter_animation() 
 #endregion
 
 #region Private functions
