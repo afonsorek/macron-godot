@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgd2dr5l4ihay"]
+[gd_scene load_steps=16 format=3 uid="uid://dgd2dr5l4ihay"]
 
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="1_bd1bj"]
-[ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/textures/prototype_textures/PNG/Table/table_leg.png" id="2_hs01l"]
+[ext_resource type="Texture2D" uid="uid://ehdx30ckv7xf" path="res://assets/textures/prototype_textures/PNG/Table/table_siding.png" id="2_6wtyt"]
 [ext_resource type="Texture2D" uid="uid://cmx66211neqe7" path="res://assets/textures/prototype_textures/PNG/Table/table_top.png" id="2_t475u"]
-[ext_resource type="Texture2D" uid="uid://clbwh5wdxqhe4" path="res://assets/textures/prototype_textures/Sample.png" id="4_os4at"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh8o3"]
-albedo_texture = ExtResource("2_hs01l")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cc7e"]
+albedo_texture = ExtResource("2_6wtyt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lir5j"]
 
@@ -20,15 +19,21 @@ albedo_texture = ExtResource("2_t475u")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hvpm5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntwk2"]
-albedo_texture = ExtResource("2_t475u")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gnh2"]
+albedo_texture = ExtResource("2_6wtyt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k33e1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y12f"]
-albedo_texture = ExtResource("4_os4at")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntwk2"]
+albedo_texture = ExtResource("2_t475u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prmkj"]
+albedo_texture = ExtResource("2_6wtyt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ybq4j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p58x3"]
+albedo_texture = ExtResource("2_6wtyt")
 
 [node name="KitchenSpace" type="Node3D"]
 
@@ -37,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0.01088, -0.112582, 0.71223
 
 [node name="TableSidding" type="MeshInstance3D" parent="Table"]
 transform = Transform3D(2.25947e-16, -4.37114e-08, -4, -0.1, -4.37114e-08, -1.39515e-15, -4.37114e-09, 1, -1.74846e-07, 2.08165e-12, 0.7, -0.752)
-material_override = SubResource("StandardMaterial3D_eh8o3")
+material_override = SubResource("StandardMaterial3D_1cc7e")
 mesh = SubResource("PlaneMesh_lir5j")
 
 [node name="Wall" type="Node3D" parent="."]
@@ -74,10 +79,28 @@ mesh = SubResource("PlaneMesh_hvpm5")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-transform = Transform3D(2.5, -9.39075e-21, 3.01992e-08, -1.51256e-21, -90, 6.63173e-16, -3.77489e-07, 2.98428e-13, 0.2, -2.08165e-12, 3.00413, -0.172409)
-material_override = SubResource("StandardMaterial3D_ntwk2")
+transform = Transform3D(2.5, -9.39075e-21, 3.01992e-08, -1.51256e-21, -90, 6.63173e-16, -3.77489e-07, 2.98428e-13, 0.2, 2.08165e-12, 3.01, -0.193)
+material_override = SubResource("StandardMaterial3D_5gnh2")
 mesh = SubResource("PlaneMesh_k33e1")
 skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(2.5, 6.56456e-13, 1.74846e-08, 8.71967e-16, 90, -1.74846e-08, 2.18557e-07, -7.86805e-06, -0.2, 2.08165e-12, 0.986139, -0.192725)
+material_override = SubResource("StandardMaterial3D_5gnh2")
+mesh = SubResource("PlaneMesh_k33e1")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.09278e-07, 90, -6.97574e-17, -2.5, 3.93402e-06, 6.97574e-17, -8.71967e-16, -3.13908e-14, -0.2, -2.5, 1.036, -0.193)
+material_override = SubResource("StandardMaterial3D_5gnh2")
+mesh = SubResource("PlaneMesh_k33e1")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.09278e-07, -90, -6.97574e-17, 2.5, 3.93402e-06, 6.97574e-17, 8.71967e-16, 3.13908e-14, -0.2, 2.5, 1.086, -0.193)
+material_override = SubResource("StandardMaterial3D_5gnh2")
+mesh = SubResource("PlaneMesh_k33e1")
+skeleton = NodePath("../../../../..")
 
 [node name="Gabinets" type="Node3D" parent="."]
 
@@ -98,8 +121,8 @@ mesh = SubResource("PlaneMesh_k33e1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67529, -1.67287, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Gabinets/RightGabinet"]
-transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, 0.158888, 5.12198, 0.189)
-material_override = SubResource("StandardMaterial3D_4y12f")
+transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, 0.159, 5.12, 0.189)
+material_override = SubResource("StandardMaterial3D_prmkj")
 mesh = SubResource("PlaneMesh_ybq4j")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Gabinets/RightGabinet"]
@@ -107,15 +130,15 @@ transform = Transform3D(-1.09278e-07, -90, -1.74846e-08, -2.5, 3.93402e-06, 6.97
 material_override = SubResource("StandardMaterial3D_ntwk2")
 mesh = SubResource("PlaneMesh_k33e1")
 
-[node name="RightLeft" type="Node3D" parent="Gabinets"]
+[node name="LeftGabinet" type="Node3D" parent="Gabinets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67529, -1.67287, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gabinets/RightLeft"]
-transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, -7.472, 5.10156, 0.189)
-material_override = SubResource("StandardMaterial3D_4y12f")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gabinets/LeftGabinet"]
+transform = Transform3D(-1, -1.35896e-05, -1.32005e-14, 0, -3.93402e-06, 2, -1.50996e-07, 90, 8.74228e-08, -7.472, 5.12, 0.189)
+material_override = SubResource("StandardMaterial3D_p58x3")
 mesh = SubResource("PlaneMesh_ybq4j")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Gabinets/RightLeft"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Gabinets/LeftGabinet"]
 transform = Transform3D(-1.09278e-07, 90, 1.74846e-08, 2.5, 3.93402e-06, 6.97574e-17, 8.68146e-15, -7.86805e-06, 0.2, -6.56377, 5.6, -0.113)
 material_override = SubResource("StandardMaterial3D_ntwk2")
 mesh = SubResource("PlaneMesh_k33e1")
