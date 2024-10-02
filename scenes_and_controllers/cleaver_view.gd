@@ -9,7 +9,6 @@ func use_animation():
 	await get_tree().create_timer(0.03).timeout
 	%SmearCleaver.hide()
 	%CuttingCleaver.show()
-	SoundManager.play_cutting_sounds(SoundManager.CutType.WET)
 	await get_tree().create_timer(0.1).timeout
 	%NeutralCleaver.show()
 	%CuttingCleaver.hide()
