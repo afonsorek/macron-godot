@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm5mlqfstdgya"]
+
+[ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="1_i4jop"]
+[ext_resource type="Script" path="res://views/ui/prompt_texture_view.gd" id="2_58o0a"]
+
+[node name="PromptTexture" type="TextureRect"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_i4jop")
+expand_mode = 2
+script = ExtResource("2_58o0a")

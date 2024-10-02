@@ -29,7 +29,7 @@ func exit(controller : KitchenController):
 func _get_next_ingredient():
 	if saved_controller.selected_ingredient_names.is_empty():
 		return
-	var next_ingredient_name : String = saved_controller.selected_ingredient_names.pop_front()
+	var next_ingredient_name : String = saved_controller.pop_selected_ingredient()
 	print("Setando ingrediente: %s" % [next_ingredient_name])
 	saved_controller.ingredient_controller.set_ingredient_by_name(next_ingredient_name)
 	

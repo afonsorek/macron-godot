@@ -12,6 +12,7 @@ class_name IngredientPanelView
 #endregion
 
 #region Variables
+@onready var prompt_texture : PromptTextureView = %PromptTexture
 var key_action := ""
 var enabled := true
 #endregion
@@ -48,10 +49,9 @@ func enable():
 	
 func set_action(action : StringName):
 	key_action = action
-	%PromptTexture.texture = InputPromptData.get_input_prompt_texture("switch",action)
+	prompt_texture.set_action(action)
 
 func set_ingredient(ingredient : Ingredient):
-	print(ingredient.name)
 	%IngredientTexture.texture = ingredient.base_texture
 #endregion
 

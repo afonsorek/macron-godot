@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://p4dp2k0f3s6m"]
+[gd_scene load_steps=4 format=3 uid="uid://p4dp2k0f3s6m"]
 
 [ext_resource type="Script" path="res://views/select_ingredient_view.gd" id="1_w7gc8"]
 [ext_resource type="PackedScene" uid="uid://2shwwhhswhoh" path="res://views/ingredient_panel_view.tscn" id="2_ba852"]
+[ext_resource type="PackedScene" uid="uid://dm5mlqfstdgya" path="res://views/ui/prompt_texture_view.tscn" id="3_n0i36"]
 
 [node name="SelectIngredientView" type="Panel"]
 anchors_preset = 8
@@ -10,9 +11,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -210.0
-offset_top = -187.0
+offset_top = -236.5
 offset_right = 210.0
-offset_bottom = 187.0
+offset_bottom = 236.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w7gc8")
@@ -25,7 +26,7 @@ offset_top = 26.0
 offset_right = 260.0
 offset_bottom = 126.0
 
-[node name="IngredientPanelLeft" parent="." instance=ExtResource("2_ba852")]
+[node name="IngredientPanelRight" parent="." instance=ExtResource("2_ba852")]
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = 274.0
@@ -33,7 +34,7 @@ offset_top = 137.0
 offset_right = 374.0
 offset_bottom = 237.0
 
-[node name="IngredientPanelRight" parent="." instance=ExtResource("2_ba852")]
+[node name="IngredientPanelLeft" parent="." instance=ExtResource("2_ba852")]
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = 44.0
@@ -48,3 +49,88 @@ offset_left = 160.0
 offset_top = 248.0
 offset_right = 260.0
 offset_bottom = 348.0
+
+[node name="SelectedIngredientsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -108.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="IngredientPanel0" type="Panel" parent="SelectedIngredientsContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SelectedIngredient0" type="TextureRect" parent="SelectedIngredientsContainer/IngredientPanel0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="IngredientPanel1" type="Panel" parent="SelectedIngredientsContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SelectedIngredient1" type="TextureRect" parent="SelectedIngredientsContainer/IngredientPanel1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="IngredientPanel2" type="Panel" parent="SelectedIngredientsContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SelectedIngredient2" type="TextureRect" parent="SelectedIngredientsContainer/IngredientPanel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="ReadyPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -23.0
+offset_right = 37.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HBox" type="HBoxContainer" parent="ReadyPanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ReadyPanelContainer/HBox"]
+layout_mode = 2
+text = " Ready!"
+
+[node name="PromptTexture" parent="ReadyPanelContainer/HBox" instance=ExtResource("3_n0i36")]
+layout_mode = 2
+starting_action = &"select_ingredient"

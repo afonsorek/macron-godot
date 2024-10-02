@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InputPromptPack" load_steps=11 format=3 uid="uid://cjsk0l02ft1tu"]
+[gd_resource type="Resource" script_class="InputPromptPack" load_steps=13 format=3 uid="uid://cjsk0l02ft1tu"]
 
 [ext_resource type="Script" path="res://models/input_prompt_action_texture.gd" id="1_dho38"]
 [ext_resource type="Script" path="res://models/input_prompt_pack.gd" id="1_iqgo6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="3_vx5ei"]
 [ext_resource type="Texture2D" uid="uid://cgwdp363p0bri" path="res://assets/inputs/switch/switch_button_b.png" id="4_6myg7"]
 [ext_resource type="Texture2D" uid="uid://6vxxb6aj7sv3" path="res://assets/inputs/switch/switch_button_y.png" id="5_2rboc"]
+[ext_resource type="Texture2D" uid="uid://c3edev75ajwi4" path="res://assets/inputs/switch/switch_button_r.png" id="6_11sea"]
 
 [sub_resource type="Resource" id="Resource_3w1bj"]
 script = ExtResource("1_dho38")
@@ -27,7 +28,12 @@ script = ExtResource("1_dho38")
 action = &"action_left"
 texture = ExtResource("5_2rboc")
 
+[sub_resource type="Resource" id="Resource_h4ldc"]
+script = ExtResource("1_dho38")
+action = &"select_ingredient"
+texture = ExtResource("6_11sea")
+
 [resource]
 script = ExtResource("1_iqgo6")
 system = &"switch"
-action_textures = Array[ExtResource("1_dho38")]([SubResource("Resource_3w1bj"), SubResource("Resource_50ep5"), SubResource("Resource_l2rqv"), SubResource("Resource_lmlsu")])
+action_textures = Array[ExtResource("1_dho38")]([SubResource("Resource_3w1bj"), SubResource("Resource_50ep5"), SubResource("Resource_l2rqv"), SubResource("Resource_lmlsu"), SubResource("Resource_h4ldc")])

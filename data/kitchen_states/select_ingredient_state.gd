@@ -5,6 +5,7 @@ class_name SelectIngredientState
 #endregion
 
 #region Parameters (consts and exportvars)
+var action_order := ["action_up", "action_right", "action_left", "action_down"]
 #endregion
 
 #region Signals
@@ -22,9 +23,12 @@ func enter(controller : KitchenController):
 	controller.ui_view.show_select_ingredient()
 	
 func update(controller : KitchenController, delta : float):
-	if Input.is_action_just_pressed("action_up"):
-		#RhythmManager.judge_input()
-		controller.add_selected_ingredient("Potato")
+	for i in range(action_order.size()):
+		if i >= GameManager.ingredients.size():
+			break
+		if Input.is_action_just_pressed(action_order[i]):
+			controller.add_selected_ingredient(GameManager.ingredients[i])
+	if Input.is_action_just_pressed("select_ingredient"):
 		if controller.is_selected_ingredients_full:
 			controller.transition_state(name,"cooking")
 	

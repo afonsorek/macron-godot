@@ -31,7 +31,7 @@ func add_ingredient(ingredient_name : StringName):
 	IngredientData.set_ingredient_as_known(ingredient_name)
 	
 func start_run():
-	ingredients = ["Potato"]
+	ingredients = ["Potato","Potato"]
 #endregion
 
 #region Private functions

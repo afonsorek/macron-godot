@@ -61,6 +61,10 @@ func add_selected_ingredient(ingredient_name : String):
 	while selected_ingredient_names.size() > 3:
 		selected_ingredient_names.pop_front()
 	print(selected_ingredient_names)
+	selected_ingredients_changed()
+	
+func selected_ingredients_changed():
+	ui_view.select_ingredient.update_selected_ingredients(selected_ingredient_names)
 	
 func make_recipe(processed_ingredients : Array[Ingredient]):
 	print("Making recipe!")
@@ -70,6 +74,11 @@ func make_recipe(processed_ingredients : Array[Ingredient]):
 	if (recipe_result):
 		print("Made recipe: %s, with ingredients %s" % [recipe_result.name, recipe_result.ingredients])
 		made_recipe = recipe_result
+		
+func pop_selected_ingredient() -> String:
+	var popped_ingredient : String = selected_ingredient_names.pop_front()
+	selected_ingredients_changed()
+	return popped_ingredient
 	
 func transition_state(current_name: String, new_state_name: String):
 	var state = states.get(current_name)

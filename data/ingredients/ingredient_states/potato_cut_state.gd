@@ -5,7 +5,7 @@ extends IngredientState
 #endregion
 
 #region Consts and exportvars
-@export var total_cuts := 3
+@export var total_cuts := 7
 #endregion
 
 #region Variables
