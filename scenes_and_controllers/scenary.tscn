@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://ijr8lvmi7nre"]
+
+[ext_resource type="Texture2D" uid="uid://qglxmb521mon" path="res://assets/textures/background_image.png" id="1_b5k3u"]
+[ext_resource type="Texture2D" uid="uid://bbsjo0cmy2l48" path="res://assets/textures/ground_image.png" id="1_hyo4f"]
+[ext_resource type="Texture2D" uid="uid://c1uj73ool6l6t" path="res://assets/textures/sky_image.png" id="3_ktd0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02mql"]
+albedo_texture = ExtResource("1_hyo4f")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tcx1a"]
+material = SubResource("StandardMaterial3D_02mql")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtyu"]
+albedo_texture = ExtResource("1_b5k3u")
+
+[sub_resource type="QuadMesh" id="QuadMesh_021ov"]
+material = SubResource("StandardMaterial3D_obtyu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i14mw"]
+albedo_texture = ExtResource("3_ktd0i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ux7od"]
+material = SubResource("StandardMaterial3D_i14mw")
+
+[node name="Scenary" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(160, -1.11612e-13, -3.04919e-23, 0, -6.99382e-06, 1, -1.11612e-13, -160, -4.37114e-08, 0, -17.6228, -21.6816)
+mesh = SubResource("QuadMesh_tcx1a")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58531, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(140, 0, 0, 0, 80, 0, 0, 0, 1, 2.08165e-12, 10, -100)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-6.11959e-06, 2.7903e-14, 1, 4.88302e-14, 80, -3.48787e-16, -140, 2.79029e-14, -4.37114e-08, -70, 10, -30)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-6.11959e-06, -2.79029e-14, -1, 4.88302e-14, 80, -3.48787e-16, 140, -2.7903e-14, -4.37114e-08, 70, 10, -30)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")
+
+[node name="Sky" type="MeshInstance3D" parent="."]
+transform = Transform3D(160, 0, -1.5246e-23, -2.43935e-21, -6.99382e-06, -1, 0, 160, -4.37114e-08, 0, 47.9205, 0)
+mesh = SubResource("QuadMesh_ux7od")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=22 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
 [ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/textures/prototype_textures/PNG/Table/table_leg.png" id="8_lvtwd"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
+[ext_resource type="PackedScene" uid="uid://ijr8lvmi7nre" path="res://scenes_and_controllers/scenary.tscn" id="12_2blwu"]
 [ext_resource type="PackedScene" uid="uid://d022tloe6ey1c" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
@@ -90,6 +91,8 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.67096
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, 1.77722, 2.08165e-12)
+
+[node name="Scenary" parent="3DEnvironment" instance=ExtResource("12_2blwu")]
 
 [node name="RhythmIndicator" parent="3DEnvironment" instance=ExtResource("11_kh371")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 2.08165e-12, 0.75, 2.08165e-12)
