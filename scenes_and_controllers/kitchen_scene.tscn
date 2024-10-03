@@ -58,11 +58,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.939693, -6.76539e-16, -0.939693, 0.34202, 2.08165e-12, 10, 2.08165e-12)
+visible = false
 light_energy = 0.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, -4.96191e-16, 3.16108e-16, 3.16108e-16, 0.906308, 0.422618, -4.96191e-16, -0.422618, 0.906308, 2.08165e-12, 2.8, 2.5)
-light_energy = 3.0
+light_energy = 3.2
 spot_angle = 58.8028
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
