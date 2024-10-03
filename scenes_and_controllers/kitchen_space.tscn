@@ -36,8 +36,8 @@ albedo_texture = ExtResource("4_cs8o2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh1xa"]
 albedo_texture = ExtResource("4_cs8o2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6celf"]
-albedo_texture = ExtResource("2_b6123")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_384d4"]
+albedo_texture = ExtResource("4_cs8o2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m1tr"]
 albedo_texture = ExtResource("4_cs8o2")
@@ -124,7 +124,7 @@ skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Wall"]
 transform = Transform3D(1.09278e-07, 90, -6.97574e-17, -2.5, 3.93402e-06, 6.97574e-17, -8.71967e-16, -3.13908e-14, -0.2, -2.5, 1.036, -0.2)
-material_override = SubResource("StandardMaterial3D_6celf")
+material_override = SubResource("StandardMaterial3D_384d4")
 mesh = SubResource("PlaneMesh_k33e1")
 skeleton = NodePath("../../../..")
 
