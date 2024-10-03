@@ -9,8 +9,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3vkh"]
 albedo_texture = ExtResource("2_b6123")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lir5j"]
-size = Vector2(1, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_goudr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3r4f2"]
 albedo_texture = ExtResource("3_hnmlj")
@@ -73,9 +72,9 @@ albedo_texture = ExtResource("2_b6123")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0.01088, -0.112582, 0.712235)
 
 [node name="TableSidding" type="MeshInstance3D" parent="Table"]
-transform = Transform3D(2.25947e-15, -4.37114e-08, -8, -1, -4.37114e-08, -2.79027e-15, -4.37114e-08, 1, -3.49691e-07, 0, 0.345783, -0.752)
+transform = Transform3D(2.25947e-15, -4.37114e-09, -8, -1, -4.37114e-09, -2.79027e-15, -4.37114e-08, 0.1, -3.49691e-07, 0, 0.345783, -0.752)
 material_override = SubResource("StandardMaterial3D_r3vkh")
-mesh = SubResource("PlaneMesh_lir5j")
+mesh = SubResource("BoxMesh_goudr")
 
 [node name="Wall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.05, -0.246)
