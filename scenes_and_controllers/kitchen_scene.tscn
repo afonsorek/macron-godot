@@ -54,8 +54,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
 [node name="Lights" type="Node3D" parent="3DEnvironment"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
-transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
-light_energy = 0.354
+transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.939693, -6.76539e-16, -0.939693, 0.34202, 2.08165e-12, 10, 2.08165e-12)
+light_energy = 0.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71943, 2.77887)
