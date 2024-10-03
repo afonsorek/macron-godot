@@ -42,8 +42,6 @@ func get_camera_position() -> Vector3:
 	
 func set_camera(cam : Camera3D):
 	camera = cam
-	print("Camera set! ")
-	print(cam)
 #endregion
 
 #region Private functions
