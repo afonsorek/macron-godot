@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/rhythm_indicator_controller.gd" id="1_gjepv"]
 [ext_resource type="PackedScene" uid="uid://cd0gssb7dajy4" path="res://scenes_and_controllers/rhythm_bar.tscn" id="2_udl37"]
-[ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/textures/prototype_textures/PNG/Light/texture_07.png" id="3_x0k3x"]
+[ext_resource type="Texture2D" uid="uid://dnytipw256xxk" path="res://assets/textures/RhythmBar.png" id="3_27f1h"]
 
 [node name="RhythmIndicator" type="Node3D"]
 script = ExtResource("1_gjepv")
 
 [node name="MiddleBar" parent="." instance=ExtResource("2_udl37")]
 unique_name_in_owner = true
-transform = Transform3D(0.0767015, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.269853)
+transform = Transform3D(0.8, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, -0.269853)
 modulate = Color(1, 1, 1, 0.360784)
-texture = ExtResource("3_x0k3x")
+texture = ExtResource("3_27f1h")
