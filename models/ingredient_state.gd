@@ -1,10 +1,5 @@
 class_name IngredientState
-extends Resource
-
- #Signals são usados para criar o design pattern de Observer
-signal transitioned
-
-@export var name : String
+extends State
 
 func enter(controller : IngredientController):
 	pass

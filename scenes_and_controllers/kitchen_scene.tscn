@@ -1,10 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=26 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
+[ext_resource type="Resource" uid="uid://rwmfr07kuxvd" path="res://data/kitchen_states/monster_enter_state.tres" id="2_2alrs"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
 [ext_resource type="Texture2D" uid="uid://b8h5dbvbea86t" path="res://assets/textures/table-1.png" id="3_22nyy"]
 [ext_resource type="PackedScene" uid="uid://cjak54fk033sm" path="res://scenes_and_controllers/table.tscn" id="3_drlmt"]
+[ext_resource type="Resource" uid="uid://b4p6bknjtdli0" path="res://data/kitchen_states/cooking_state.tres" id="3_fn0gc"]
+[ext_resource type="Resource" uid="uid://c2lsc7om1uj5d" path="res://data/kitchen_states/select_ingredient_state.tres" id="3_t6pwe"]
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/sprites/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
+[ext_resource type="Resource" uid="uid://ctuahlhh8j147" path="res://data/kitchen_states/judgement_state.tres" id="5_i3djm"]
 [ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
 [ext_resource type="PackedScene" uid="uid://dgd2dr5l4ihay" path="res://scenes_and_controllers/kitchen_space.tscn" id="6_sop3a"]
@@ -37,6 +41,7 @@ size = Vector3(2.06, 0.19, 1.09)
 
 [node name="Kitchen" type="Node3D"]
 script = ExtResource("1_0221c")
+state_resources = Array[Resource("res://models/kitchen_state.gd")]([ExtResource("2_2alrs"), ExtResource("3_t6pwe"), ExtResource("3_fn0gc"), ExtResource("5_i3djm")])
 
 [node name="MainCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -87,7 +92,7 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.34, 0.687306, 0.63
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.87359)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.672746, 0.674258)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true

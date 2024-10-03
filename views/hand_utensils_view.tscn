@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d022tloe6ey1c"]
 
 [ext_resource type="Script" path="res://hand_utensils_view.gd" id="1_tsnts"]
-[ext_resource type="PackedScene" path="res://scenes_and_controllers/cleaver_view.tscn" id="2_u2an6"]
+[ext_resource type="PackedScene" uid="uid://d3vrpqk33p1f3" path="res://scenes_and_controllers/cleaver_view.tscn" id="2_u2an6"]
 
 [node name="HandUtensilsView" type="Control"]
 layout_mode = 3

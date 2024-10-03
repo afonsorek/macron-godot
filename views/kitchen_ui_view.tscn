@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2fdmbv3amdhn"]
+[gd_scene load_steps=4 format=3 uid="uid://d2fdmbv3amdhn"]
 
 [ext_resource type="Script" path="res://views/kitchen_ui_view.gd" id="1_h37ij"]
+[ext_resource type="PackedScene" uid="uid://p4dp2k0f3s6m" path="res://views/select_ingredient_view.tscn" id="2_u73a7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
 font_size = 31
@@ -14,34 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h37ij")
 
-[node name="SelectIngredientPanel" type="Panel" parent="."]
+[node name="SelectIngredient" parent="." instance=ExtResource("2_u73a7")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -187.0
-offset_right = 210.0
-offset_bottom = 187.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="SelectIngredientPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "O menu de selecionar ingredientes vai ser aqui"
-label_settings = SubResource("LabelSettings_kbh1i")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="SatisfactionPanel" type="Panel" parent="."]
 unique_name_in_owner = true

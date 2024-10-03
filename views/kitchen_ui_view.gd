@@ -11,6 +11,7 @@ class_name KitchenUiView
 #endregion
 
 #region Variables
+@onready var select_ingredient := %SelectIngredient as SelectIngredientView
 #endregion
 
 #region Computed properties
@@ -34,16 +35,14 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
-func hide_select_ingredient():
-	%SelectIngredientPanel.hide()
+func hide_select_ingredient(): select_ingredient.hide_panel()
 	
 func on_satisfaction_changed(new_value : int, delta : int, max : int):
 	if !%SatisfactionPanel.visible:
 		%SatisfactionPanel.show()
 	(%SatisfactionLabel as Label).text = "Satisfaction: %d/%d" % [new_value,max]
 	
-func show_select_ingredient():
-	%SelectIngredientPanel.show()
+func show_select_ingredient(): select_ingredient.show_panel()
 #endregion
 
 #region Private functions

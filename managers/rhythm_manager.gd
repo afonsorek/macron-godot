@@ -36,7 +36,7 @@ var used_this_beat := false
 #region Computed properties
 var current_beat : int:
 	get: return total_beat_count % (current_track.time_signature if current_track else 1)
-var wait_time : float:
+var beat_time : float:
 	get: return 1.0/(bpm/60.0)
 #endregion
 
@@ -70,14 +70,14 @@ func chain_track(track: MusicTrack):
 	
 func judge_input(animate := true) -> bool:
 	var delayed_input := timer.time_left + delay_input
-	var time := (delayed_input)/wait_time
+	var time := (delayed_input)/beat_time
 	var hit_last_beat := (1.0-time) < TOLERANCE and !used_last_beat
 	var hit_this_beat := time < TOLERANCE and !used_this_beat
 	if hit_last_beat:
 		used_last_beat = true
 	if hit_this_beat:
 		used_this_beat = true
-	#print("%.2f / %.2f = %.2f" % [delayed_input, wait_time, time])
+	#print("%.2f / %.2f = %.2f" % [delayed_input, beat_time, time])
 	var result = hit_last_beat or hit_this_beat
 	input_judged.emit(result,animate)
 	return result
@@ -95,7 +95,7 @@ func play():
 	
 func set_bpm(new_bpm : float):
 	bpm = new_bpm
-	timer.wait_time = wait_time
+	timer.wait_time = beat_time
 	bpm_changed.emit(bpm)
 	if is_playing and current_track:
 		_adjust_pitch_scale()

@@ -4,7 +4,12 @@ extends IngredientState
 #region Enums
 #endregion
 
+#region Consts and exportvars
+@export var total_cuts := 7
+#endregion
+
 #region Variables
+var remaining_cuts : int
 #endregion
 
 #region Computed properties
@@ -16,21 +21,18 @@ func _init():
 #region Public functions
 func enter(controller : IngredientController):
 	controller.view.set_color(Color.CHARTREUSE)
-	controller.state_properties["remaining_cuts"] = 4
+	remaining_cuts = total_cuts
 	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
-	print("Entered cut state!")
 
 func update(controller : IngredientController, delta : float):
 	if Input.is_action_just_pressed("action_right"):
-		#play animation of cuting
-		#controller.view.cut()
 		RhythmManager.judge_input()
 		SoundManager.play_cutting_sounds(SoundManager.CutType.WET)
 		controller.view.squishy()
+		remaining_cuts -= 1
 		controller.view.splash.animate_splash()
-		controller.state_properties["remaining_cuts"] -= 1
-		print("Cut! Remaining: %d" % controller.state_properties["remaining_cuts"])
-	if controller.state_properties["remaining_cuts"] <= 0:
+		print("Cut! Remaining: %d" % remaining_cuts)
+	if remaining_cuts <= 0:
 		controller.transition("cut","done")
 
 func beat(controller : IngredientController):
@@ -38,7 +40,6 @@ func beat(controller : IngredientController):
 
 func exit(controller : IngredientController):
 	controller.view.set_color(Color.RED)
-	print("Exited cut state!")
 #endregion
 
 #region Subclasses

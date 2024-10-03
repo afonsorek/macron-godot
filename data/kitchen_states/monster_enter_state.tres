@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MonsterEnterState" load_steps=2 format=3 uid="uid://rwmfr07kuxvd"]
+
+[ext_resource type="Script" path="res://data/kitchen_states/monster_enter_state.gd" id="1_w3fpe"]
+
+[resource]
+script = ExtResource("1_w3fpe")
+wait_beats = 4
+name = "monster_enter"
