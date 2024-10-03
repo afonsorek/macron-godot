@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ijr8lvmi7nre"]
+
+[ext_resource type="Texture2D" uid="uid://qglxmb521mon" path="res://assets/textures/background_image.png" id="1_b5k3u"]
+[ext_resource type="Texture2D" uid="uid://bbsjo0cmy2l48" path="res://assets/textures/ground_image.png" id="1_hyo4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02mql"]
+albedo_texture = ExtResource("1_hyo4f")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tcx1a"]
+material = SubResource("StandardMaterial3D_02mql")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtyu"]
+albedo_texture = ExtResource("1_b5k3u")
+
+[sub_resource type="QuadMesh" id="QuadMesh_021ov"]
+material = SubResource("StandardMaterial3D_obtyu")
+
+[node name="Scenary" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, -5.5806e-14, -3.0492e-23, 0, -3.49691e-06, 1, -6.97575e-14, -80, -4.37114e-08, 0, -11.954, -35.1564)
+mesh = SubResource("QuadMesh_tcx1a")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58531, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(90, 0, 0, 0, 60, 0, 0, 0, 1, 2.08165e-12, 5.00838, -73.8732)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-3.93402e-06, -1.74393e-14, -1, 3.13908e-14, 50, -3.48786e-16, 90, -1.74394e-14, -4.37114e-08, 44.9904, 10, -36.6114)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-3.93402e-06, 1.74393e-14, 1, 3.13908e-14, 50, -3.48787e-16, -90, 1.74393e-14, -4.37114e-08, -44.99, 10, -40.7408)
+mesh = SubResource("QuadMesh_021ov")
+skeleton = NodePath("../..")

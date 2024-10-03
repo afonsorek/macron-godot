@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=22 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
@@ -7,10 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cswvhp1bjpvg" path="res://assets/sprites/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_u8rba"]
 [ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
+[ext_resource type="PackedScene" uid="uid://dgd2dr5l4ihay" path="res://scenes_and_controllers/kitchen_space.tscn" id="6_sop3a"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
+[ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/textures/prototype_textures/PNG/Table/table_leg.png" id="8_lvtwd"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
+[ext_resource type="PackedScene" uid="uid://ijr8lvmi7nre" path="res://scenes_and_controllers/scenary.tscn" id="12_2blwu"]
 [ext_resource type="PackedScene" uid="uid://d022tloe6ey1c" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
 
 [sub_resource type="Environment" id="Environment_mj3wy"]
@@ -25,7 +28,8 @@ albedo_texture = ExtResource("3_22nyy")
 albedo_texture = ExtResource("4_u8rba")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e607t"]
-albedo_color = Color(0.161819, 0.104871, 0.0569567, 1)
+albedo_color = Color(0.562958, 0.562958, 0.562958, 1)
+albedo_texture = ExtResource("8_lvtwd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4asul"]
 material = SubResource("StandardMaterial3D_e607t")
@@ -53,23 +57,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rexfd")
 [node name="Lights" type="Node3D" parent="3DEnvironment"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DEnvironment/Lights"]
-transform = Transform3D(-0.0471064, -0.83296, 0.551324, 1.92508e-16, 0.551937, 0.833886, -0.99889, 0.0392814, -0.0259998, 2.08165e-12, 10, 2.08165e-12)
-light_energy = 0.354
+transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.939693, -6.76539e-16, -0.939693, 0.34202, 2.08165e-12, 10, 2.08165e-12)
+visible = false
+light_energy = 0.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71943, 2.77887)
-light_color = Color(1, 1, 0.576471, 1)
-light_energy = 2.859
+transform = Transform3D(1, -4.96191e-16, 3.16108e-16, 3.16108e-16, 0.906308, 0.422618, -4.96191e-16, -0.422618, 0.906308, 2.08165e-12, 2.8, 2.5)
+light_energy = 3.2
 spot_angle = 58.8028
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
+visible = false
+
+[node name="KitchenSpace" parent="3DEnvironment" instance=ExtResource("6_sop3a")]
 
 [node name="Parede" parent="3DEnvironment" instance=ExtResource("5_j22kp")]
 transform = Transform3D(-24, 6.62695e-15, -3.7749e-06, 8.37089e-15, 19, -8.71967e-15, 3.6239e-06, -6.62695e-15, -25, 2.08165e-12, -2, -0.246)
+visible = false
 
 [node name="ChoppingTable" type="MeshInstance3D" parent="3DEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.58, 0.86)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.444991, 0.739598)
 mesh = SubResource("BoxMesh_4asul")
 skeleton = NodePath("../..")
 
@@ -79,14 +87,16 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.34, 0.687306, 0.63
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.855828)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.08165e-12, 0.670969, 0.87359)
 
 [node name="Monster" parent="3DEnvironment" instance=ExtResource("7_sxhc7")]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.08165e-12, 1.77722, 2.08165e-12)
 
+[node name="Scenary" parent="3DEnvironment" instance=ExtResource("12_2blwu")]
+
 [node name="RhythmIndicator" parent="3DEnvironment" instance=ExtResource("11_kh371")]
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 2.08165e-12, 0.774, 2.08165e-12)
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 2.08165e-12, 0.75, 2.08165e-12)
 bar_spawn_distance = 55.7
 
 [node name="KitchenUIView" parent="." instance=ExtResource("8_e8gji")]
