@@ -9,6 +9,8 @@ enum CutType {DRY, WET, CRUNCH, SAW}
 @onready var wet_cutting_sounds = $WetCuttingSounds
 @onready var crunch_cutting_sounds = $CrunchCuttingSounds
 @onready var saw_cutting_sounds = $SawCuttingSounds
+@onready var knife_in_sound = $KnifeIn
+@onready var knife_out_sound = $KnifeOut
 #endregion
 
 #region Public functions

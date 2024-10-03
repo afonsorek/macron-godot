@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes_and_controllers/monster_controller.gd" id="1_h02wp"]
 [ext_resource type="Script" path="res://views/monster_view.gd" id="2_6obq7"]
-[ext_resource type="Texture2D" uid="uid://dmthcm8ujrdw7" path="res://assets/sprites/mc-sapao.PNG" id="3_wwi87"]
+[ext_resource type="Texture2D" uid="uid://25x6cvbncqr4" path="res://assets/textures/monster_placeholder.png" id="3_ae1uk"]
 
 [sub_resource type="Curve" id="Curve_07rnm"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.135468, 0.33995), 0.0, 0.0, 0, 0, Vector2(0.591133, 0.614292), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -75,7 +75,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -90)
 modulate = Color(1, 1, 1, 0)
 shaded = true
-texture = ExtResource("3_wwi87")
+texture = ExtResource("3_ae1uk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="View"]
 unique_name_in_owner = true

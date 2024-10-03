@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cd0gssb7dajy4"]
 
-[ext_resource type="Texture2D" uid="uid://paq20dea7bhx" path="res://assets/textures/prototype_textures/PNG/Purple/texture_09.png" id="1_eiy87"]
+[ext_resource type="Texture2D" uid="uid://bhmxgb4ay6v81" path="res://assets/textures/RhythmBarBlue.png" id="1_m4gqs"]
 
 [node name="RhythmBar" type="Sprite3D"]
-transform = Transform3D(0.0767015, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-texture = ExtResource("1_eiy87")
+transform = Transform3D(1.2, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("1_m4gqs")
