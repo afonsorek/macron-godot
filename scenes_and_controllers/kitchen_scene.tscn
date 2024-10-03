@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=21 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Script" path="res://scenes_and_controllers/camera_controller.gd" id="2_g0kje"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
 [ext_resource type="PackedScene" uid="uid://d2fdmbv3amdhn" path="res://views/kitchen_ui_view.tscn" id="8_e8gji"]
+[ext_resource type="Texture2D" uid="uid://kapl0gboy74a" path="res://assets/textures/prototype_textures/PNG/Table/table_leg.png" id="8_lvtwd"]
 [ext_resource type="PackedScene" uid="uid://c7vd6yojlgkd" path="res://scenes_and_controllers/rhythm_indicator.tscn" id="11_kh371"]
 [ext_resource type="PackedScene" uid="uid://d022tloe6ey1c" path="res://views/hand_utensils_view.tscn" id="12_g15y3"]
 
@@ -26,7 +27,8 @@ albedo_texture = ExtResource("3_22nyy")
 albedo_texture = ExtResource("4_u8rba")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e607t"]
-albedo_color = Color(0.161819, 0.104871, 0.0569567, 1)
+albedo_color = Color(0.562958, 0.562958, 0.562958, 1)
+albedo_texture = ExtResource("8_lvtwd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4asul"]
 material = SubResource("StandardMaterial3D_e607t")
