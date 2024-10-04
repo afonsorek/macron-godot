@@ -56,18 +56,18 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("13_006kt")
 stream_2/weight = 1.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_roeee"]
-streams_count = 2
-stream_0/stream = ExtResource("16_ddp48")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("17_0a416")
-stream_1/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qir57"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ibwcd"]
 streams_count = 2
 stream_0/stream = ExtResource("18_f2wlx")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("19_phe8y")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_demj7"]
+streams_count = 2
+stream_0/stream = ExtResource("17_0a416")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("16_ddp48")
 stream_1/weight = 1.0
 
 [node name="SoundManager" type="Node"]
@@ -93,8 +93,8 @@ volume_db = -20.0
 stream = ExtResource("15_gxor2")
 volume_db = -20.0
 
-[node name="UnsatisfiedMonster" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_roeee")
+[node name="SatisfiedMonster" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ibwcd")
 
-[node name="SatisfiedMonster" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_qir57")
+[node name="UnsatisfiedMonster" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_demj7")
