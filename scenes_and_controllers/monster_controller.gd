@@ -61,7 +61,6 @@ func receive_recipe(recipe: Recipe) -> void:
 	print("Recipe score: %d" % recipe_score)
 	if (satisfaction >= 0):
 		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.SATISFIED)
-		print("OHMAGAAAAAH")
 	else:
 		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.UNSATISFIED)
 	satisfaction += recipe_score
