@@ -123,16 +123,16 @@ script = ExtResource("1_ai2c3")
 
 [node name="Pivot" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.12, 2.08165e-12)
 
 [node name="Sprite" type="Sprite3D" parent="Pivot"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.12035, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 texture = ExtResource("2_jjfxn")
 
-[node name="Splash" type="Sprite3D" parent="."]
+[node name="Splash" type="Sprite3D" parent="Pivot"]
 unique_name_in_owner = true
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.08165e-12, -5.12, 0.716835)
 visible = false
 texture = ExtResource("3_2l1fa")
 script = ExtResource("5_0o0sb")

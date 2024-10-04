@@ -5,6 +5,7 @@ class_name IngredientView
 #endregion
 
 #region Parameters (consts and exportvars)
+@export var base_sprite_size := 1024.0
 #endregion
 
 #region Signals
