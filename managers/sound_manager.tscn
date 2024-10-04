@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=26 format=3 uid="uid://ddmjli473yvch"]
 
 [ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
 [ext_resource type="AudioStream" uid="uid://c2wwavq34rnby" path="res://assets/sfx/cutting_sounds/dry_cut_1.wav" id="2_mmg0p"]
@@ -15,6 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://c4tm4ft1rmc0" path="res://assets/sfx/cutting_sounds/saw_cut_3.wav" id="13_006kt"]
 [ext_resource type="AudioStream" uid="uid://b6bi8dvf5vbgc" path="res://assets/sfx/knife_entry.wav" id="14_drhax"]
 [ext_resource type="AudioStream" uid="uid://dkobws75dopnt" path="res://assets/sfx/knife_out.wav" id="15_gxor2"]
+[ext_resource type="AudioStream" uid="uid://clkb5ejqr54do" path="res://assets/sfx/groan4.mp3" id="16_ddp48"]
+[ext_resource type="AudioStream" uid="uid://dc31ngnh0u3wj" path="res://assets/sfx/groan2.mp3" id="17_0a416"]
+[ext_resource type="AudioStream" uid="uid://bp0ila265odtj" path="res://assets/sfx/groan1.mp3" id="18_f2wlx"]
+[ext_resource type="AudioStream" uid="uid://cu1yfsdy56ebi" path="res://assets/sfx/groan3.mp3" id="19_phe8y"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
 streams_count = 3
@@ -52,6 +56,20 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("13_006kt")
 stream_2/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ibwcd"]
+streams_count = 2
+stream_0/stream = ExtResource("18_f2wlx")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("19_phe8y")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_demj7"]
+streams_count = 2
+stream_0/stream = ExtResource("17_0a416")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("16_ddp48")
+stream_1/weight = 1.0
+
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_nubne")
 
@@ -74,3 +92,9 @@ volume_db = -20.0
 [node name="KnifeOut" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_gxor2")
 volume_db = -20.0
+
+[node name="SatisfiedMonster" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ibwcd")
+
+[node name="UnsatisfiedMonster" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_demj7")

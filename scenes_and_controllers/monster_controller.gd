@@ -54,10 +54,15 @@ func receive_recipe(recipe: Recipe) -> void:
 	var recipe_score := 0
 	for element in recipe.get_elements():
 		if current_monster.tastes.has(element):
-			recipe_score += 2 if current_monster.tastes[element] else -2
+			var multiplier = 1 if current_monster.tastes[element] else -1
+			recipe_score += 2 * multiplier
 		else:
 			recipe_score += 1
 	print("Recipe score: %d" % recipe_score)
+	if (satisfaction >= 0):
+		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.SATISFIED)
+	else:
+		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.UNSATISFIED)
 	satisfaction += recipe_score
 	get_position_to_move()
 	view.move_monster_to(move_position)
