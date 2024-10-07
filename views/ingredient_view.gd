@@ -55,6 +55,10 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
+func set_ingredient(ingredient: Ingredient):
+	sprite.set_texture_resize(ingredient.base_texture)
+	splash.set_modulate(ingredient.splash_color)
+	
 func set_color(color: Color):
 	sprite.modulate = color
 #endregion

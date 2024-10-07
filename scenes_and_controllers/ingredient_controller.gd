@@ -76,10 +76,8 @@ func set_ingredient(ingredient: Ingredient):
 		starting_state.enter(self)
 		current_state = starting_state
 	print("Ingredient %s set with state %s" % [ingredient.name,starting_state.name])
-	ingredient_entered = false
-	view.entry()
-	await get_tree().create_timer(RhythmManager.beat_time*await_enter_multiplier).timeout
-	ingredient_entered = true
+	_ingredient_entry()
+	view.set_ingredient(ingredient)
 
 func set_utensil(utensil : HandUtensilsView.Utensil):
 	setting_utensil.emit(utensil)
@@ -114,6 +112,12 @@ func _clear_states():
 func _on_beat():
 	if current_state:
 		current_state.beat(self)
+
+func _ingredient_entry():
+	ingredient_entered = false
+	view.entry()
+	await get_tree().create_timer(RhythmManager.beat_time*await_enter_multiplier).timeout
+	ingredient_entered = true
 
 func _send_ingredient():
 	print("Sending ingredient!")
