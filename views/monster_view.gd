@@ -50,7 +50,8 @@ func set_shaded(value : bool):
 func entry():
 	show()
 	%AnimationPlayer.play("monster-entry")
-	
+	await %AnimationPlayer.animation_finished
+	%AnimationPlayer.play("monster_idle")
 
 func move_monster_to(position: float):
 	%AnimationPlayer.play("monster_jump")
