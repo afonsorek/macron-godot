@@ -6,6 +6,7 @@ class_name PivotableView
 
 #region Parameters (consts and exportvars)
 @export var look_at_camera := true
+@onready var pivot : Node3D = %Pivot
 #endregion
 
 #region Signals
@@ -35,13 +36,21 @@ func _physics_process(_delta):
 	pass
 #endregion
 
+#region Tool functions
+func _get_configuration_warnings():
+	var pivot_node := get_node("Pivot")
+	if !pivot_node or !(pivot_node is Node3D):
+		return ["PivotableView must have a Node3D \"Pivot\" child."]
+	return []
+#endregion
+
 #region Public functions
 #endregion
 
 #region Private functions
 func _look_at_camera():
 	var cam = CameraManager.camera
-	%Pivot.look_at(cam.position,Vector3.UP,true)
+	pivot.look_at(cam.position,Vector3.UP,true)
 #endregion
 
 #region Subclasses

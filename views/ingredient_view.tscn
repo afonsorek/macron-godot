@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkf7jh10fcqgk"]
+[gd_scene load_steps=12 format=3 uid="uid://dkf7jh10fcqgk"]
 
 [ext_resource type="Script" path="res://views/ingredient_view.gd" id="1_ai2c3"]
 [ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/textures/prototype_textures/PNG/Light/texture_07.png" id="2_jjfxn"]
 [ext_resource type="Texture2D" uid="uid://yjfgxttfoudt" path="res://assets/sprites/splash.png" id="3_2l1fa"]
+[ext_resource type="Script" path="res://views/fixed_size_sprite_3d.gd" id="3_07qfu"]
 [ext_resource type="Script" path="res://views/splash_view.gd" id="5_0o0sb"]
 
 [sub_resource type="Animation" id="Animation_ipngs"]
@@ -129,6 +130,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5.12, 2.08165e-1
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 texture = ExtResource("2_jjfxn")
+script = ExtResource("3_07qfu")
+base_size_px = Vector2(1024, 1024)
 
 [node name="Splash" type="Sprite3D" parent="Pivot"]
 unique_name_in_owner = true
