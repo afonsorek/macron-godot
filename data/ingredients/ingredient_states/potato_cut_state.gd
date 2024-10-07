@@ -25,7 +25,7 @@ func enter(controller : IngredientController):
 	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
 
 func update(controller : IngredientController, delta : float):
-	if Input.is_action_just_pressed("action_right"):
+	if controller.allow_inputs and Input.is_action_just_pressed("action_right"):
 		RhythmManager.judge_input()
 		SoundManager.play_cutting_sounds(SoundManager.CutType.WET)
 		controller.view.squishy()

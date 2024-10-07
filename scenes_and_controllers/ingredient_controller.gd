@@ -5,6 +5,7 @@ class_name IngredientController
 #endregion
 
 #region Parameters (consts and exportvars)
+@export var await_enter_multiplier := 0.75
 #endregion
 
 #region Signals
@@ -16,11 +17,15 @@ signal setting_utensil(utensil : HandUtensilsView.Utensil)
 var current_ingredient : Ingredient
 var states : Dictionary = {}
 var current_state : IngredientState
+var ingredient_entered := false
 var ingredient_process := false
 var view : IngredientView
 #endregion
 
 #region Computed properties
+var allow_inputs : bool :
+	get:
+		return ingredient_entered and ingredient_process
 #endregion
 
 #region Event functions
@@ -71,7 +76,10 @@ func set_ingredient(ingredient: Ingredient):
 		starting_state.enter(self)
 		current_state = starting_state
 	print("Ingredient %s set with state %s" % [ingredient.name,starting_state.name])
+	ingredient_entered = false
 	view.entry()
+	await get_tree().create_timer(RhythmManager.beat_time*await_enter_multiplier).timeout
+	ingredient_entered = true
 
 func set_utensil(utensil : HandUtensilsView.Utensil):
 	setting_utensil.emit(utensil)
