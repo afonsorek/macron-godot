@@ -36,6 +36,35 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.1)
 }
 
+[sub_resource type="Animation" id="Animation_5j81v"]
+resource_name = "monster_idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%MainSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 0.9, 1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%MainSprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -40), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_moxqj"]
 resource_name = "monster_jump"
 length = 2.0
@@ -55,6 +84,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tx23r"]
 _data = {
 "monster-entry": SubResource("Animation_36ld6"),
+"monster_idle": SubResource("Animation_5j81v"),
 "monster_jump": SubResource("Animation_moxqj")
 }
 
@@ -73,7 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08165e-12, 0)
 
 [node name="MainSprite" type="Sprite3D" parent="View/Pivot"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -90)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -40)
 modulate = Color(1, 1, 1, 0)
 shaded = true
 texture = ExtResource("3_ae1uk")
