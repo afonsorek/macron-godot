@@ -57,6 +57,8 @@ func move_monster_to(position: float):
 	%AnimationPlayer.play("monster_jump")
 	var movement_tween = get_tree().create_tween()
 	movement_tween.tween_property(%Pivot/MainSprite, "position", Vector3(0, 0, position), 1)
+	#await %AnimationPlayer.animation_finished
+	#%AnimationPlayer.play("monster_idle")
 #endregion
 
 #region Private functions
