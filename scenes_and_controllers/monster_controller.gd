@@ -5,6 +5,8 @@ class_name MonsterController
 #endregion
 
 #region Parameters (consts and exportvars)
+@export var patience_error_value = 4
+@export var patience_recovery_value = 3
 #endregion
 
 #region Signals
@@ -13,12 +15,20 @@ signal satisfaction_changed(new_value,delta)
 
 #region Variables
 var current_monster : Monster
-var patience := 0
+var patience := 0 :
+	set(value):
+		if !current_monster:
+			patience = value
+			return
+		patience = clampi(value,0,current_monster.waiting_beats)
 var satisfaction : int:
 	set(value):
-		satisfaction_changed.emit(value,value-satisfaction)
-		satisfaction = clampi(value, 0.0, current_monster.max_satisfaction)
+		var delta = value-satisfaction
+		satisfaction = clampi(value, 0, current_monster.max_satisfaction)
+		satisfaction_changed.emit(satisfaction,delta)
 		view.set_monster_position_relative(satisfaction,current_monster.max_satisfaction)
+		if value <= 0 or value >= current_monster.max_satisfaction:
+			GameManager.end_game(value >= current_monster.max_satisfaction)
 		
 @onready var view := %View as MonsterView
 #endregion
@@ -88,7 +98,9 @@ func _on_beat():
 func _on_input_judged(result: bool, animate : bool):
 	if (result):
 		await RhythmManager.beat
-		_reset_patience()
+		patience += patience_recovery_value
+	else:
+		patience -= patience_error_value
 	
 func _reset_patience():
 	if !current_monster:

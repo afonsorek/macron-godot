@@ -7,9 +7,11 @@ extends Node
 #endregion
 
 #region Signals
+signal game_ended(result:bool)
 #endregion
 
 #region Variables
+var game_running := true
 var ingredients : Array[StringName] = []
 #endregion
 
@@ -29,6 +31,10 @@ func _ready():
 func add_ingredient(ingredient_name : StringName):
 	ingredients.append(ingredient_name)
 	IngredientData.set_ingredient_as_known(ingredient_name)
+	
+func end_game(result : bool):
+	game_running = false
+	game_ended.emit(result)
 	
 func start_run():
 	ingredients = ["Potato","Potato"]
