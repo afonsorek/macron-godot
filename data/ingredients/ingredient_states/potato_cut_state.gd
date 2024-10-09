@@ -20,7 +20,7 @@ func _init():
 
 #region Public functions
 func enter(controller : IngredientController):
-	controller.view.set_color(Color.CHARTREUSE)
+	#controller.view.set_color(Color.CHARTREUSE)
 	remaining_cuts = total_cuts
 	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
 
@@ -39,7 +39,8 @@ func beat(controller : IngredientController):
 	pass
 
 func exit(controller : IngredientController):
-	controller.view.set_color(Color.RED)
+	#controller.view.set_color(Color.RED)
+	pass
 #endregion
 
 #region Subclasses

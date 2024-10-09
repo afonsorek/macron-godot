@@ -37,7 +37,7 @@ func end_game(result : bool):
 	game_ended.emit(result)
 	
 func start_run():
-	ingredients = ["Potato","Potato"]
+	ingredients = ["Potato","Apple","Onion","Corn"]
 #endregion
 
 #region Private functions
