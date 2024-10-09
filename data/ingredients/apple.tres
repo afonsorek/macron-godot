@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://cmfjrovhtbqkq"]
+
+[ext_resource type="Texture2D" uid="uid://bewji4phruegd" path="res://assets/sprites/ingredients/apple.png" id="1_8ueoh"]
+[ext_resource type="Script" path="res://models/ingredient.gd" id="2_tjqjp"]
+[ext_resource type="Resource" uid="uid://mnoe4f4ay4pe" path="res://data/ingredients/ingredient_states/potato_cut_state.tres" id="3_m0ncu"]
+[ext_resource type="Resource" uid="uid://dut5uudnrimce" path="res://data/ingredients/ingredient_states/done_state.tres" id="4_opt31"]
+[ext_resource type="PackedScene" uid="uid://dkf7jh10fcqgk" path="res://views/ingredient_view.tscn" id="5_naak7"]
+
+[resource]
+script = ExtResource("2_tjqjp")
+name = &"Apple"
+description = "It's an apple."
+elements = Array[StringName]([&"Carbs"])
+states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_m0ncu"), ExtResource("4_opt31")])
+view_tscn = ExtResource("5_naak7")
+base_texture = ExtResource("1_8ueoh")
+splash_color = Color(1, 0.506289, 0.439697, 1)

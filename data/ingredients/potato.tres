@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://de64q1orppkqg"]
 
 [ext_resource type="Script" path="res://models/ingredient.gd" id="1_eobuh"]
-[ext_resource type="Texture2D" uid="uid://4kfoxlvqm0mb" path="res://assets/icon.svg" id="1_r286v"]
+[ext_resource type="Texture2D" uid="uid://dhm3w7xk3tppj" path="res://assets/sprites/ingredients/potato.png" id="1_fxh7m"]
 [ext_resource type="Resource" uid="uid://mnoe4f4ay4pe" path="res://data/ingredients/ingredient_states/potato_cut_state.tres" id="2_hmux6"]
 [ext_resource type="Resource" uid="uid://dut5uudnrimce" path="res://data/ingredients/ingredient_states/done_state.tres" id="3_ss82p"]
 [ext_resource type="PackedScene" uid="uid://dkf7jh10fcqgk" path="res://views/ingredient_view.tscn" id="4_iqabq"]
@@ -13,5 +13,5 @@ description = "It's a potato."
 elements = Array[StringName]([&"Carbs"])
 states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("2_hmux6"), ExtResource("3_ss82p")])
 view_tscn = ExtResource("4_iqabq")
-base_texture = ExtResource("1_r286v")
-splash_color = Color(1, 0, 0, 1)
+base_texture = ExtResource("1_fxh7m")
+splash_color = Color(1, 0.777775, 0.595867, 1)
