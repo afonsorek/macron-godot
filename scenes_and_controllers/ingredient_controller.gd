@@ -40,7 +40,7 @@ func _ready():
 	pass
 	
 func _process(delta):
-	if !ingredient_process:
+	if !ingredient_process or !GameManager.game_running:
 		return
 	# Manda a atualização de update para o state atual caso permitido
 	if current_state:

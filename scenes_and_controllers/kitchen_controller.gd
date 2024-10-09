@@ -48,7 +48,7 @@ func _ready():
 	current_state.enter(self)
 	
 func _process(_delta):
-	if current_state:
+	if current_state and GameManager.game_running:
 		current_state.update(self,_delta)
 	
 func _physics_process(_delta):

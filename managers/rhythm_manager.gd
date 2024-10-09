@@ -140,6 +140,8 @@ func _mute_action():
 	AudioServer.set_bus_mute(audio_bus_index,muted)
 	
 func _on_timer_timeout():
+	if !GameManager.game_running:
+		return
 	total_beat_count += 1
 	beat.emit()
 	used_last_beat = used_this_beat
