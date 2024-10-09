@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyb8w3iyx08fl"]
+
+[ext_resource type="Texture2D" uid="uid://df27ljlcjhjq4" path="res://assets/background_meme_funk.png" id="1_llhly"]
+[ext_resource type="Script" path="res://scenes_and_controllers/meme_funk.gd" id="1_nnb56"]
+[ext_resource type="Texture2D" uid="uid://b6c4yewe34vr3" path="res://assets/meme_sapao.png" id="3_bt7b7"]
+
+[sub_resource type="Animation" id="Animation_m6mnm"]
+resource_name = "animacao-meme-sapao"
+length = 0.4762
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0730366, 0.4762),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(962, 625), Vector2(962, 605), Vector2(962, 625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0012761, 0.0718093, 0.472739),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vo0wa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(962, 605)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnpxi"]
+_data = {
+"RESET": SubResource("Animation_vo0wa"),
+"animacao-meme-sapao": SubResource("Animation_m6mnm")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nnb56")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_llhly")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(962, 605)
+texture = ExtResource("3_bt7b7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Sprite2D2")
+libraries = {
+"": SubResource("AnimationLibrary_mnpxi")
+}

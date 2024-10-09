@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://2ulf11b83ngh"]
+
+[ext_resource type="AudioStream" uid="uid://d377681dokx6s" path="res://assets/pancadao-do-sapao.wav" id="1_kr6hu"]
+[ext_resource type="Script" path="res://models/music_track.gd" id="1_tru5p"]
+
+[resource]
+script = ExtResource("1_tru5p")
+name = "Pancadão do Sapão"
+audio_stream = ExtResource("1_kr6hu")
+bpm = 126.0
+head_note = 0
+time_signature = 4

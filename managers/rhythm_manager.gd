@@ -50,7 +50,7 @@ func _ready():
 	_init_timer()
 	_init_player()
 	# Testes
-	set_track(load("res://data/music_tracks/test_track.tres"),true,true)
+	#set_track(load("res://data/music_tracks/test_track.tres"),true,true)
 	delay_input = 0.1
 	#set_bpm(100*1.25)
 	
@@ -100,6 +100,7 @@ func set_bpm(new_bpm : float):
 		_adjust_pitch_scale()
 	
 func set_track(track: MusicTrack, change_bpm := true, play_on_change := false):
+	print("Aqui")
 	current_track = track
 	stop()
 	player.stream = current_track.audio_stream
