@@ -11,9 +11,9 @@ enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 @export var name : StringName
 @export var descriptions : Array[String]
 @export var tips : Array[String]
-@export var hunger : Hunger
-@export var aggressiveness : Agressiveness
-@export var impatience : Impatience
+@export var hunger := Hunger.NIBBLER
+@export var aggressiveness = Agressiveness.CALM
+@export var impatience := Impatience.PATIENT
 @export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
 var knowledge_level := 0
 
@@ -23,7 +23,7 @@ var knowledge_level := 0
 var max_satisfaction : int:
 	get: return 30+hunger*10
 var satisfaction_damage : int:
-	get: return 2*aggressiveness
+	get: return 4*aggressiveness
 var waiting_beats : int:
 	get: return (6-impatience)*4
 #endregion

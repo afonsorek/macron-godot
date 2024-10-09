@@ -13,17 +13,14 @@ signal satisfaction_changed(new_value,delta)
 
 #region Variables
 var current_monster : Monster
+var patience := 0
 var satisfaction : int:
 	set(value):
 		satisfaction_changed.emit(value,value-satisfaction)
-		satisfaction = value
-var move_position = 0
-var max_position = -150
+		satisfaction = clampi(value, 0.0, current_monster.max_satisfaction)
+		view.set_monster_position_relative(satisfaction,current_monster.max_satisfaction)
 		
 @onready var view := %View as MonsterView
-
-# Pra criar (daí vc edita a curva na cena "monster.tscn")
-@export var monster_proximity_curve : Curve
 #endregion
 
 #region Computed properties
@@ -39,7 +36,8 @@ func _enter_tree():
 	pass
 	
 func _ready():
-	pass
+	RhythmManager.beat.connect(_on_beat)
+	RhythmManager.input_judged.connect(_on_input_judged)
 	
 func _process(_delta):
 	pass
@@ -59,25 +57,43 @@ func receive_recipe(recipe: Recipe) -> void:
 		else:
 			recipe_score += 1
 	print("Recipe score: %d" % recipe_score)
-	if (satisfaction >= 0):
-		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.SATISFIED)
-	else:
-		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.UNSATISFIED)
-	satisfaction += recipe_score
-	get_position_to_move()
-	view.move_monster_to(move_position)
+	_change_satisfaction(recipe_score)
 	
 func set_monster(monster: Monster) -> void:
 	view.entry()
 	current_monster = monster
 	current_monster.enter(self)
 	satisfaction = monster.max_satisfaction/2
-
-func get_position_to_move():
-	move_position = monster_proximity_curve.sample(float(satisfaction)/current_monster.max_satisfaction)*max_position
+	#view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
+	view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
+	_reset_patience()
 #endregion
 
 #region Private functions
+func _change_satisfaction(delta: float):
+	if (delta >= 0):
+		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.SATISFIED)
+	else:
+		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.UNSATISFIED)
+	satisfaction += delta
+	
+func _on_beat():
+	if !current_monster:
+		return
+	patience -= 1
+	if patience <= 0:
+		_change_satisfaction(-current_monster.satisfaction_damage)
+		_reset_patience()
+	
+func _on_input_judged(result: bool, animate : bool):
+	if (result):
+		await RhythmManager.beat
+		_reset_patience()
+	
+func _reset_patience():
+	if !current_monster:
+		return
+	patience = current_monster.waiting_beats
 #endregion
 
 #region Subclasses

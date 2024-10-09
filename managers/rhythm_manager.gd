@@ -5,7 +5,7 @@ extends Node
 #endregion
 
 #region Parameters (consts and exportvars)
-const TOLERANCE = 0.2
+const TOLERANCE = 0.35
 #endregion
 
 #region Signals
@@ -13,7 +13,6 @@ signal beat()
 signal bpm_changed(bpm : float)
 signal changed_measure()
 signal input_judged(result : bool, animate: bool)
-signal rhythm_input(action : String)
 signal started_playing(track : MusicTrack)
 signal stopped_playing()
 #endregion
