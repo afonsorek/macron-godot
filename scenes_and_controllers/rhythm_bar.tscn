@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd0gssb7dajy4"]
+[gd_scene load_steps=3 format=3 uid="uid://cd0gssb7dajy4"]
 
 [ext_resource type="Texture2D" uid="uid://bhmxgb4ay6v81" path="res://assets/textures/RhythmBarBlue.png" id="1_m4gqs"]
+[ext_resource type="Script" path="res://scenes_and_controllers/rhythm_bar_controller.gd" id="2_4eh7r"]
 
 [node name="RhythmBar" type="Sprite3D"]
 transform = Transform3D(1.2, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 0, 0)
 texture = ExtResource("1_m4gqs")
+script = ExtResource("2_4eh7r")
+
+[node name="Light" type="OmniLight3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.833333, 0, 0, 0, 0.769231, 0, 0, 0, 1, 0, 0, 0)
+light_color = Color(0.223529, 0.541176, 0.647059, 1)
+light_energy = 0.25
+light_volumetric_fog_energy = 0.0
+omni_range = 2.655
