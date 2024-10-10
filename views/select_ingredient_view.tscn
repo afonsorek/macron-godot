@@ -77,6 +77,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 2
+stretch_mode = 5
 
 [node name="IngredientPanel1" type="Panel" parent="SelectedIngredientsContainer"]
 custom_minimum_size = Vector2(75, 75)
@@ -92,6 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 2
+stretch_mode = 5
 
 [node name="IngredientPanel2" type="Panel" parent="SelectedIngredientsContainer"]
 custom_minimum_size = Vector2(75, 75)
@@ -107,6 +109,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 2
+stretch_mode = 5
 
 [node name="ReadyPanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true

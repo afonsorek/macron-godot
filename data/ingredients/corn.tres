@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://r01k5h7b0c5x"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://buw7q8v47qpca"]
 
 [ext_resource type="Texture2D" uid="uid://dkrqaoqtp0egg" path="res://assets/sprites/ingredients/corn.png" id="1_wf1fd"]
 [ext_resource type="Script" path="res://models/ingredient.gd" id="2_syfsn"]
@@ -14,4 +14,4 @@ elements = Array[StringName]([&"Carbs"])
 states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_8wrkk"), ExtResource("4_w144g")])
 view_tscn = ExtResource("5_glrle")
 base_texture = ExtResource("1_wf1fd")
-splash_color = Color(0.979643, 0.547353, 0.268067, 1)
+splash_color = Color(0.996772, 0.806778, 0.700373, 1)
