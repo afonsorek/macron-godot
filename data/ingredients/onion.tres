@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://dpyh7atv0fdff"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://dfsiu74qs6o18"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsl4fku7rnv" path="res://assets/sprites/ingredients/onion.png" id="1_hujaj"]
 [ext_resource type="Script" path="res://models/ingredient.gd" id="2_1km23"]
@@ -14,4 +14,4 @@ elements = Array[StringName]([&"Carbs"])
 states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_3c2ma"), ExtResource("4_nhkro")])
 view_tscn = ExtResource("5_xpjfb")
 base_texture = ExtResource("1_hujaj")
-splash_color = Color(0.749886, 0.562492, 0.89254, 1)
+splash_color = Color(0.90341, 0.833149, 0.963118, 1)

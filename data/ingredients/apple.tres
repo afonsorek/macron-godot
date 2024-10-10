@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://cmfjrovhtbqkq"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://70j6r241wf57"]
 
 [ext_resource type="Texture2D" uid="uid://bewji4phruegd" path="res://assets/sprites/ingredients/apple.png" id="1_8ueoh"]
 [ext_resource type="Script" path="res://models/ingredient.gd" id="2_tjqjp"]
@@ -14,4 +14,4 @@ elements = Array[StringName]([&"Carbs"])
 states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_m0ncu"), ExtResource("4_opt31")])
 view_tscn = ExtResource("5_naak7")
 base_texture = ExtResource("1_8ueoh")
-splash_color = Color(1, 0.506289, 0.439697, 1)
+splash_color = Color(0.874083, 0, 0, 1)
