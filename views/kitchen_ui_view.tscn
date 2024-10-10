@@ -75,12 +75,12 @@ text = "Teste!!!!!!!!!!"
 label_settings = SubResource("LabelSettings_knmeo")
 
 [node name="InstructionButtonsPrompt" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(2.08165e-12, 130)
+custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.831
+anchor_top = 0.856
 anchor_right = 1.0
-anchor_bottom = 0.951852
+anchor_bottom = 0.976852
 offset_top = 0.520029
 grow_horizontal = 2
 grow_vertical = 0
