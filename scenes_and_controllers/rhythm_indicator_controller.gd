@@ -17,7 +17,7 @@ class_name RhythmIndicatorController
 #endregion
 
 #region Variables
-@onready var middle_bar : Sprite3D = %MiddleBar
+@onready var middle_bar : RhythmBarController = %MiddleBar
 var middle_bar_base_scale : Vector3
 var middle_bar_tween : Tween
 var speed_scale := 1.0
@@ -56,8 +56,8 @@ func _physics_process(_delta):
 func _adjust_speed_scale(bpm:float):
 	speed_scale = bpm/60.0
 	
-func _instantiate_bar() -> Sprite3D:
-	var new_bar : Sprite3D = rhythm_bar_tscn.instantiate()
+func _instantiate_bar() -> RhythmBarController:
+	var new_bar : RhythmBarController = rhythm_bar_tscn.instantiate()
 	add_child(new_bar)
 	new_bar.modulate = Color.TRANSPARENT
 	return new_bar
@@ -65,9 +65,11 @@ func _instantiate_bar() -> Sprite3D:
 func _on_beat():
 	var left_bar := _instantiate_bar()
 	left_bar.position = Vector3(-bar_spawn_distance,0,0)
+	left_bar.set_light_energy_factor(0.0)
 	_tween_bar(left_bar)
 	var right_bar := _instantiate_bar()
 	right_bar.position = Vector3(bar_spawn_distance,0,0)
+	right_bar.set_light_energy_factor(0.0)
 	_tween_bar(right_bar)
 	
 func _on_rhythm_input(value : bool, _animate : bool):
@@ -82,11 +84,14 @@ func _on_rhythm_input(value : bool, _animate : bool):
 	middle_bar_tween.tween_property(middle_bar,"scale",middle_bar_base_scale,note_duration*pulse_multiplier)
 	middle_bar_tween.parallel().tween_property(middle_bar,"modulate",Color.WHITE,note_duration*pulse_multiplier)
 		
-func _tween_bar(bar : Sprite3D):
+func _tween_bar(bar : RhythmBarController):
+	var beat_duration := note_duration/notes_on_screen
 	var tween = get_tree().create_tween()
 	tween.tween_property(bar,"position", Vector3.ZERO, note_duration)
-	tween.parallel().tween_property(bar,"modulate", Color.WHITE, note_duration/notes_on_screen)
-	tween.tween_property(bar,"modulate", Color.TRANSPARENT, note_duration/notes_on_screen)
+	tween.parallel().tween_property(bar,"modulate", Color.WHITE, beat_duration)
+	tween.parallel().tween_method(bar.set_light_energy_factor,0.0,1.0,beat_duration)
+	tween.tween_property(bar,"modulate", Color.TRANSPARENT, beat_duration)
+	tween.parallel().tween_method(bar.set_light_energy_factor,1.0,0.0,beat_duration)
 	tween.tween_callback(bar.queue_free)
 	
 #endregion
