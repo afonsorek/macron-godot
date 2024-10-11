@@ -1,39 +1,49 @@
-[gd_resource type="Resource" script_class="InputPromptPack" load_steps=13 format=3 uid="uid://cjsk0l02ft1tu"]
+[gd_resource type="Resource" script_class="InputPromptPack" load_steps=18 format=3 uid="uid://cjsk0l02ft1tu"]
 
-[ext_resource type="Script" path="res://models/input_prompt_action_texture.gd" id="1_dho38"]
+[ext_resource type="Texture2D" uid="uid://bir3ghv7gqh0b" path="res://assets/inputs/switch/switch_button_x_outline.png" id="1_iq2ps"]
 [ext_resource type="Script" path="res://models/input_prompt_pack.gd" id="1_iqgo6"]
+[ext_resource type="Script" path="res://models/input_prompt.gd" id="2_f523f"]
 [ext_resource type="Texture2D" uid="uid://bnlkqueg8fgjs" path="res://assets/inputs/switch/switch_button_x.png" id="2_iftki"]
 [ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="3_vx5ei"]
+[ext_resource type="Texture2D" uid="uid://drbfqy8nssuym" path="res://assets/inputs/switch/switch_button_a_outline.png" id="4_2ugqf"]
 [ext_resource type="Texture2D" uid="uid://cgwdp363p0bri" path="res://assets/inputs/switch/switch_button_b.png" id="4_6myg7"]
 [ext_resource type="Texture2D" uid="uid://6vxxb6aj7sv3" path="res://assets/inputs/switch/switch_button_y.png" id="5_2rboc"]
 [ext_resource type="Texture2D" uid="uid://c3edev75ajwi4" path="res://assets/inputs/switch/switch_button_r.png" id="6_11sea"]
+[ext_resource type="Texture2D" uid="uid://bhkmuuidqb0yq" path="res://assets/inputs/switch/switch_button_b_outline.png" id="6_i21xx"]
+[ext_resource type="Texture2D" uid="uid://bt0dmiux1pba" path="res://assets/inputs/switch/switch_button_y_outline.png" id="8_3b6ki"]
+[ext_resource type="Texture2D" uid="uid://lt5gdxeo0kg5" path="res://assets/inputs/switch/switch_button_r_outline.png" id="10_yiap5"]
 
-[sub_resource type="Resource" id="Resource_3w1bj"]
-script = ExtResource("1_dho38")
-action = &"action_up"
-texture = ExtResource("2_iftki")
-
-[sub_resource type="Resource" id="Resource_50ep5"]
-script = ExtResource("1_dho38")
+[sub_resource type="Resource" id="Resource_cb6of"]
+script = ExtResource("2_f523f")
 action = &"action_right"
 texture = ExtResource("3_vx5ei")
+pressed_texture = ExtResource("4_2ugqf")
 
-[sub_resource type="Resource" id="Resource_l2rqv"]
-script = ExtResource("1_dho38")
+[sub_resource type="Resource" id="Resource_ic2ox"]
+script = ExtResource("2_f523f")
 action = &"action_down"
 texture = ExtResource("4_6myg7")
+pressed_texture = ExtResource("6_i21xx")
 
-[sub_resource type="Resource" id="Resource_lmlsu"]
-script = ExtResource("1_dho38")
+[sub_resource type="Resource" id="Resource_kg3fp"]
+script = ExtResource("2_f523f")
+action = &"action_up"
+texture = ExtResource("2_iftki")
+pressed_texture = ExtResource("1_iq2ps")
+
+[sub_resource type="Resource" id="Resource_8m2sw"]
+script = ExtResource("2_f523f")
 action = &"action_left"
 texture = ExtResource("5_2rboc")
+pressed_texture = ExtResource("8_3b6ki")
 
-[sub_resource type="Resource" id="Resource_h4ldc"]
-script = ExtResource("1_dho38")
-action = &"select_ingredient"
+[sub_resource type="Resource" id="Resource_sc3p2"]
+script = ExtResource("2_f523f")
+action = &"done"
 texture = ExtResource("6_11sea")
+pressed_texture = ExtResource("10_yiap5")
 
 [resource]
 script = ExtResource("1_iqgo6")
 system = &"switch"
-action_textures = Array[ExtResource("1_dho38")]([SubResource("Resource_3w1bj"), SubResource("Resource_50ep5"), SubResource("Resource_l2rqv"), SubResource("Resource_lmlsu"), SubResource("Resource_h4ldc")])
+input_prompts = Array[ExtResource("2_f523f")]([SubResource("Resource_cb6of"), SubResource("Resource_ic2ox"), SubResource("Resource_kg3fp"), SubResource("Resource_8m2sw"), SubResource("Resource_sc3p2")])

@@ -136,4 +136,4 @@ text = " Ready!"
 
 [node name="PromptTexture" parent="ReadyPanelContainer/HBox" instance=ExtResource("3_n0i36")]
 layout_mode = 2
-starting_action = &"select_ingredient"
+starting_action = &"done"
