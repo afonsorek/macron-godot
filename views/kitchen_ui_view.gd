@@ -35,12 +35,18 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
+func hide_button_prompt(): %ButtonPrompt.hide()
+
 func hide_select_ingredient(): select_ingredient.hide_panel()
 	
 func on_satisfaction_changed(new_value : int, delta : int, max : int):
 	if !%SatisfactionPanel.visible:
 		%SatisfactionPanel.show()
 	(%SatisfactionLabel as Label).text = "Satisfaction: %d/%d" % [new_value,max]
+	
+func show_button_prompt(action: String):
+	%ButtonPrompt.show()
+	%ButtonPrompt.set_action(action)
 	
 func show_select_ingredient(): select_ingredient.show_panel()
 

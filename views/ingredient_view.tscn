@@ -131,6 +131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 texture = ExtResource("2_jjfxn")
 script = ExtResource("3_07qfu")
 base_size_px = Vector2(1024, 1024)
+fixed_type = 1
 
 [node name="Splash" parent="Pivot" instance=ExtResource("4_cv63o")]
 unique_name_in_owner = true

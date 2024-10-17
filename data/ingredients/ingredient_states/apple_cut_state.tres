@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AppleCutState" load_steps=2 format=3 uid="uid://68tq10bin5h5"]
+
+[ext_resource type="Script" path="res://data/ingredients/ingredient_states/apple_cut_state.gd" id="1_l7hih"]
+
+[resource]
+script = ExtResource("1_l7hih")
+name = "cut"

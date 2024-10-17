@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CornCutState" load_steps=2 format=3 uid="uid://cekm00wxr0ugx"]
+
+[ext_resource type="Script" path="res://data/ingredients/ingredient_states/corn_cut_state.gd" id="1_as44f"]
+
+[resource]
+script = ExtResource("1_as44f")
+name = "cut"

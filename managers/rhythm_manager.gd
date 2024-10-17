@@ -68,18 +68,13 @@ func chain_track(track: MusicTrack):
 	set_track(track,true,true)
 	
 func judge_input(animate := true) -> bool:
-	var delayed_input := timer.time_left + delay_input
-	var time := (delayed_input)/beat_time
-	var hit_last_beat := (1.0-time) < TOLERANCE and !used_last_beat
-	var hit_this_beat := time < TOLERANCE and !used_this_beat
-	if hit_last_beat:
-		used_last_beat = true
-	if hit_this_beat:
-		used_this_beat = true
-	#print("%.2f / %.2f = %.2f" % [delayed_input, beat_time, time])
-	var result = hit_last_beat or hit_this_beat
+	var result := _use_beat()
 	input_judged.emit(result,animate)
 	return result
+	
+func miss():
+	_use_beat()
+	input_judged.emit(false,false)
 	
 func play():
 	if !current_track:
@@ -151,6 +146,17 @@ func _on_timer_timeout():
 	
 func _reset_total_beat_count():
 	total_beat_count = 0
+	
+func _use_beat() -> bool:
+	var delayed_input := timer.time_left + delay_input
+	var time := (delayed_input)/beat_time
+	var hit_last_beat := (1.0-time) < TOLERANCE and !used_last_beat
+	var hit_this_beat := time < TOLERANCE and !used_this_beat
+	if hit_last_beat:
+		used_last_beat = true
+	if hit_this_beat:
+		used_this_beat = true
+	return hit_last_beat or hit_this_beat
 #endregion
 
 #region Subclasses

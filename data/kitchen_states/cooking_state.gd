@@ -21,6 +21,7 @@ func beat(controller : KitchenController):
 func exit(controller : KitchenController):
 	controller.ingredient_controller.stop_ingredient_process()
 	controller.ingredient_controller.sending_ingredient.disconnect(_ingredient_sent)
+	controller.ui_view.hide_button_prompt()
 	saved_controller = null
 	processed_ingredients.clear()
 #endregion

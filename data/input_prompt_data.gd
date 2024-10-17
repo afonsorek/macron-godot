@@ -21,11 +21,11 @@ static func initialize_input_prompts():
 		else:
 			print("Input prompt pack null!!")
 			
-static func get_input_prompt_texture(system: StringName, action: StringName) -> Texture2D:
+static func get_input_prompt(system: StringName, action: StringName) -> InputPrompt:
 	var pack := get_input_prompt_pack(system)
-	for action_texture in pack.action_textures:
-		if action == action_texture.action:
-			return action_texture.texture
+	for input_prompt in pack.input_prompts:
+		if action == input_prompt.action:
+			return input_prompt
 	print("No action by name %s in system %s!" % [action,system])
 	return null
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2fdmbv3amdhn"]
+[gd_scene load_steps=7 format=3 uid="uid://d2fdmbv3amdhn"]
 
 [ext_resource type="Script" path="res://views/kitchen_ui_view.gd" id="1_h37ij"]
 [ext_resource type="PackedScene" uid="uid://p4dp2k0f3s6m" path="res://views/select_ingredient_view.tscn" id="2_u73a7"]
+[ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="3_ik1tc"]
+[ext_resource type="Script" path="res://views/ui/prompt_texture_view.gd" id="4_3hy7o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kbh1i"]
 font_size = 31
@@ -72,3 +74,21 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Teste!!!!!!!!!!"
 label_settings = SubResource("LabelSettings_knmeo")
+
+[node name="ButtonPrompt" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -291.0
+offset_right = 92.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_ik1tc")
+script = ExtResource("4_3hy7o")
