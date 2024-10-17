@@ -6,7 +6,7 @@ extends Resource
 
 #region Variables
 @export var system : StringName
-@export var action_textures : Array[InputPromptActionTexture]
+@export var input_prompts : Array[InputPrompt]
 #endregion
 
 #region Computed properties

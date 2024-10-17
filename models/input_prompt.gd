@@ -1,4 +1,4 @@
-class_name InputPromptActionTexture
+class_name InputPrompt
 extends Resource
 
 #region Enums
@@ -7,6 +7,7 @@ extends Resource
 #region Variables
 @export var action : StringName
 @export var texture : Texture2D
+@export var pressed_texture : Texture2D
 #endregion
 
 #region Computed properties

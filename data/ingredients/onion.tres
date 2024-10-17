@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbtsl4fku7rnv" path="res://assets/sprites/ingredients/onion.png" id="1_hujaj"]
 [ext_resource type="Script" path="res://models/ingredient.gd" id="2_1km23"]
-[ext_resource type="Resource" uid="uid://mnoe4f4ay4pe" path="res://data/ingredients/ingredient_states/potato_cut_state.tres" id="3_3c2ma"]
+[ext_resource type="Resource" uid="uid://b2s2p8taq1h4v" path="res://data/ingredients/ingredient_states/onion_cut_state.tres" id="3_gxtnu"]
 [ext_resource type="Resource" uid="uid://dut5uudnrimce" path="res://data/ingredients/ingredient_states/done_state.tres" id="4_nhkro"]
 [ext_resource type="PackedScene" uid="uid://dkf7jh10fcqgk" path="res://views/ingredient_view.tscn" id="5_xpjfb"]
 
@@ -11,7 +11,7 @@ script = ExtResource("2_1km23")
 name = &"Onion"
 description = "It's an onion."
 elements = Array[StringName]([&"Carbs"])
-states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_3c2ma"), ExtResource("4_nhkro")])
+states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("3_gxtnu"), ExtResource("4_nhkro")])
 view_tscn = ExtResource("5_xpjfb")
 base_texture = ExtResource("1_hujaj")
 splash_color = Color(0.90341, 0.833149, 0.963118, 1)

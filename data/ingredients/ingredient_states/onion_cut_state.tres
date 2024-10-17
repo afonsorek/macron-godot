@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="OnionCutState" load_steps=2 format=3 uid="uid://b2s2p8taq1h4v"]
+
+[ext_resource type="Script" path="res://data/ingredients/ingredient_states/onion_cut_state.gd" id="1_s8uit"]
+
+[resource]
+script = ExtResource("1_s8uit")
+name = "cut"

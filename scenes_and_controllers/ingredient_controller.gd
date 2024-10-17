@@ -10,6 +10,7 @@ class_name IngredientController
 
 #region Signals
 signal sending_ingredient(ingredient)
+signal setting_action_prompt(action : StringName)
 signal setting_utensil(utensil : HandUtensilsView.Utensil)
 #endregion
 
@@ -46,7 +47,7 @@ func _process(delta):
 	if current_state:
 		current_state.update(self,delta)
 	# Verifica se o jogador está enviando o prato
-	if Input.is_action_just_pressed("action_down") and current_state and current_state.name == "done":
+	if Input.is_action_just_pressed("done") and current_state and current_state.name == "done":
 		RhythmManager.judge_input(false)
 		_send_ingredient()
 	
@@ -56,6 +57,8 @@ func _physics_process(delta):
 
 #region Public functions
 func allow_ingredient_process(): ingredient_process = true
+
+func set_action_prompt(action : StringName): setting_action_prompt.emit(action)
 	
 func set_ingredient_by_name(name: StringName):
 	var new_ingredient = IngredientData.get_ingredient_by_name(name)

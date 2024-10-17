@@ -1,46 +1,26 @@
 class_name PotatoCutState
-extends IngredientState
+extends SimpleCutState
 
 #region Enums
 #endregion
 
 #region Consts and exportvars
-@export var total_cuts := 7
 #endregion
 
 #region Variables
-var remaining_cuts : int
 #endregion
 
 #region Computed properties
 #endregion
 
-func _init():
-	pass
-
 #region Public functions
-func enter(controller : IngredientController):
-	#controller.view.set_color(Color.CHARTREUSE)
-	remaining_cuts = total_cuts
-	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
+#endregion
 
-func update(controller : IngredientController, delta : float):
-	if controller.allow_inputs and Input.is_action_just_pressed("action_right"):
-		RhythmManager.judge_input()
-		SoundManager.play_cutting_sounds(SoundManager.CutType.WET)
-		controller.view.squishy()
-		remaining_cuts -= 1
-		controller.view.splash.animate_splash()
-		print("Cut! Remaining: %d" % remaining_cuts)
-	if remaining_cuts <= 0:
-		controller.transition("cut","done")
-
-func beat(controller : IngredientController):
-	pass
-
-func exit(controller : IngredientController):
-	#controller.view.set_color(Color.RED)
-	pass
+#region Private functions
+func _initialize_action_sequence():
+	action_sequence = []
+	for i in range(8):
+		action_sequence.append("action_left")
 #endregion
 
 #region Subclasses

@@ -40,6 +40,7 @@ func _enter_tree():
 func _ready():
 	# Connect signals
 	ingredient_controller.setting_utensil.connect(_set_utensil)
+	ingredient_controller.setting_action_prompt.connect(_set_action_prompt)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	RhythmManager.beat.connect(_on_beat)
 	# Start initial state
@@ -107,6 +108,12 @@ func _on_beat():
 		
 func _on_satisfaction_changed(new_value : int, delta : int):
 	ui_view.on_satisfaction_changed(new_value, delta, monster_controller.current_monster.max_satisfaction)
+
+func _set_action_prompt(action : StringName):
+	if action.is_empty():
+		ui_view.hide_button_prompt()
+	else:
+		ui_view.show_button_prompt(action)
 
 func _set_utensil(utensil : HandUtensilsView.Utensil):
 	hand_utensils.set_utensil(utensil)

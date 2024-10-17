@@ -28,7 +28,7 @@ func update(controller : KitchenController, delta : float):
 			break
 		if Input.is_action_just_pressed(action_order[i]):
 			controller.add_selected_ingredient(GameManager.ingredients[i])
-	if Input.is_action_just_pressed("select_ingredient"):
+	if Input.is_action_just_pressed("done"):
 		if controller.is_selected_ingredients_full:
 			controller.transition_state(name,"cooking")
 	
