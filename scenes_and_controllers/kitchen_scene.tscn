@@ -88,7 +88,7 @@ skeleton = NodePath("../..")
 
 [node name="Sizzle" parent="3DEnvironment" instance=ExtResource("5_v4o5j")]
 unique_name_in_owner = true
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.59011, 0.483643, 0.368292)
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.8, 0.484, 0.368)
 
 [node name="Ingredient" parent="3DEnvironment" instance=ExtResource("6_tprpm")]
 unique_name_in_owner = true
