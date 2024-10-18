@@ -6,7 +6,10 @@ extends Resource
 
 #region Variables
 var name: StringName
-var ingredients: Array[StringName]
+var ingredients: Array[StringName]:
+	set(value):
+		value.sort()
+		ingredients = value
 var known : bool = false
 #endregion
 
@@ -14,6 +17,14 @@ var known : bool = false
 #endregion
 
 #region Public functions
+func is_same_recipe(other : Recipe) -> bool:
+	ingredients.sort()
+	other.ingredients.sort()
+	for idx in ingredients.size():
+		if ingredients[idx] != other.ingredients[idx]:
+			return false
+	return true
+	
 func get_elements() -> Array[StringName]:
 	var ings : Array[Ingredient] = []
 	for ingredient_name in ingredients:
