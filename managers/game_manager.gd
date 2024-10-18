@@ -25,6 +25,10 @@ func _ready():
 	RecipeData.initialize_recipes()
 	InputPromptData.initialize_input_prompts()
 	start_run()
+	
+func _process(delta):
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 #endregion
 
 #region Public functions
