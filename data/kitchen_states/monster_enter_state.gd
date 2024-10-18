@@ -22,8 +22,12 @@ func enter(controller : KitchenController):
 	controller.camera.move_view_to(CameraController.Position.MAIN)
 	var wait_time := RhythmManager.beat_time * wait_beats
 	await controller.get_tree().create_timer(wait_time).timeout
+	if !controller:
+		return
 	_spawn_monster(controller)
 	await controller.get_tree().create_timer(wait_time).timeout
+	if !controller:
+		return
 	controller.transition_state(name,"select_ingredient")
 	
 func update(controller : KitchenController, delta : float):
