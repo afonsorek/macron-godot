@@ -71,6 +71,12 @@ transform = Transform3D(1, -4.96191e-16, 3.16108e-16, 3.16108e-16, 0.906308, 0.4
 light_energy = 3.2
 spot_angle = 58.8028
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="3DEnvironment/Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.801776, 0.597625, 0, -0.597625, 0.801776, 0, 31.1898, 4.07771)
+light_energy = 30.0
+spot_range = 97.179
+spot_angle = 29.34
+
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
 visible = false
