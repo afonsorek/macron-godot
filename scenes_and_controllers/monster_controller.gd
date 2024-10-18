@@ -7,6 +7,7 @@ class_name MonsterController
 #region Parameters (consts and exportvars)
 @export var patience_error_value = 4
 @export var patience_recovery_value = 3
+@export var fed_up_base := 0.7
 #endregion
 
 #region Signals
@@ -15,6 +16,7 @@ signal satisfaction_changed(new_value,delta)
 
 #region Variables
 var current_monster : Monster
+var received_recipes : Array[Recipe] = []
 var patience := 0 :
 	set(value):
 		if !current_monster:
@@ -60,20 +62,28 @@ func _physics_process(_delta):
 func receive_recipe(recipe: Recipe) -> void:
 	print("Recipe %s received by monster!" % recipe.name)
 	var recipe_score := 0
+	# Verificar gostos do monstro
 	for element in recipe.get_elements():
 		if current_monster.tastes.has(element):
 			var multiplier = 1 if current_monster.tastes[element] else -1
 			recipe_score += 2 * multiplier
 		else:
 			recipe_score += 1
+	# Monstro se enjoando da receita
+	if recipe_score > 0:
+		recipe_score *= _fed_up_tax(recipe) 
+	
+	# Enviar resultados
 	print("Recipe score: %d" % recipe_score)
 	_change_satisfaction(recipe_score)
+	received_recipes.append(recipe)
 	
 func set_monster(monster: Monster) -> void:
 	view.entry()
 	current_monster = monster
 	current_monster.enter(self)
 	satisfaction = monster.max_satisfaction/2
+	received_recipes = []
 	#view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	_reset_patience()
@@ -86,6 +96,13 @@ func _change_satisfaction(delta: float):
 	else:
 		SoundManager.play_monster_reaction_sound(SoundManager.MonsterReaction.UNSATISFIED)
 	satisfaction += delta
+	
+func _fed_up_tax(new_recipe : Recipe) -> float:
+	var count := 0
+	for recipe : Recipe in received_recipes:
+		if recipe.is_same_recipe(new_recipe):
+			count += 1
+	return fed_up_base ** count
 	
 func _on_beat():
 	if !current_monster:
