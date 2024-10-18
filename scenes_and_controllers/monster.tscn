@@ -105,6 +105,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 modulate = Color(1, 1, 1, 0)
 shaded = true
+alpha_cut = 2
 texture = ExtResource("3_ae1uk")
 script = ExtResource("4_3kabe")
 base_size_px = Vector2(1972, 2044)

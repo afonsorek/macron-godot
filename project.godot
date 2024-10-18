@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="macro-demo"
+config/name="Ravenous Rhythm Pre-Alpha"
+config/version="0.1.0"
 run/main_scene="res://scenes_and_controllers/kitchen_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/sprites/sizzle_head.png"
+config/icon="res://assets/sizzle_icon.png"
 
 [audio]
 
