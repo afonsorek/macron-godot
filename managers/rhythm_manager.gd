@@ -47,6 +47,7 @@ func _enter_tree():
 	pass
 	
 func _ready():
+	GameManager.scene_resetted.connect(func(): set_track(load("res://data/music_tracks/test_track.tres"),true,true))
 	_init_timer()
 	_init_player()
 	# Testes
