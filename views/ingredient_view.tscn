@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkf7jh10fcqgk"]
+[gd_scene load_steps=12 format=3 uid="uid://dkf7jh10fcqgk"]
 
 [ext_resource type="Script" path="res://views/ingredient_view.gd" id="1_ai2c3"]
 [ext_resource type="Texture2D" uid="uid://b127jsc6ma167" path="res://assets/textures/prototype_textures/PNG/Light/texture_07.png" id="2_jjfxn"]
 [ext_resource type="Script" path="res://views/fixed_size_sprite_3d.gd" id="3_07qfu"]
-[ext_resource type="PackedScene" uid="uid://cyu2yf0l2vjb" path="res://views/splash_view.tscn" id="4_cv63o"]
+[ext_resource type="Texture2D" uid="uid://uly66h17ooia" path="res://assets/sprites/ingredients/shadow.png" id="4_6bacx"]
+[ext_resource type="PackedScene" path="res://views/splash_view.tscn" id="4_cv63o"]
 
 [sub_resource type="Animation" id="Animation_ipngs"]
 length = 0.001
@@ -132,6 +133,10 @@ texture = ExtResource("2_jjfxn")
 script = ExtResource("3_07qfu")
 base_size_px = Vector2(1024, 1024)
 fixed_type = 1
+
+[node name="shadow" type="Sprite3D" parent="Pivot/Sprite"]
+transform = Transform3D(2, -1.19083e-15, 2.46629e-16, 4.93259e-16, 1.41421, 0.707107, -1.19083e-15, -1.41421, 0.707107, 2.08165e-12, -4.44888, -2.3875)
+texture = ExtResource("4_6bacx")
 
 [node name="Splash" parent="Pivot" instance=ExtResource("4_cv63o")]
 unique_name_in_owner = true
