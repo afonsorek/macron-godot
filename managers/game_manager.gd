@@ -8,6 +8,7 @@ extends Node
 
 #region Signals
 signal game_ended(result:bool)
+signal scene_resetted()
 #endregion
 
 #region Variables
@@ -27,8 +28,7 @@ func _ready():
 	start_run()
 	
 func _process(delta):
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
+	_check_reset()
 #endregion
 
 #region Public functions
@@ -45,6 +45,10 @@ func start_run():
 #endregion
 
 #region Private functions
+func _check_reset():
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+		scene_resetted.emit()
 #endregion
 
 #region Subclasses
