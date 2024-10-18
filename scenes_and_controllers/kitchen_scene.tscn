@@ -66,16 +66,16 @@ transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.93
 visible = false
 light_energy = 0.1
 
-[node name="SpotLight3D" type="SpotLight3D" parent="3DEnvironment/Lights"]
+[node name="KitchenLight" type="SpotLight3D" parent="3DEnvironment/Lights"]
 transform = Transform3D(1, -4.96191e-16, 3.16108e-16, 3.16108e-16, 0.906308, 0.422618, -4.96191e-16, -0.422618, 0.906308, 2.08165e-12, 2.8, 2.5)
 light_energy = 3.2
 spot_angle = 58.8028
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="3DEnvironment/Lights"]
-transform = Transform3D(1, 0, 0, 0, 0.801776, 0.597625, 0, -0.597625, 0.801776, 0, 31.1898, 4.07771)
-light_energy = 30.0
+[node name="OutsideLight" type="SpotLight3D" parent="3DEnvironment/Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.862585, 0.505913, 0, -0.505913, 0.862585, 0, 31.1898, -3.03901)
+light_energy = 20.0
 spot_range = 97.179
-spot_angle = 29.34
+spot_angle = 60.0
 
 [node name="Table" parent="3DEnvironment" instance=ExtResource("3_drlmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.758451)
