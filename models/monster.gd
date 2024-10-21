@@ -44,10 +44,14 @@ func beat(controller: MonsterController) -> void:
 func exit(controller: MonsterController) -> void:
 	pass
 	
-func get_aggressiveness
+func get_aggressiveness_level(ag: int) -> String:
+	return Aggressiveness.find_key(ag)
 	
-func get_hunger_level(hunger: int) -> String:
-	return Hunger.find_key(hunger)
+func get_impatience(imp: int) -> String:
+	return Impatience.find_key(imp)
+	
+func get_hunger_level(hg: int) -> String:
+	return Hunger.find_key(hg)
 #endregion
 
 #region Subclasses
