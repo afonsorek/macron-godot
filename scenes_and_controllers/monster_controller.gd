@@ -61,14 +61,7 @@ func _physics_process(_delta):
 #region Public functions
 func receive_recipe(recipe: Recipe) -> void:
 	print("Recipe %s received by monster!" % recipe.name)
-	var recipe_score := 0
-	# Verificar gostos do monstro
-	for element in recipe.get_elements():
-		if current_monster.has_taste(element):
-			var multiplier = 1 if current_monster.get_taste(element).likes else -1
-			recipe_score += 2 * multiplier
-		else:
-			recipe_score += 1
+	var recipe_score := current_monster.get_recipe_score(recipe)
 	# Monstro se enjoando da receita
 	if recipe_score > 0:
 		recipe_score *= _fed_up_tax(recipe) 
