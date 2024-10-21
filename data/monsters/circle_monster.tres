@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Monster" load_steps=3 format=3 uid="uid://daiord0xq0wvr"]
+
+[ext_resource type="Script" path="res://models/monster.gd" id="1_3xshk"]
+[ext_resource type="PackedScene" uid="uid://1oppig4buorh" path="res://views/worldspace/monster_view.tscn" id="2_od7qf"]
+
+[resource]
+script = ExtResource("1_3xshk")
+name = &"Circly"
+descriptions = Array[String](["A monster made by drawing a circle. Children fear them."])
+tips = Array[String](["Oh, here comes Circly. He's got nothing. Whoop his ass!"])
+hunger = 1
+aggressiveness = 1
+impatience = 1
+tastes = {}
+view_tscn = ExtResource("2_od7qf")

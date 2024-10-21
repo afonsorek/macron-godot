@@ -9,12 +9,14 @@ enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 
 #region Variables
 @export var name : StringName
-@export var descriptions : Array[String]
-@export var tips : Array[String]
+@export_multiline var descriptions : Array[String]
+@export_multiline var tips : Array[String]
 @export var hunger := Hunger.NIBBLER
 @export var aggressiveness = Aggressiveness.CALM
 @export var impatience := Impatience.PATIENT
+# TODO: Mudar para MonsterTaste
 @export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
+@export var view_tscn : PackedScene
 var knowledge_level := 0
 
 #endregion
@@ -33,7 +35,7 @@ func _init():
 
 #region Public functions
 func enter(controller: MonsterController) -> void:
-	pass
+	print("%s was chosen!" % name)
 	
 func update(controller: MonsterController, delta : float) -> void:
 	pass

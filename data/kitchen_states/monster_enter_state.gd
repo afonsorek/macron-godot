@@ -42,8 +42,7 @@ func exit(controller : KitchenController):
 
 #region Private functions
 func _spawn_monster(controller : KitchenController):
-	# TODO: Get random monster from MonsterData here
-	var selected_monster = Monster.new()
+	var selected_monster = MonsterData.get_random_monster()
 	controller.monster_controller.set_monster(selected_monster)
 	controller.sizzle_controller.give_tip(selected_monster.tips)
 #endregion

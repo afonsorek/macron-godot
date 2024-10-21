@@ -79,12 +79,13 @@ func receive_recipe(recipe: Recipe) -> void:
 	received_recipes.append(recipe)
 	
 func set_monster(monster: Monster) -> void:
-	view.entry()
 	current_monster = monster
+	view = monster.view_tscn.instantiate()
+	add_child(view)
 	current_monster.enter(self)
+	view.entry()
 	satisfaction = monster.max_satisfaction/2
 	received_recipes = []
-	#view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	_reset_patience()
 #endregion
