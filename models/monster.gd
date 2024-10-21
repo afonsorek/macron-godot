@@ -14,6 +14,7 @@ enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 @export var hunger := Hunger.NIBBLER
 @export var aggressiveness = Aggressiveness.CALM
 @export var impatience := Impatience.PATIENT
+@export var base_sprite : Texture2D
 # TODO: Mudar para MonsterTaste
 @export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
 @export var view_tscn : PackedScene

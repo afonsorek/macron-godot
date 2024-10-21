@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Monster" load_steps=3 format=3 uid="uid://daiord0xq0wvr"]
+[gd_resource type="Resource" script_class="Monster" load_steps=4 format=3 uid="uid://daiord0xq0wvr"]
 
 [ext_resource type="Script" path="res://models/monster.gd" id="1_3xshk"]
+[ext_resource type="Texture2D" uid="uid://25x6cvbncqr4" path="res://assets/textures/monster_placeholder.png" id="1_ydf7f"]
 [ext_resource type="PackedScene" uid="uid://1oppig4buorh" path="res://views/worldspace/monster_view.tscn" id="2_od7qf"]
 
 [resource]
@@ -11,5 +12,6 @@ tips = Array[String](["Oh, here comes Circly. He's got nothing. Whoop his ass!"]
 hunger = 1
 aggressiveness = 1
 impatience = 1
+base_sprite = ExtResource("1_ydf7f")
 tastes = {}
 view_tscn = ExtResource("2_od7qf")
