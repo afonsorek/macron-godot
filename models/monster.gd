@@ -3,7 +3,7 @@ extends Resource
 
 #region Enums
 enum Hunger {NIBBLER = 1, HUNGRY, INSATIABLE, DEVOURER, RAVENOUS}
-enum Agressiveness {CALM = 1, OPPORTUNISTIC, AGGRESSIVE, FURIOUS, BERSERKER}
+enum Aggressiveness {CALM = 1, OPPORTUNISTIC, AGGRESSIVE, FURIOUS, BERSERKER}
 enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 #endregion
 
@@ -12,7 +12,7 @@ enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 @export var descriptions : Array[String]
 @export var tips : Array[String]
 @export var hunger := Hunger.NIBBLER
-@export var aggressiveness = Agressiveness.CALM
+@export var aggressiveness = Aggressiveness.CALM
 @export var impatience := Impatience.PATIENT
 @export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
 var knowledge_level := 0
@@ -43,6 +43,8 @@ func beat(controller: MonsterController) -> void:
 	
 func exit(controller: MonsterController) -> void:
 	pass
+	
+func get_aggressiveness
 	
 func get_hunger_level(hunger: int) -> String:
 	return Hunger.find_key(hunger)
