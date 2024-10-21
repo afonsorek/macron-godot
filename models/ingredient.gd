@@ -9,7 +9,7 @@ extends Resource
 ## funcionando efetivamente como UUIDs.
 @export var name : StringName
 @export var description : String
-@export var elements : Array[StringName]
+@export var elements : Array[Global.Element]
 @export var states : Array[IngredientState]
 @export var view_tscn : PackedScene # .tscn que herda da classe IngredientView
 @export var base_texture : Texture2D

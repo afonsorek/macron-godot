@@ -64,8 +64,8 @@ func receive_recipe(recipe: Recipe) -> void:
 	var recipe_score := 0
 	# Verificar gostos do monstro
 	for element in recipe.get_elements():
-		if current_monster.tastes.has(element):
-			var multiplier = 1 if current_monster.tastes[element] else -1
+		if current_monster.has_taste(element):
+			var multiplier = 1 if current_monster.get_taste(element).likes else -1
 			recipe_score += 2 * multiplier
 		else:
 			recipe_score += 1

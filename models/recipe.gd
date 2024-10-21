@@ -25,13 +25,13 @@ func is_same_recipe(other : Recipe) -> bool:
 			return false
 	return true
 	
-func get_elements() -> Array[StringName]:
+func get_elements() -> Array[Global.Element]:
 	var ings : Array[Ingredient] = []
 	for ingredient_name in ingredients:
 		var ing = IngredientData.get_ingredient_by_name(ingredient_name)
 		if ing:
 			ings.append(ing)
-	var elements : Array[StringName] = []
+	var elements : Array[Global.Element] = []
 	for ing in ings:
 		elements.append_array(ing.elements)
 	return elements

@@ -16,7 +16,7 @@ enum Impatience {PATIENT = 1, IMPATIENT, IMMEDIATIST, HOTHEAD, ZERO_TOLERANCE}
 @export var impatience := Impatience.PATIENT
 @export var base_sprite : Texture2D
 # TODO: Mudar para MonsterTaste
-@export var tastes : Dictionary # StringName -> bool, true se gosta e false se desgosta
+@export var tastes : Array[MonsterTaste] = []
 @export var view_tscn : PackedScene
 var knowledge_level := 0
 
@@ -55,6 +55,18 @@ func get_impatience(imp: int) -> String:
 	
 func get_hunger_level(hg: int) -> String:
 	return Hunger.find_key(hg)
+	
+func get_taste(element: Global.Element) -> MonsterTaste:
+	for taste in tastes:
+		if taste.element == element:
+			return taste
+	return null
+	
+func has_taste(element: Global.Element) -> bool:
+	for taste in tastes:
+		if taste.element == element:
+			return true
+	return false
 #endregion
 
 #region Subclasses
