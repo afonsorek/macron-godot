@@ -11,7 +11,7 @@ class_name IngredientController
 #region Signals
 signal sending_ingredient(ingredient)
 signal setting_action_prompt(action : StringName)
-signal setting_utensil(utensil : HandUtensilsView.Utensil)
+signal setting_utensil(utensil : Global.Utensil)
 #endregion
 
 #region Variables
@@ -82,7 +82,7 @@ func set_ingredient(ingredient: Ingredient):
 	_ingredient_entry()
 	view.set_ingredient(ingredient)
 
-func set_utensil(utensil : HandUtensilsView.Utensil):
+func set_utensil(utensil : Global.Utensil):
 	setting_utensil.emit(utensil)
 	
 func stop_ingredient_process(): ingredient_process = false

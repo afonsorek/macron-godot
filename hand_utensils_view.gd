@@ -2,7 +2,6 @@ extends Control
 class_name HandUtensilsView
 
 #region Enums
-enum Utensil {NONE, CLEAVER}
 #endregion
 
 #region Parameters (consts and exportvars)
@@ -13,7 +12,7 @@ enum Utensil {NONE, CLEAVER}
 
 #region Variables
 @onready var cleaver := %CleaverView as CleaverView
-var current_utensil : Utensil = Utensil.NONE
+var current_utensil : Global.Utensil = Global.Utensil.NONE
 #endregion
 
 #region Computed properties
@@ -38,9 +37,9 @@ func _physics_process(_delta):
 
 #region Public functions
 func remove_utensil():
-	set_utensil(Utensil.NONE)
+	set_utensil(Global.Utensil.NONE)
 	
-func set_utensil(new_utensil : Utensil):
+func set_utensil(new_utensil : Global.Utensil):
 	# Se já for o utensílio atual, não faz nada
 	if (new_utensil == current_utensil):
 		return
@@ -55,9 +54,9 @@ func set_utensil(new_utensil : Utensil):
 #endregion
 
 #region Private functions
-func _get_utensil_node(utensil : Utensil) -> Control:
+func _get_utensil_node(utensil : Global.Utensil) -> Control:
 	match utensil:
-		Utensil.CLEAVER:
+		Global.Utensil.CLEAVER:
 			return %CleaverView as Control
 		_:
 			return null
