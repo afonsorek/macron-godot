@@ -1,9 +1,11 @@
-extends Control
+extends MarginContainer
+
+class_name TextBox
 
 @onready var label : Label = %Label
 @onready var timer : Timer = %LetterDisplayTimer
 
-const MAX_WIDHT = 256
+const MAX_WIDHT = 2560
 
 var text = ""
 var letter_index = 0 
