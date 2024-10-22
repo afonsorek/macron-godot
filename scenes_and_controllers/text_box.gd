@@ -5,7 +5,7 @@ class_name TextBox
 @onready var label : Label = %Label
 @onready var timer : Timer = %LetterDisplayTimer
 
-const MAX_WIDHT = 2560
+const MAX_WIDHT = 1000
 
 var text = ""
 var letter_index = 0 
@@ -29,8 +29,8 @@ func display_text(text_to_display: String):
 		await resized
 		custom_minimum_size.y = size.y
 		
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
+	global_position.x -= size.x
+	global_position.y -= size.y + 80
 		
 	label.text = ""
 	_display_letter()
