@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_126lg")
+action_sequence = Array[String](["action_left"])
+repetitions = 8
 name = "cut"

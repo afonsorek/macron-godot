@@ -41,6 +41,7 @@ func _ready():
 	# Connect signals
 	ingredient_controller.setting_utensil.connect(_set_utensil)
 	ingredient_controller.setting_action_prompt.connect(_set_action_prompt)
+	ingredient_controller.setting_action_sequence.connect(_set_action_prompt_sequence)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	RhythmManager.beat.connect(_on_beat)
 	# Start initial state
@@ -111,9 +112,17 @@ func _on_satisfaction_changed(new_value : int, delta : int):
 
 func _set_action_prompt(action : StringName):
 	if action.is_empty():
+		print("Hiding button prompt!")
 		ui_view.hide_button_prompt()
 	else:
 		ui_view.show_button_prompt(action)
+
+func _set_action_prompt_sequence(action_sequence: Array[String]):
+	if action_sequence.is_empty():
+		print("Hiding button sequence!")
+		ui_view.hide_button_sequence()
+	else:
+		ui_view.set_button_sequence(action_sequence)
 
 func _set_utensil(utensil : Global.Utensil):
 	hand_utensils.set_utensil(utensil)

@@ -24,7 +24,7 @@ func beat(controller : IngredientController):
 	pass
 
 func exit(controller : IngredientController):
-	pass
+	controller.set_action_prompt("")
 #endregion
 
 #region Subclasses

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bavi45fhx6tgu"]
+
+[ext_resource type="Script" path="res://views/ui/button_sequence_view.gd" id="1_3fs53"]
+[ext_resource type="PackedScene" uid="uid://dm5mlqfstdgya" path="res://views/ui/prompt_texture_view.tscn" id="2_d5db4"]
+
+[node name="ButtonSequence" type="HBoxContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -247.0
+offset_right = 2.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_3fs53")
+
+[node name="PromptTexture" parent="." instance=ExtResource("2_d5db4")]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+animate_press = false

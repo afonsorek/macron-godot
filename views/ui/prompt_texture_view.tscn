@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://views/ui/prompt_texture_view.gd" id="2_58o0a"]
 
 [node name="PromptTexture" type="TextureRect"]
+custom_minimum_size = Vector2(32, 32)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -15,6 +16,8 @@ offset_right = 9.0
 offset_bottom = 9.0
 grow_horizontal = 0
 grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("1_i4jop")
 expand_mode = 2
 script = ExtResource("2_58o0a")

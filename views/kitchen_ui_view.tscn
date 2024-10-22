@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2fdmbv3amdhn"]
+[gd_scene load_steps=8 format=3 uid="uid://d2fdmbv3amdhn"]
 
 [ext_resource type="Script" path="res://views/kitchen_ui_view.gd" id="1_h37ij"]
 [ext_resource type="PackedScene" uid="uid://p4dp2k0f3s6m" path="res://views/select_ingredient_view.tscn" id="2_u73a7"]
+[ext_resource type="PackedScene" uid="uid://bavi45fhx6tgu" path="res://views/ui/button_sequence_view.tscn" id="3_8cbje"]
 [ext_resource type="Texture2D" uid="uid://b1nqg6caukfx1" path="res://assets/inputs/switch/switch_button_a.png" id="3_ik1tc"]
 [ext_resource type="Script" path="res://views/ui/prompt_texture_view.gd" id="4_3hy7o"]
 
@@ -74,6 +75,15 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Teste!!!!!!!!!!"
 label_settings = SubResource("LabelSettings_knmeo")
+
+[node name="ButtonSequence" parent="." instance=ExtResource("3_8cbje")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = -289.0
+offset_right = 0.0
+offset_bottom = -159.0
 
 [node name="ButtonPrompt" type="TextureRect" parent="."]
 unique_name_in_owner = true

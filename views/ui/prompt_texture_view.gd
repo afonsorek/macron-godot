@@ -5,6 +5,7 @@ class_name PromptTextureView
 #endregion
 
 #region Parameters (consts and exportvars)
+@export var animate_press := true
 @export var starting_action : StringName = ""
 #endregion
 
@@ -30,13 +31,20 @@ func _ready():
 		set_action(starting_action)
 	
 func _process(_delta):
-	_check_pressed()
+	if animate_press:
+		_check_pressed()
 	
 func _physics_process(_delta):
 	pass
 #endregion
 
 #region Public functions
+func press():
+	texture = current_prompt.pressed_texture
+	
+func release():
+	texture = current_prompt.texture
+	
 func set_action(action : StringName):
 	current_prompt = InputPromptData.get_input_prompt("switch",action)
 	texture = current_prompt.texture
