@@ -27,6 +27,7 @@ CameraManager="*res://managers/camera_manager.gd"
 RhythmManager="*res://managers/rhythm_manager.gd"
 SoundManager="*res://managers/sound_manager.tscn"
 InputManager="*res://managers/input_manager.gd"
+DialogManager="*res://managers/dialog_manager.gd"
 
 [display]
 
