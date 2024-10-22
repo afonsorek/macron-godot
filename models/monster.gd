@@ -31,7 +31,7 @@ var pickiness_multiplier : int:
 var satisfaction_damage : int:
 	get: return 4*aggressiveness
 var waiting_beats : int:
-	get: return (6-impatience)*4
+	get: return (6-impatience)*8
 #endregion
 
 func _init():

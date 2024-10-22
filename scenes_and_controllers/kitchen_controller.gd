@@ -117,12 +117,12 @@ func _set_action_prompt(action : StringName):
 	else:
 		ui_view.show_button_prompt(action)
 
-func _set_action_prompt_sequence(action_sequence: Array[String], repetitions: int):
+func _set_action_prompt_sequence(action_sequence: Array[String]):
 	if action_sequence.is_empty():
 		print("Hiding button sequence!")
 		ui_view.hide_button_sequence()
 	else:
-		ui_view.set_button_sequence(action_sequence,repetitions)
+		ui_view.set_button_sequence(action_sequence)
 
 func _set_utensil(utensil : Global.Utensil):
 	hand_utensils.set_utensil(utensil)

@@ -29,7 +29,7 @@ func enter(controller : IngredientController):
 	controller.set_utensil(Global.Utensil.CLEAVER)
 	#_set_current_action_prompt(controller)
 	#controller.set_action_prompt(action_sequence[0])
-	controller.set_action_sequence(action_sequence,repetitions)
+	controller.set_action_sequence(action_sequence)
 
 func update(controller : IngredientController, delta : float):
 	if !controller.allow_inputs:
@@ -49,8 +49,8 @@ func update(controller : IngredientController, delta : float):
 		#_set_current_action_prompt(controller)
 	if sequence_position >= action_sequence.size():
 		remaining_repetitions -= 1
-		print(remaining_repetitions)
 		if remaining_repetitions > 0:
+			controller.set_action_sequence(action_sequence)
 			sequence_position = 0
 		else:
 			controller.transition(name,"done")
@@ -60,7 +60,7 @@ func beat(controller : IngredientController):
 
 func exit(controller : IngredientController):
 	#controller.set_action_prompt("")
-	controller.set_action_sequence([],0)
+	controller.set_action_sequence([])
 #endregion
 
 #region Private functions

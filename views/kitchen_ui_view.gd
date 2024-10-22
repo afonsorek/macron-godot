@@ -47,10 +47,10 @@ func on_satisfaction_changed(new_value : int, delta : int, max : int):
 		%SatisfactionPanel.show()
 	(%SatisfactionLabel as Label).text = "Satisfaction: %d/%d" % [new_value,max]
 	
-func set_button_sequence(action_sequence: Array[String], repetitions: int):
-	if !action_sequence.is_empty() and repetitions != 0:
+func set_button_sequence(action_sequence: Array[String]):
+	if !action_sequence.is_empty():
 		button_sequence.show()
-	button_sequence.set_sequence(action_sequence, repetitions)
+	button_sequence.set_sequence(action_sequence)
 	
 func show_button_prompt(action: String):
 	%ButtonPrompt.show()

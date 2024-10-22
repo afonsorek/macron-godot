@@ -13,10 +13,10 @@ class_name ButtonSequenceView
 #endregion
 
 #region Variables
+var allow_press := false
 var current_prompt_textures : Array[PromptTextureView]
 var current_sequence : Array[String]
 var current_idx : int
-var remaining_repetitions : int
 #endregion
 
 #region Computed properties
@@ -40,35 +40,31 @@ func _physics_process(_delta):
 #endregion
 
 #region Public functions
-func set_sequence(action_sequence: Array[String], repetitions: int):
+func set_sequence(action_sequence: Array[String]):
 	current_sequence = action_sequence
 	current_idx = 0
-	remaining_repetitions = repetitions
-	_set_next_repetition()
+	_set_prompt_textures()
 #endregion
 
 #region Private functions	
 func _check_current_action():
-	if !current_sequence:
+	if !current_sequence or !allow_press:
 		return
 	if Input.is_action_just_pressed(current_sequence[current_idx]):
 		current_prompt_textures[current_idx].press()
 		current_idx += 1
 		if current_idx >= current_sequence.size():
 			current_idx = 0
-			remaining_repetitions -= 1
-			_clear_button_prompts()
-			if remaining_repetitions > 0:
-				_set_next_repetition()
-			else:
-				current_sequence = []
+			current_sequence = []
 
 func _clear_button_prompts():
 	current_prompt_textures = []
 	for child in get_children():
 		child.queue_free()
 	
-func _set_next_repetition():
+func _set_prompt_textures():
+	_clear_button_prompts()
+	allow_press = false
 	for action in current_sequence:
 		var new_prompt : PromptTextureView = prompt_texture_tscn.instantiate()
 		add_child(new_prompt)
@@ -76,6 +72,8 @@ func _set_next_repetition():
 		new_prompt.set_action(action)
 		new_prompt.custom_minimum_size = prompt_size
 		current_prompt_textures.append(new_prompt)
+	await get_tree().create_timer(0.1).timeout # Para não pressionar o próximo botão imediatamente
+	allow_press = true
 #endregion
 
 #region Subclasses
