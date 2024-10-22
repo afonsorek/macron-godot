@@ -23,7 +23,7 @@ func enter(controller : IngredientController):
 	#controller.view.set_color(Color.CHARTREUSE)
 	_initialize_action_sequence()
 	sequence_position = 0
-	controller.set_utensil(HandUtensilsView.Utensil.CLEAVER)
+	controller.set_utensil(Global.Utensil.CLEAVER)
 	_set_current_action_prompt(controller)
 	controller.set_action_prompt(action_sequence[0])
 

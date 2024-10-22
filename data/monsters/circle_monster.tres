@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Monster" load_steps=9 format=3 uid="uid://daiord0xq0wvr"]
+
+[ext_resource type="Script" path="res://models/monster.gd" id="1_3xshk"]
+[ext_resource type="Texture2D" uid="uid://25x6cvbncqr4" path="res://assets/textures/monster_placeholder.png" id="1_ydf7f"]
+[ext_resource type="PackedScene" uid="uid://1oppig4buorh" path="res://views/worldspace/monster_view.tscn" id="2_od7qf"]
+[ext_resource type="Script" path="res://models/monster_taste.gd" id="3_ipgg2"]
+
+[sub_resource type="Resource" id="Resource_00j4d"]
+script = ExtResource("3_ipgg2")
+element = 0
+likes = true
+
+[sub_resource type="Resource" id="Resource_oj1ul"]
+script = ExtResource("3_ipgg2")
+element = 4
+likes = true
+
+[sub_resource type="Resource" id="Resource_nee3e"]
+script = ExtResource("3_ipgg2")
+element = 2
+likes = false
+
+[sub_resource type="Resource" id="Resource_6ykpm"]
+script = ExtResource("3_ipgg2")
+element = 3
+likes = false
+
+[resource]
+script = ExtResource("1_3xshk")
+name = &"Circly"
+descriptions = Array[String](["A monster made by drawing a circle. Children fear them."])
+tips = Array[String](["Oh, here comes Circly. He's got nothing. Whoop his ass!"])
+hunger = 1
+aggressiveness = 1
+impatience = 1
+base_sprite = ExtResource("1_ydf7f")
+tastes = Array[ExtResource("3_ipgg2")]([SubResource("Resource_00j4d"), SubResource("Resource_oj1ul"), SubResource("Resource_nee3e"), SubResource("Resource_6ykpm")])
+view_tscn = ExtResource("2_od7qf")

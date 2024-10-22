@@ -115,7 +115,7 @@ func _set_action_prompt(action : StringName):
 	else:
 		ui_view.show_button_prompt(action)
 
-func _set_utensil(utensil : HandUtensilsView.Utensil):
+func _set_utensil(utensil : Global.Utensil):
 	hand_utensils.set_utensil(utensil)
 #endregion
 

@@ -61,14 +61,7 @@ func _physics_process(_delta):
 #region Public functions
 func receive_recipe(recipe: Recipe) -> void:
 	print("Recipe %s received by monster!" % recipe.name)
-	var recipe_score := 0
-	# Verificar gostos do monstro
-	for element in recipe.get_elements():
-		if current_monster.tastes.has(element):
-			var multiplier = 1 if current_monster.tastes[element] else -1
-			recipe_score += 2 * multiplier
-		else:
-			recipe_score += 1
+	var recipe_score := current_monster.get_recipe_score(recipe)
 	# Monstro se enjoando da receita
 	if recipe_score > 0:
 		recipe_score *= _fed_up_tax(recipe) 
@@ -79,12 +72,13 @@ func receive_recipe(recipe: Recipe) -> void:
 	received_recipes.append(recipe)
 	
 func set_monster(monster: Monster) -> void:
-	view.entry()
 	current_monster = monster
+	view = monster.view_tscn.instantiate()
+	add_child(view)
 	current_monster.enter(self)
+	view.entry()
 	satisfaction = monster.max_satisfaction/2
 	received_recipes = []
-	#view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	view.set_monster_position_relative(satisfaction,monster.max_satisfaction,true)
 	_reset_patience()
 #endregion

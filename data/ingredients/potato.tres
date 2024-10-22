@@ -10,7 +10,7 @@
 script = ExtResource("1_eobuh")
 name = &"Potato"
 description = "It's a potato."
-elements = Array[StringName]([&"Carbs"])
+elements = Array[int]([0])
 states = Array[Resource("res://models/ingredient_state.gd")]([ExtResource("2_hmux6"), ExtResource("3_ss82p")])
 view_tscn = ExtResource("4_iqabq")
 base_texture = ExtResource("1_fxh7m")

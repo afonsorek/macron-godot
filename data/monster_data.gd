@@ -24,18 +24,29 @@ static func initialize_monsters():
 			print("Monster null!!")
 
 static func get_monster_by_name(name : StringName) -> Monster:
-	if !monsters:
-		print("Monsters not initialized!")
+	if !_check_initialization():
 		return null
 	for monster in monsters:
 		if monster.name == name:
 			return monster
 	return null
 	
+static func get_random_monster() -> Monster:
+	if !_check_initialization():
+		return null
+	return monsters.pick_random()
+	
 static func increase_knowledge_level(name : StringName) -> void:
 	var monster = get_monster_by_name(name)
 	if monster:
 		monster.knowledge_level += 1
+#endregion
+
+#region Private functions
+static func _check_initialization() -> bool:
+	if !monsters:
+		print("Monsters not initiliazed!")
+	return !!monsters
 #endregion
 
 #region Subclasses

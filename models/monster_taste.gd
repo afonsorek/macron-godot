@@ -1,16 +1,19 @@
-class_name Element
+class_name MonsterTaste
 extends Resource
 
 #region Enums
 #endregion
 
 #region Variables
-var name : StringName
-var description : String
+@export var element : Global.Element
+@export var likes : bool
 #endregion
 
 #region Computed properties
 #endregion
+
+func _init():
+	pass
 
 #region Public functions
 #endregion
