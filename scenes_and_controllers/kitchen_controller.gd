@@ -7,6 +7,11 @@ class_name KitchenController
 #region Parameters (consts and exportvars)
 @export var initial_state_name : String = "monster_enter"
 @export var state_resources : Array[KitchenState]
+const test_lines: Array[String] = [
+	"You could do better with more rhythm!",
+	"Haha, eu posso falar o que eu quiser!",
+	"Enfim, QUEIJO!"
+]
 #endregion
 
 #region Signals
@@ -47,6 +52,9 @@ func _ready():
 	_init_states()
 	current_state = states.get(initial_state_name)
 	current_state.enter(self)
+	# Show text box?
+	var sizzle_2d_pos := Vector2(sizzle_controller.global_position.x,sizzle_controller.global_position.y)
+	DialogManager.start_dialog(sizzle_2d_pos, test_lines)
 	
 func _process(_delta):
 	if current_state and GameManager.game_running:

@@ -1,7 +1,8 @@
 extends Control
+class_name TextBox
 
-@onready var label = %Label
-@onready var timer = %LetterDisplayTimer
+@onready var label : Label = %Label
+@onready var timer : Timer = %LetterDisplayTimer
 
 const MAX_WIDHT = 256
 
@@ -11,8 +12,8 @@ var letter_time = 0.03
 var space_time = 0.06
 var ponctuation_time = 0.2
 
-signal finished_display()
-
+signal finished_displaying()
+ 
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
@@ -38,7 +39,7 @@ func _display_letter():
 	
 	letter_index += 1
 	if letter_index >= text.length():
-		finished_display.emit()
+		finished_displaying.emit()
 		return
 		
 	match text[letter_index]:
@@ -51,7 +52,7 @@ func _display_letter():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,3 +62,5 @@ func _process(delta):
 
 func _on_letter_display_timer_timeout():
 	_display_letter()
+	
+

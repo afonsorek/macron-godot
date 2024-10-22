@@ -1,11 +1,11 @@
 extends Node
 
-@onready var text_box_scene = preload("res://scenes_and_controllers/sizzle_text_box.gd")
+@onready var text_box_scene = preload("res://scenes_and_controllers/sizzle_text_box.tscn")
 
 var dialog_lines: Array[String] = []
 var current_line_index = 0
 
-var text_box
+var text_box : TextBox
 var text_box_position: Vector2
 
 var is_dialog_active = false
@@ -24,8 +24,9 @@ func start_dialog(position: Vector2, lines: Array[String]):
 func _show_text_box():
 	text_box = text_box_scene.instantiate()
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
-	get_tree().root.add_child(text_box)
+	get_tree().root.add_child.call_deferred(text_box)
 	text_box.global_position = text_box_position
+	await text_box.ready
 	text_box.display_text(dialog_lines[current_line_index])
 	can_advance_line = false
 	
