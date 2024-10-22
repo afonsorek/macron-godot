@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cklbju1dnhmkf"
-path.s3tc="res://.godot/imported/sizzle.PNG-bac18f345e62c79831017a0603b09360.s3tc.ctex"
+path.s3tc="res://.godot/imported/sizzle.png-9f9846cf511e26881258bd60a6acf747.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/sizzle.PNG"
-dest_files=["res://.godot/imported/sizzle.PNG-bac18f345e62c79831017a0603b09360.s3tc.ctex"]
+source_file="res://assets/sprites/sizzle.png"
+dest_files=["res://.godot/imported/sizzle.png-9f9846cf511e26881258bd60a6acf747.s3tc.ctex"]
 
 [params]
 

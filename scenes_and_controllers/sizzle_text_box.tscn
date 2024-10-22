@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://pqy23tklkqi4"]
+
+[node name="SizzleTextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "texto teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
