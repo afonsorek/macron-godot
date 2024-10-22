@@ -24,8 +24,8 @@ func start_dialog(position: Vector2, lines: Array[String]):
 func _show_text_box():
 	text_box = text_box_scene.instantiate()
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
-	get_tree().root.add_child.call_deferred(text_box)
 	text_box.global_position = text_box_position
+	get_tree().root.add_child.call_deferred(text_box)
 	await text_box.ready
 	text_box.display_text(dialog_lines[current_line_index])
 	can_advance_line = false
