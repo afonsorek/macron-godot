@@ -5,7 +5,16 @@ class_name RhythmBarController
 #endregion
 
 #region Parameters (consts and exportvars)
-@export var light_color := Color("398aa5")
+@export var light_color := Color("398aa5"):
+	set(value):
+		light_color = value
+		if light:
+			_update_light_color()
+@export var light_on := true :
+	set(value):
+		light_on = value
+		if light:
+			_update_light_visiblity()
 #endregion
 
 #region Signals
@@ -28,7 +37,8 @@ func _enter_tree():
 	
 func _ready():
 	max_energy = light.light_energy
-	light.light_color = light_color
+	_update_light_color()
+	_update_light_visiblity()
 	
 func _process(_delta):
 	pass
@@ -42,9 +52,19 @@ func hide_light(): light.hide()
 
 func set_light_energy_factor(factor : float):
 	light.light_energy = max_energy*factor
+	
+func show_light(): light.show()
 #endregion
 
 #region Private functions
+func _update_light_color():
+	light.light_color = light_color
+	
+func _update_light_visiblity():
+	if light_on:
+		show_light()
+	else:
+		hide_light()
 #endregion
 
 #region Subclasses
