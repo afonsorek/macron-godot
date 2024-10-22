@@ -22,13 +22,9 @@ func _init():
 
 #region Public functions
 func enter(controller : IngredientController):
-	#controller.view.set_color(Color.CHARTREUSE)
-	#_initialize_action_sequence()
 	sequence_position = 0
 	remaining_repetitions = repetitions
 	controller.set_utensil(Global.Utensil.CLEAVER)
-	#_set_current_action_prompt(controller)
-	#controller.set_action_prompt(action_sequence[0])
 	controller.set_action_sequence(action_sequence)
 
 func update(controller : IngredientController, delta : float):
@@ -46,7 +42,6 @@ func update(controller : IngredientController, delta : float):
 		controller.view.squishy()
 		controller.view.splash.animate_splash()
 		sequence_position += 1
-		#_set_current_action_prompt(controller)
 	if sequence_position >= action_sequence.size():
 		remaining_repetitions -= 1
 		if remaining_repetitions > 0:
@@ -59,17 +54,10 @@ func beat(controller : IngredientController):
 	pass
 
 func exit(controller : IngredientController):
-	#controller.set_action_prompt("")
 	controller.set_action_sequence([])
 #endregion
 
 #region Private functions
-#func _initialize_action_sequence():
-	#action_sequence = []
-		#
-#func _set_current_action_prompt(controller : IngredientController):
-	#if sequence_position >= 0 and sequence_position < action_sequence.size():
-		#controller.set_action_prompt(action_sequence[sequence_position])
 #endregion
 
 #region Subclasses
