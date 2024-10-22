@@ -60,4 +60,4 @@ func _process(delta):
 
 
 func _on_letter_display_timer_timeout():
-	pass # Replace with function body.
+	_display_letter()
