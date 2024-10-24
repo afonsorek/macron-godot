@@ -21,4 +21,3 @@ script = ExtResource("1_3fs53")
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 animate_press = false
-starting_action = null
