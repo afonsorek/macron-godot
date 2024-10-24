@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="InputPromptPack" load_steps=18 format=3 uid="uid://u27282o8kkr"]
+
+[ext_resource type="Texture2D" uid="uid://cplxjhyhdnmsj" path="res://assets/inputs/keyboard/keyboard_l_outline.png" id="1_bnjva"]
+[ext_resource type="Script" path="res://models/input_prompt.gd" id="2_5c53a"]
+[ext_resource type="Texture2D" uid="uid://clrhpcspn0krj" path="res://assets/inputs/keyboard/keyboard_l.png" id="3_bl7kx"]
+[ext_resource type="Texture2D" uid="uid://bl3f0kona2ou1" path="res://assets/inputs/keyboard/keyboard_k_outline.png" id="4_x5k80"]
+[ext_resource type="Texture2D" uid="uid://cvecqc5s7o6kl" path="res://assets/inputs/keyboard/keyboard_k.png" id="5_0dvbn"]
+[ext_resource type="Texture2D" uid="uid://bvg8ry5a458ul" path="res://assets/inputs/keyboard/keyboard_i_outline.png" id="6_pamiv"]
+[ext_resource type="Texture2D" uid="uid://dlpc2bc2y868x" path="res://assets/inputs/keyboard/keyboard_i.png" id="7_eqk7x"]
+[ext_resource type="Texture2D" uid="uid://b55c5xqah4f0i" path="res://assets/inputs/keyboard/keyboard_j_outline.png" id="8_do6kn"]
+[ext_resource type="Texture2D" uid="uid://cckksm3di3p" path="res://assets/inputs/keyboard/keyboard_j.png" id="9_vqcsa"]
+[ext_resource type="Texture2D" uid="uid://dvxueq6h1lxp3" path="res://assets/inputs/keyboard/keyboard_o_outline.png" id="10_g53t8"]
+[ext_resource type="Texture2D" uid="uid://o3lai8k3apn" path="res://assets/inputs/keyboard/keyboard_o.png" id="11_fuxet"]
+[ext_resource type="Script" path="res://models/input_prompt_pack.gd" id="12_b53ln"]
+
+[sub_resource type="Resource" id="Resource_cb6of"]
+script = ExtResource("2_5c53a")
+action = &"action_right"
+texture = ExtResource("3_bl7kx")
+pressed_texture = ExtResource("1_bnjva")
+
+[sub_resource type="Resource" id="Resource_ic2ox"]
+script = ExtResource("2_5c53a")
+action = &"action_down"
+texture = ExtResource("5_0dvbn")
+pressed_texture = ExtResource("4_x5k80")
+
+[sub_resource type="Resource" id="Resource_kg3fp"]
+script = ExtResource("2_5c53a")
+action = &"action_up"
+texture = ExtResource("7_eqk7x")
+pressed_texture = ExtResource("6_pamiv")
+
+[sub_resource type="Resource" id="Resource_8m2sw"]
+script = ExtResource("2_5c53a")
+action = &"action_left"
+texture = ExtResource("9_vqcsa")
+pressed_texture = ExtResource("8_do6kn")
+
+[sub_resource type="Resource" id="Resource_sc3p2"]
+script = ExtResource("2_5c53a")
+action = &"done"
+texture = ExtResource("11_fuxet")
+pressed_texture = ExtResource("10_g53t8")
+
+[resource]
+script = ExtResource("12_b53ln")
+system = &"keyboard"
+input_prompts = Array[ExtResource("2_5c53a")]([SubResource("Resource_cb6of"), SubResource("Resource_ic2ox"), SubResource("Resource_kg3fp"), SubResource("Resource_8m2sw"), SubResource("Resource_sc3p2")])

@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="InputPromptPack" load_steps=18 format=3 uid="uid://yi8os1em85nj"]
+
+[ext_resource type="Texture2D" uid="uid://bj8a5xnrhsred" path="res://assets/inputs/xbox/xbox_button_color_b_outline.png" id="1_b764a"]
+[ext_resource type="Script" path="res://models/input_prompt.gd" id="2_hvtpf"]
+[ext_resource type="Texture2D" uid="uid://c2c832rcgmwky" path="res://assets/inputs/xbox/xbox_button_color_b.png" id="3_g54yt"]
+[ext_resource type="Texture2D" uid="uid://d04y0ecxlnqow" path="res://assets/inputs/xbox/xbox_button_color_a_outline.png" id="4_83isn"]
+[ext_resource type="Texture2D" uid="uid://bwlfsiybl5br5" path="res://assets/inputs/xbox/xbox_button_color_a.png" id="5_t48gx"]
+[ext_resource type="Texture2D" uid="uid://x0sqa4vqwu18" path="res://assets/inputs/xbox/xbox_button_color_y_outline.png" id="6_7kqm7"]
+[ext_resource type="Texture2D" uid="uid://b3g6t7wlv3n2q" path="res://assets/inputs/xbox/xbox_button_color_y.png" id="7_w0yfd"]
+[ext_resource type="Texture2D" uid="uid://dsu52d5sc7coa" path="res://assets/inputs/xbox/xbox_button_color_x_outline.png" id="8_jnngf"]
+[ext_resource type="Texture2D" uid="uid://d4imui6n2lsfr" path="res://assets/inputs/xbox/xbox_button_color_x.png" id="9_iocap"]
+[ext_resource type="Texture2D" uid="uid://qequ1j7yaci4" path="res://assets/inputs/xbox/xbox_rb_outline.png" id="10_6p0k4"]
+[ext_resource type="Texture2D" uid="uid://c6mr0gmnwop5n" path="res://assets/inputs/xbox/xbox_rb.png" id="11_xk62d"]
+[ext_resource type="Script" path="res://models/input_prompt_pack.gd" id="12_0tuc5"]
+
+[sub_resource type="Resource" id="Resource_cb6of"]
+script = ExtResource("2_hvtpf")
+action = &"action_right"
+texture = ExtResource("3_g54yt")
+pressed_texture = ExtResource("1_b764a")
+
+[sub_resource type="Resource" id="Resource_ic2ox"]
+script = ExtResource("2_hvtpf")
+action = &"action_down"
+texture = ExtResource("5_t48gx")
+pressed_texture = ExtResource("4_83isn")
+
+[sub_resource type="Resource" id="Resource_kg3fp"]
+script = ExtResource("2_hvtpf")
+action = &"action_up"
+texture = ExtResource("7_w0yfd")
+pressed_texture = ExtResource("6_7kqm7")
+
+[sub_resource type="Resource" id="Resource_8m2sw"]
+script = ExtResource("2_hvtpf")
+action = &"action_left"
+texture = ExtResource("9_iocap")
+pressed_texture = ExtResource("8_jnngf")
+
+[sub_resource type="Resource" id="Resource_sc3p2"]
+script = ExtResource("2_hvtpf")
+action = &"done"
+texture = ExtResource("11_xk62d")
+pressed_texture = ExtResource("10_6p0k4")
+
+[resource]
+script = ExtResource("12_0tuc5")
+system = &"xbox"
+input_prompts = Array[ExtResource("2_hvtpf")]([SubResource("Resource_cb6of"), SubResource("Resource_ic2ox"), SubResource("Resource_kg3fp"), SubResource("Resource_8m2sw"), SubResource("Resource_sc3p2")])

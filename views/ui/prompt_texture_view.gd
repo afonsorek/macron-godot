@@ -46,7 +46,7 @@ func release():
 	texture = current_prompt.texture
 	
 func set_action(action : StringName):
-	current_prompt = InputPromptData.get_input_prompt("switch",action)
+	current_prompt = InputPromptData.get_input_prompt(action)
 	texture = current_prompt.texture
 #endregion
 
