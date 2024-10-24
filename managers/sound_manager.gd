@@ -2,7 +2,7 @@ extends Node
 
 #region Enums
 enum CutType {DRY, WET, CRUNCH, SAW}
-enum MonsterReaction {SATISFIED, UNSATISFIED}
+enum MonsterReaction {SATISFIED, UNSATISFIED, LAUGH}
 #endregion
 
 #region Variables
@@ -14,6 +14,7 @@ enum MonsterReaction {SATISFIED, UNSATISFIED}
 @onready var knife_out_sound = $KnifeOut
 @onready var unsatisfied_monster = $UnsatisfiedMonster
 @onready var satisfied_monster = $SatisfiedMonster
+@onready var monster_laugh = $MonsterLaugh
 #endregion
 
 #region Public functions
@@ -33,9 +34,11 @@ func play_cutting_sounds(cut_type : CutType):
 func play_monster_reaction_sound(monster_reaction : MonsterReaction):
 	match monster_reaction:
 		MonsterReaction.SATISFIED:
-				satisfied_monster.play()
+			satisfied_monster.play()
 		MonsterReaction.UNSATISFIED:
-				unsatisfied_monster.play()
+			unsatisfied_monster.play()
+		MonsterReaction.LAUGH:
+			monster_laugh.play()
 		_:
 			pass
 #endregion

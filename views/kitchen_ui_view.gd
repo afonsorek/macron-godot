@@ -64,8 +64,9 @@ func show_info_panel(text := ""):
 #endregion
 
 #region Private functions
-func _on_game_ended(result : bool):
-	show_info_panel("Você venceu!!!" if result else "Você perdeu!!!")
+func _on_game_ended(success : bool):
+	if success:
+		show_info_panel("Você venceu!!!")
 #endregion
 
 #region Subclasses

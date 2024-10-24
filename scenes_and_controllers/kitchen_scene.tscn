@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://5rasuq5uei7a"]
+[gd_scene load_steps=27 format=3 uid="uid://5rasuq5uei7a"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/kitchen_controller.gd" id="1_0221c"]
 [ext_resource type="Resource" uid="uid://rwmfr07kuxvd" path="res://data/kitchen_states/monster_enter_state.tres" id="2_2alrs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://ctuahlhh8j147" path="res://data/kitchen_states/judgement_state.tres" id="5_i3djm"]
 [ext_resource type="PackedScene" uid="uid://b5qvs0i2rw838" path="res://assets/textures/prototype_textures/PNG/Table/inside_foodtruck.gltf" id="5_j22kp"]
 [ext_resource type="PackedScene" uid="uid://flf8c64yeova" path="res://scenes_and_controllers/sizzle.tscn" id="5_v4o5j"]
+[ext_resource type="Resource" uid="uid://4apx224jdro8" path="res://data/kitchen_states/jumpscare_state.tres" id="6_edo4u"]
 [ext_resource type="PackedScene" uid="uid://dgd2dr5l4ihay" path="res://scenes_and_controllers/kitchen_space.tscn" id="6_sop3a"]
 [ext_resource type="PackedScene" uid="uid://cu4nvbf4m386a" path="res://scenes_and_controllers/ingredient.tscn" id="6_tprpm"]
 [ext_resource type="PackedScene" uid="uid://c5bwsn8oqsf64" path="res://scenes_and_controllers/monster.tscn" id="7_sxhc7"]
@@ -41,7 +42,7 @@ size = Vector3(2.06, 0.19, 1.09)
 
 [node name="Kitchen" type="Node3D"]
 script = ExtResource("1_0221c")
-state_resources = Array[Resource("res://models/kitchen_state.gd")]([ExtResource("2_2alrs"), ExtResource("3_t6pwe"), ExtResource("3_fn0gc"), ExtResource("5_i3djm")])
+state_resources = Array[Resource("res://models/kitchen_state.gd")]([ExtResource("2_2alrs"), ExtResource("3_t6pwe"), ExtResource("3_fn0gc"), ExtResource("5_i3djm"), ExtResource("6_edo4u")])
 
 [node name="MainCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true

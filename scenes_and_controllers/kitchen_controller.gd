@@ -44,6 +44,7 @@ func _ready():
 	ingredient_controller.setting_action_sequence.connect(_set_action_prompt_sequence)
 	monster_controller.satisfaction_changed.connect(_on_satisfaction_changed)
 	RhythmManager.beat.connect(_on_beat)
+	GameManager.game_ended.connect(_on_game_end)
 	# Start initial state
 	_init_states()
 	current_state = states.get(initial_state_name)
@@ -64,6 +65,9 @@ func add_selected_ingredient(ingredient_name : String):
 		selected_ingredient_names.pop_front()
 	print(selected_ingredient_names)
 	selected_ingredients_changed()
+	
+func hide_ui():
+	ui_view.hide()
 	
 func selected_ingredients_changed():
 	ui_view.select_ingredient.update_selected_ingredients(selected_ingredient_names)
@@ -106,6 +110,10 @@ func _init_states():
 func _on_beat():
 	if current_state:
 		current_state.beat(self)
+		
+func _on_game_end(success : bool):
+	if !success:
+		transition_state(current_state.name,"jumpscare")
 		
 func _on_satisfaction_changed(new_value : int, delta : int):
 	ui_view.on_satisfaction_changed(new_value, delta, monster_controller.current_monster.max_satisfaction)

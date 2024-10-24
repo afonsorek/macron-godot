@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ddmjli473yvch"]
+[gd_scene load_steps=27 format=3 uid="uid://ddmjli473yvch"]
 
 [ext_resource type="Script" path="res://managers/sound_manager.gd" id="1_nubne"]
 [ext_resource type="AudioStream" uid="uid://c2wwavq34rnby" path="res://assets/sfx/cutting_sounds/dry_cut_1.wav" id="2_mmg0p"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dc31ngnh0u3wj" path="res://assets/sfx/groan2.mp3" id="17_0a416"]
 [ext_resource type="AudioStream" uid="uid://bp0ila265odtj" path="res://assets/sfx/groan1.mp3" id="18_f2wlx"]
 [ext_resource type="AudioStream" uid="uid://cu1yfsdy56ebi" path="res://assets/sfx/groan3.mp3" id="19_phe8y"]
+[ext_resource type="AudioStream" uid="uid://cjlj3q3p3o8bc" path="res://assets/sfx/RISADONHA.wav" id="20_jfafc"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6aunh"]
 streams_count = 3
@@ -98,3 +99,6 @@ stream = SubResource("AudioStreamRandomizer_ibwcd")
 
 [node name="UnsatisfiedMonster" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_demj7")
+
+[node name="MonsterLaugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_jfafc")
