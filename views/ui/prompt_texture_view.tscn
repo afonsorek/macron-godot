@@ -21,3 +21,5 @@ size_flags_vertical = 4
 texture = ExtResource("1_i4jop")
 expand_mode = 2
 script = ExtResource("2_58o0a")
+animate_press = null
+starting_action = null

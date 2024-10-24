@@ -4,7 +4,7 @@ class_name InputPromptData
 #endregion
 
 #region Variables
-
+static var current_system : StringName = ""
 static var input_prompt_packs : Array[InputPromptPack] = []
 #endregion
 
@@ -21,23 +21,26 @@ static func initialize_input_prompts():
 		else:
 			print("Input prompt pack null!!")
 			
-static func get_input_prompt(system: StringName, action: StringName) -> InputPrompt:
-	var pack := get_input_prompt_pack(system)
+static func get_input_prompt(action: StringName) -> InputPrompt:
+	var pack := get_input_prompt_pack()
 	for input_prompt in pack.input_prompts:
 		if action == input_prompt.action:
 			return input_prompt
-	print("No action by name %s in system %s!" % [action,system])
+	print("No action by name %s in system %s!" % [action,current_system])
 	return null
 
-static func get_input_prompt_pack(system : StringName) -> InputPromptPack:
+static func get_input_prompt_pack() -> InputPromptPack:
 	if !input_prompt_packs:
 		print("Input prompts not initialized!")
 		return null
 	for input_prompt_pack in input_prompt_packs:
-		if input_prompt_pack.system == system:
+		if input_prompt_pack.system == current_system:
 			return input_prompt_pack
-	print("No input prompt pack by name %s!" % system)
+	print("No input prompt pack by system %s!" % current_system)
 	return null
+	
+static func set_system(system : StringName):
+	current_system = system
 #endregion
 
 #region Private functions

@@ -25,6 +25,7 @@ func _ready():
 	MonsterData.initialize_monsters()
 	RecipeData.initialize_recipes()
 	InputPromptData.initialize_input_prompts()
+	InputPromptData.set_system("keyboard")
 	start_run()
 	
 func _process(delta):

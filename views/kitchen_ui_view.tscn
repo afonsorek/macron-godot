@@ -102,3 +102,5 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_ik1tc")
 script = ExtResource("4_3hy7o")
+animate_press = null
+starting_action = null

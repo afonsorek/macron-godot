@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="InputPromptPack" load_steps=18 format=3 uid="uid://pnn4dahg6oxh"]
+
+[ext_resource type="Texture2D" uid="uid://ci8iui4wnds70" path="res://assets/inputs/playstation/playstation_button_color_circle_outline.png" id="1_nftre"]
+[ext_resource type="Script" path="res://models/input_prompt.gd" id="2_hoq05"]
+[ext_resource type="Texture2D" uid="uid://caaeis05u8fj6" path="res://assets/inputs/playstation/playstation_button_color_circle.png" id="3_eulco"]
+[ext_resource type="Texture2D" uid="uid://bevqkyanqib0l" path="res://assets/inputs/playstation/playstation_button_color_cross_outline.png" id="4_nhoh8"]
+[ext_resource type="Texture2D" uid="uid://d2u5ypx3gelfh" path="res://assets/inputs/playstation/playstation_button_color_cross.png" id="5_od8d8"]
+[ext_resource type="Texture2D" uid="uid://cpbej0scdg1e8" path="res://assets/inputs/playstation/playstation_button_color_triangle_outline.png" id="6_l6ymm"]
+[ext_resource type="Texture2D" uid="uid://b8u0pruh6fx4d" path="res://assets/inputs/playstation/playstation_button_color_triangle.png" id="7_e1amq"]
+[ext_resource type="Texture2D" uid="uid://ci1ibviipud3f" path="res://assets/inputs/playstation/playstation_button_color_square_outline.png" id="8_o07vw"]
+[ext_resource type="Texture2D" uid="uid://cyxu1fy88vu3u" path="res://assets/inputs/playstation/playstation_button_color_square.png" id="9_y47c6"]
+[ext_resource type="Texture2D" uid="uid://dw51xsvwq3yw7" path="res://assets/inputs/playstation/playstation_trigger_r1_alternative_outline.png" id="10_iiyju"]
+[ext_resource type="Texture2D" uid="uid://cgyi07brv7mpy" path="res://assets/inputs/playstation/playstation_trigger_r1_alternative.png" id="11_baj38"]
+[ext_resource type="Script" path="res://models/input_prompt_pack.gd" id="12_eeei0"]
+
+[sub_resource type="Resource" id="Resource_cb6of"]
+script = ExtResource("2_hoq05")
+action = &"action_right"
+texture = ExtResource("3_eulco")
+pressed_texture = ExtResource("1_nftre")
+
+[sub_resource type="Resource" id="Resource_ic2ox"]
+script = ExtResource("2_hoq05")
+action = &"action_down"
+texture = ExtResource("5_od8d8")
+pressed_texture = ExtResource("4_nhoh8")
+
+[sub_resource type="Resource" id="Resource_kg3fp"]
+script = ExtResource("2_hoq05")
+action = &"action_up"
+texture = ExtResource("7_e1amq")
+pressed_texture = ExtResource("6_l6ymm")
+
+[sub_resource type="Resource" id="Resource_8m2sw"]
+script = ExtResource("2_hoq05")
+action = &"action_left"
+texture = ExtResource("9_y47c6")
+pressed_texture = ExtResource("8_o07vw")
+
+[sub_resource type="Resource" id="Resource_sc3p2"]
+script = ExtResource("2_hoq05")
+action = &"done"
+texture = ExtResource("11_baj38")
+pressed_texture = ExtResource("10_iiyju")
+
+[resource]
+script = ExtResource("12_eeei0")
+system = &"playstation"
+input_prompts = Array[ExtResource("2_hoq05")]([SubResource("Resource_cb6of"), SubResource("Resource_ic2ox"), SubResource("Resource_kg3fp"), SubResource("Resource_8m2sw"), SubResource("Resource_sc3p2")])
